@@ -20,9 +20,9 @@ private:
 
 
 public:
-	bool checkManualData(std::string& assignString);
-	bool checkManualData(double& assignDouble);
-	bool checkManualData(int& assignInt);
+	bool checkManualData(const std::string& _assignString);
+	bool checkManualData(const double& _assignDouble);
+	bool checkManualData(const int& _assignInt);
 	DataEntry getManualData(void);
 	bool canConvert(std::string arr[]);
 	DataEntry ConvertDataTypes(std::string arr[]);

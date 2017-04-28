@@ -28,7 +28,16 @@ bool Datareader::checkManualData(std::string &assignString) {
 
 
 
-
+bool checkManualData(const std::string& _assignString){
+  if(_assignString == ""){return false;}
+return true;
+}
+bool checkManualData(const double& _assignDouble){
+return true;
+}
+bool checkManualData(const int& _assignInt){
+  return true;
+}
 
 
 void readStringsFromFile(const Tree* _tree, const char* _file);
