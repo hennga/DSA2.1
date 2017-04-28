@@ -18,6 +18,13 @@ private:
 public:
 	DataEntry(std::string newName,int newPLZ,int newAlter, double newEinkommen):
 	Name(newName),PLZ(newPLZ),Alter(newAlter),Einkommen(newEinkommen){}
+
+
+void set_name(const std::string _val);
+void set_plz(const int _val);
+void set_age(const int _val);
+void set_income(const double _val);
+
 };
 
 
