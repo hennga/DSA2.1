@@ -15,17 +15,14 @@ TreeNode* Tree::getAnker() {
    return this->Anker;
 }
 
-
 void Tree::setAnker(TreeNode *newAnker) {
    this->Anker = newAnker;
 }
 
-
-   bool Tree::fromManualEntryNewNode() {
+bool Tree::fromManualEntryNewNode() {
 
 	  Datareader ManualReader;
 	  DataEntry newEntry = ManualReader.getManualData();
-
 
    }
 

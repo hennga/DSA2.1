@@ -13,7 +13,23 @@ TreeNode::TreeNode(const int _pos,const  int _id,const  std::string _name,const 
    this->Einkommen=_income;
    this->PLZ= _plz;
 }
+TreeNode(const int _id,const std::string _name,const int _age,const double _income,const int _plz){
+  this->NodePosID= _age + _plz + (int)_income;
+  this->NodeID=_id;
+  this->Name=_name;
+  this->Alter=_age;
+  this->Einkommen=_income;
+  this->PLZ= _plz;
+}
+TreeNode(const int _id,const DataEntry* _data){
+  this->NodePosID= _data->Alter + _data->PLZ + (int)_data->Einkommen;
+  this->NodeID=_id;
+  this->Name=_data->Name;
+  this->Alter=_data->Alter;
+  this->Einkommen=_data->Einkommen;
+  this->PLZ= _data->PLZ;
 
+}
 int TreeNode::getNodePosID(void) {
    return this->NodePosID;
 }

@@ -39,9 +39,38 @@ bool checkManualData(const int& _assignInt){
   return true;
 }
 
+/*
+std::string Name;
+int PLZ;
+int Alter;
+double Einkommen;
+*/
 
-void readStringsFromFile(const Tree* _tree, const char* _file);
 
+void ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data){
+
+if(_tree == nullptr){
+  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE << std::endl;
+  return;
+}
+
+if(checkManualData(_data.Name)
+  && checkManualData(_data.PLZ)
+  && checkManualData(_data.Alter)
+  &&checkManualData(_data.Einkommen)){
+  }else{
+    std::cout << "ERROR" << __FILE__ << ":" << __LINE << std::endl;
+    return;
+  }
+//nutze den 3. ctr für auto pos gen
+TreeNode node = new TreeNode(_tree->NumberOfNodes, &_data);
+_tree->insertNewNode(node);
+}
+
+
+
+
+void readStringsFromFile(Tree* _tree, const char* _file);
 
 
 DataEntry Datareader::getManualData(void) {

@@ -2,6 +2,7 @@
 // Created by henn on 26.04.17.
 //
 #include <string>
+#include "DataEntry.h"
 #ifndef PRAKTIKUM2TREE_TREENODE_H
 #define PRAKTIKUM2TREE_TREENODE_H
 
@@ -19,6 +20,8 @@ private:
 
 public:
 	TreeNode(const  int _pos,const int _id,const std::string _name,const int _age,const double _income,const int _plz);
+	TreeNode(const int _id,const std::string _name,const int _age,const double _income,const int _plz);
+		TreeNode(const int _id,const DataEntry* _data);
 	std::string getName(void);
 	int getAlter(void);
 	double getEinkommen(void);

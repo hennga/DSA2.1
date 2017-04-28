@@ -24,9 +24,11 @@ public:
 	bool checkManualData(const double& _assignDouble);
 	bool checkManualData(const int& _assignInt);
 	DataEntry getManualData(void);
-	bool canConvert(std::string arr[]);
-	DataEntry ConvertDataTypes(std::string arr[]);
-	void readStringsFromFile(const Tree* _tree, const char* _file);
+
+
+	void ConvertAndAddDataTypes(Tree* _tree, DataEntry _data);
+
+	void readStringsFromFile(Tree* _tree, const char* _file);
 
 
 
