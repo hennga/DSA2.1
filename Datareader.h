@@ -8,7 +8,8 @@
 #include "DataEntry.h"
 #include <string>
 #include <fstream>
-
+#include "TreeNode.h"
+#include "Tree.h"
 
 
 class Datareader {
@@ -22,11 +23,10 @@ public:
 	bool checkManualData(std::string& assignString);
 	bool checkManualData(double& assignDouble);
 	bool checkManualData(int& assignInt);
-	std::ifstream createFileStream(void);
 	DataEntry getManualData(void);
 	bool canConvert(std::string arr[]);
 	DataEntry ConvertDataTypes(std::string arr[]);
-	void readStringsFromFile(std::ifstream CsvStream,std::string arr[]);
+	void readStringsFromFile(const Tree* _tree, const char* _file);
 
 
 

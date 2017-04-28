@@ -24,8 +24,7 @@ public:
 	TreeNode* getAnker(void);
 	bool fromManualEntryNewNode();
 	TreeNode* insertNewNode(TreeNode* newNode);
-	bool fromFileInsertNewNodes();
 	void treeAusgeben(void);
 	TreeNode* searchNode(std::string searchData);
-	
+
 };

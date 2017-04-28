@@ -12,10 +12,10 @@
 class Menue{
 
 public:
-	
+
 	std::string MenueUserSelection();
 	bool checkUserSelection(std::string eingabe);
-	
+
 };
 
 

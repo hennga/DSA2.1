@@ -20,36 +20,6 @@ void Tree::setAnker(TreeNode *newAnker) {
    this->Anker = newAnker;
 }
 
-bool Tree::fromFileInsertNewNodes() {
-   Datareader Filereader;
-   std::string CsvStringHolder[3];
-   std::ifstream CsvStream = Filereader.createFileStream();
-
-   std::string NewName;
-   int NewPLZ;
-   int NewAlter;
-   double NewEinkommen;
-
-   if (!CsvStream.is_open()) {
-	  std::cout << "Es ist ein Fehler beim Oeffnen der CSV Datei aufgetreten" << std::endl;
-	  return false;
-   }
-
-   while (CsvStream.good()) {
-
-	  Filereader.readStringsFromFile(CsvStream, CsvStringHolder);
-
-	  if (Filereader.canConvert(CsvStringHolder)) {
-
-
-	  } else {
-		 std::cout << "Es ist ein Fehler beim Konvertieren der Datentypen aus der CSV Datei " << std::endl;
-		 return false;
-	  }
-
-
-   }
-
 
    bool Tree::fromManualEntryNewNode() {
 
@@ -119,21 +89,7 @@ bool Tree::fromFileInsertNewNodes() {
 
 			}
 
-
-
-
-
-
-
-
-
 		 }
-
-
-
-
-
-
 
 	  }
 

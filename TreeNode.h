@@ -1,10 +1,7 @@
 //
 // Created by henn on 26.04.17.
 //
-
 #include <string>
-
-
 #ifndef PRAKTIKUM2TREE_TREENODE_H
 #define PRAKTIKUM2TREE_TREENODE_H
 
@@ -36,9 +33,6 @@ public:
 	TreeNode* getRechtsNode(void);
 	void setRechtsNode(TreeNode* ToSet);
 	void setLinksNode(TreeNode* ToSet);
-
-
-
 };
 
 

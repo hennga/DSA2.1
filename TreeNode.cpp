@@ -94,13 +94,4 @@ std::cout << Einkommen << " | ";
 std::cout << PLZ << " | ";
 std::cout << Pos << std::endl;
 
-  return;
 }
-
-
-
-
-this->Name=_name;
-this->Alter=_age;
-this->Einkommen=_income;
-this->PLZ= _plz;
