@@ -29,7 +29,7 @@ bool Datareader::checkManualData(std::string &assignString) {
 
 
 
-void Datareader::readStringsFromFile(std::ifstream CsvStream,std::string arr[]) {
+int Datareader::readStringsFromFile(std::ifstream CsvStream,std::string arr[]) {
    
    std::string Name,PLZ,Einkommen,Alter;
    
@@ -43,6 +43,15 @@ void Datareader::readStringsFromFile(std::ifstream CsvStream,std::string arr[]) 
    arr[2]=Einkommen;
    arr[3]=PLZ;
 }
+
+
+
+
+
+
+
+
+
 
 std::ifstream Datareader::createFileStream(void) {
    

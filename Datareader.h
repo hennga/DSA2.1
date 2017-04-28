@@ -13,7 +13,9 @@
 
 class Datareader {
 
-private: std::string CSVSearchadress = "ExportZielanalyse.csv";
+private:
+		//immer schön const :D
+		const std::string CSVSearchadress = "ExportZielanalyse.csv";
 
 
 public:
@@ -25,10 +27,10 @@ public:
 	bool canConvert(std::string arr[]);
 	DataEntry ConvertDataTypes(std::string arr[]);
 	void readStringsFromFile(std::ifstream CsvStream,std::string arr[]);
-	
-	
-	
-	
+
+
+
+
 };
 
 
