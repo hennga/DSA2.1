@@ -8,20 +8,20 @@
 #include <string>
 
 bool Datareader::checkManualData(std::string &assignString) {
-   
+
    try {
 	  std::getline(std::cin, assignString);
-   
+
 	  if (assignString.empty()) {
 		 throw "Der eingegebene Name darf nicht leer sein";
 	  }
    }
    catch(std::string err){
 	  std::cout << err<< std::endl;
-	  
+
 	  return false;
    }
-   
+
    return true;
 }
 
@@ -29,78 +29,44 @@ bool Datareader::checkManualData(std::string &assignString) {
 
 
 
-int Datareader::readStringsFromFile(std::ifstream CsvStream,std::string arr[]) {
-   
-   std::string Name,PLZ,Einkommen,Alter;
-   
-   getline(CsvStream,Name,',');
-   getline(CsvStream,Alter,',');
-   getline(CsvStream,Einkommen,',');
-   getline(CsvStream,PLZ,',');
-   
-   arr[0]=Name;
-   arr[1]=Alter;
-   arr[2]=Einkommen;
-   arr[3]=PLZ;
-}
 
 
+void readStringsFromFile(const Tree* _tree, const char* _file);
 
 
-
-
-
-
-
-
-std::ifstream Datareader::createFileStream(void) {
-   
-	  std::ifstream CsvStream (CSVSearchadress);
-   
-   return CsvStream;
-}
 
 DataEntry Datareader::getManualData(void) {
-   
-   
    std::string newName;
    int newPLZ;
    int newAlter;
    double newEinkommen;
-   
+
    std::cout << "Bitte geben Sie den neuen Datensatz ein" << std::endl;
-   
+
    do {
-	  
 	  std::cout << "Name ?> ";
 	  std::cin>>newName;
-	  
-	  
    } while (!this->checkManualData(newName));
-   
+
    do {
-   
    std::cout<< "Alter ?> ";
 	  std::cin>>newAlter;
-   
-	  
-	  
-   } while (!this->checkManualData(newAlter))
-   
-   ;
-   
-   
-   
-   std::cout<<"Einkommen ? " ;
-   
-   
-   std::cout <<"PLZ ?";
-   
-   
+   } while (!this->checkManualData(newAlter));
+
+   do {
+   std::cout<<"Einkommen ?> " ;
+	  std::cin>>newEinkommen;
+   } while (!this->checkManualData(newEinkommen));
+
+
+   do {
+   std::cout<<"PLZ ?> " ;
+	  std::cin>>newEinkommen;
+  } while (!this->checkManualData(newPLZ));
+
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
-   
+
    return newEntry;
-   
 }
 
 
