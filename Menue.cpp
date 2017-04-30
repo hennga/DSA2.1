@@ -9,9 +9,8 @@
 #include "Datareader.h"
 
 
-
-std::string Menue::MenueUserSelection() {
-
+//enmaum bietet sich heri besser an als string vorallem wegen case und so
+Menue::SELECTION_NN Menue::MenueUserSelection() {
    std::string eingabe;
    std::cout << "1) Datensatz einfuegen, manuell" << std::endl;
    std::cout << "2) Datensatz einfuegen, CSV Datei"<< std::endl;
@@ -25,8 +24,8 @@ std::string Menue::MenueUserSelection() {
 
    }
    while (!checkUserSelection(eingabe));
-
-   return eingabe;
+	//fancy cast
+   return (SELECTION_NN)(atoi(eingabe.c_str())-1);
 }
 
 bool Menue::checkUserSelection(std::string UserEntry) {

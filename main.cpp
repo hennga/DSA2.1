@@ -15,29 +15,28 @@ int main() {
    std::cout << "3) Datensatz loeschen" << std::endl;
    std::cout << "4) Datensatz suchen" << std::endl;
    std::cout << "5) Datenstruktur anzeigen " << std::endl;*/
-Tree* baum = new Tree();
+	Tree* baum = new Tree(true);
 Menue men;
 Datareader reader;
 //dauerschleife für Menue
 while (42) {
   /* code */
-std::string tmp = men.MenueUserSelection();
 
 
-switch (tmp) {
-  case "1": break; //manuell
-    case "2": reader.readStringsFromFile(baum, FILE_CSV_PATH) break; //file
-      case "3": break; //löschen
 
-        case "4": {
+switch (men.MenueUserSelection()) {
+case Menue::SELECTION_NN::INSERT: break; //manuell
+case Menue::SELECTION_NN::INSERT_CSV : reader.readStringsFromFile(baum, FILE_CSV_PATH); break; //file
+case Menue::SELECTION_NN::DELETE: break; //löschen
+
+case Menue::SELECTION_NN::SEARCH: {
           std::string tmp = "";
           std::cin >> tmp;
           TreeNode* n = baum->searchNode(tmp);
           n->printData();
         }
         break; //suchen
-        
-          case "5": baum->treeAusgebenbreak(); //print
+case Menue::SELECTION_NN::PRINT: baum->treeAusgeben(); break; //print
   default:break;
 }
 

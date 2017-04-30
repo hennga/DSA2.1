@@ -11,14 +11,18 @@
 #include "TreeNode.h"
 #include "Tree.h"
 
+
+#define CSV_SPLIT_CHAR ';'
+#define CSV_REQ_SPLIT_AMUNT 3
+
 class Datareader {
 
 public:
-	bool checkManualData(const std::string& _assignString);
-	bool checkManualData(const double& _assignDouble);
-	bool checkManualData(const int& _assignInt);
+	bool checkManualData( std::string& _assignString);
+	bool checkManualData( double& _assignDouble);
+	bool checkManualData( int& _assignInt);
 	DataEntry getManualData(void);
 	void ConvertAndAddDataTypes(Tree* _tree, DataEntry _data);
-	void readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv");
+	int readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv");
 };
 #endif //PRAKTIKUM2TREE_DATAREADER_H

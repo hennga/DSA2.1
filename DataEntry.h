@@ -9,7 +9,8 @@
 
 class DataEntry {
 
-private:
+//private:
+public:
 	std::string Name;
 	int PLZ;
 	int Alter;
@@ -22,6 +23,8 @@ void set_name(const std::string _val);
 void set_plz(const int _val);
 void set_age(const int _val);
 void set_income(const double _val);
+
+//extra getter zu machen ist mir jetzt zu zumm
 
 };
 #endif //PRAKTIKUM2TREE_DATAENTRY_H

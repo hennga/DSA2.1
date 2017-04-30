@@ -1,10 +1,13 @@
 //
 // Created by henn on 26.04.17.
 //
-#include <string>
-#include "DataEntry.h"
 #ifndef PRAKTIKUM2TREE_TREENODE_H
 #define PRAKTIKUM2TREE_TREENODE_H
+
+
+#include <string>
+#include "DataEntry.h"
+#include <iostream>
 
 class TreeNode {
 

@@ -20,6 +20,12 @@ if(_create_anchor){
 
 }
 
+
+int Tree::get_non() {
+	return NumberOfNodes;
+
+}
+
 TreeNode* Tree::getAnker() {
    return this->Anker;
 }
@@ -32,12 +38,12 @@ bool Tree::fromManualEntryNewNode() {
 
 	  Datareader ManualReader;
 	  DataEntry newEntry = ManualReader.getManualData();
-
-   }
+	  return true;
+ }
 
    void Tree::CallProcedure(std::string MenueFlag) {
 
-
+	   /*
 	  if (MenueFlag == "1") {
 		 this->fromManualEntryNewNode();
 	  } else if (MenueFlag == "2") {
@@ -49,19 +55,20 @@ bool Tree::fromManualEntryNewNode() {
 	  } else if (MenueFlag == "5") {
 
 	  }
+	  */
 
-   }
+   //}
 
 }
 
 
-   TreeNode *Tree::insertNewNode(TreeNode *newNode) {
+   TreeNode* Tree::insertNewNode(TreeNode *newNode) {
 
 	  if(this->Anker == nullptr){
-		 Anker = newNode;
+		 this->Anker = newNode;
 	  }
 	  else {
-		 TreeNode* tmp = Anker;
+		 TreeNode* tmp = this->Anker;
 		 while (tmp!= nullptr){
 
 			if (tmp->getNodePosID()>=newNode->getNodePosID()) {
@@ -103,11 +110,11 @@ bool Tree::fromManualEntryNewNode() {
 
 void Tree::treeAusgeben(void) {
 //TODO DURCH JEDEN NODE DA print AUSGEBEN
-Anker->printData();
+this->Anker->printData();
 }
 
 TreeNode *Tree::searchNode(std::string searchData) {
-   TreeNode* tmp = Anker;
+   TreeNode* tmp = this->Anker;
 
 
 

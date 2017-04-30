@@ -7,7 +7,7 @@
 #include <fstream>
 #include <string>
 
-bool Datareader::checkManualData(std::string &assignString) {
+bool Datareader::checkManualData(std::string assignString) {
 
    try {
 	  std::getline(std::cin, assignString);
@@ -28,36 +28,24 @@ bool Datareader::checkManualData(std::string &assignString) {
 
 
 
-bool checkManualData(const std::string& _assignString){
-  if(_assignString == ""){return false;}
+
+bool Datareader::checkManualData( double& _assignDouble){
 return true;
 }
-bool checkManualData(const double& _assignDouble){
-return true;
-}
-bool checkManualData(const int& _assignInt){
+bool Datareader::checkManualData( int& _assignInt){
   return true;
 }
 
 
 
-void ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data){
+void Datareader::ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data){
   //check ptr
 if(_tree == nullptr){
-  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE << std::endl;
+  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE__ << std::endl;
   return;
 }
-//check data
-if(checkManualData(_data.Name)
-  && checkManualData(_data.PLZ)
-  && checkManualData(_data.Alter)
-  &&checkManualData(_data.Einkommen)){
-  }else{
-    std::cout << "ERROR" << __FILE__ << ":" << __LINE << std::endl;
-    return;
-  }
-//nutze den 3. ctr für auto pos gen
-TreeNode node = new TreeNode(_tree->NumberOfNodes, &_data);
+
+TreeNode* node = new TreeNode(_tree->get_non(), &_data);
 
 if(node == nullptr){
   std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
@@ -69,9 +57,9 @@ _tree->insertNewNode(node);
 
 
 
-void readStringsFromFile(Tree* _tree, const char* _file){
+int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
 
-        if(tree == nullptr){
+        if(_tree == nullptr){
             std::cout << "_tree nullptr"<< __FILE__ << ":" <<__LINE__ << std::endl;
             return -1;
         }
@@ -152,7 +140,7 @@ void readStringsFromFile(Tree* _tree, const char* _file){
             //appende beide string together
             tmp= "";
             tmp.append(start_str, end_str);
-            entry.set_income(atod(tmp.c_str()));
+            entry.set_income(atof(tmp.c_str()));
             //read third
             start_str = strstr(end_str, ";");
             start_str++;
@@ -201,4 +189,4 @@ DataEntry Datareader::getManualData(void) {
 
 
 
-}
+

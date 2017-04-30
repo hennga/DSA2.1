@@ -13,7 +13,17 @@ class Menue{
 
 public:
 
-	std::string MenueUserSelection();
+	enum SELECTION_NN
+	{
+		INSERT = 0,
+		INSERT_CSV = 1,
+		DELETE = 2,
+		SEARCH = 3,
+		PRINT = 4
+	};
+
+
+	SELECTION_NN MenueUserSelection();
 	bool checkUserSelection(std::string eingabe);
 
 };

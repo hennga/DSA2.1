@@ -3,7 +3,7 @@
 //
 
 #include "TreeNode.h"
-
+#include <iostream>
 
 TreeNode::TreeNode(const int _pos,const  int _id,const  std::string _name,const  int _age,const double _income,const int _plz) {
    this->NodePosID=_pos;
@@ -13,7 +13,7 @@ TreeNode::TreeNode(const int _pos,const  int _id,const  std::string _name,const 
    this->Einkommen=_income;
    this->PLZ= _plz;
 }
-TreeNode(const int _id,const std::string _name,const int _age,const double _income,const int _plz){
+TreeNode::TreeNode(const int _id,const std::string _name,const int _age,const double _income,const int _plz){
   this->NodePosID= _age + _plz + (int)_income;
   this->NodeID=_id;
   this->Name=_name;
@@ -21,7 +21,7 @@ TreeNode(const int _id,const std::string _name,const int _age,const double _inco
   this->Einkommen=_income;
   this->PLZ= _plz;
 }
-TreeNode(const int _id,const DataEntry* _data){
+TreeNode::TreeNode(const int _id,const DataEntry* _data){
   this->NodePosID= _data->Alter + _data->PLZ + (int)_data->Einkommen;
   this->NodeID=_id;
   this->Name=_data->Name;
@@ -58,9 +58,11 @@ int TreeNode::getAlter(void){
   return Alter;
 }
 
-double getEinkommen(void){
-  return Einkommen;
+double TreeNode::getEinkommen(void)
+{
+	return Einkommen;
 }
+
 
 int TreeNode::getPLZ(void){
   return PLZ;
@@ -86,10 +88,10 @@ void TreeNode::printData(void){
 //format id
 std::cout << NodePosID;
 if(NodeID < 10){
-  std::std::cout << "  ";
+  std::cout << "  ";
 }
 if(NodeID > 9 && NodeID < 100){
-  std::std::cout << " ";
+  std::cout << " ";
 }
 
 //FORMAT NAME
@@ -105,9 +107,9 @@ if(w < 0 || w == 0){
 
 //FORMAT AGE
 //mal echt jetzt ich habe keine lust mehr auf das passend formatierte
-std::cout << Alter << " | ";
-std::cout << Einkommen << " | ";
-std::cout << PLZ << " | ";
-std::cout << Pos << std::endl;
+std::cout << this->Alter << " | ";
+std::cout << this->Einkommen << " | ";
+std::cout << this->PLZ << " | ";
+std::cout << this->NodeID << std::endl;
 
 }
