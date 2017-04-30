@@ -13,7 +13,7 @@
 Tree::Tree(bool _create_anchor){
 
 if(_create_anchor){
-Anker = new Tree
+//Anker = new TreeNode();
 //TODO
 
 }
@@ -102,15 +102,8 @@ bool Tree::fromManualEntryNewNode() {
    }
 
 void Tree::treeAusgeben(void) {
-
-
-
-
-
-
-
-
-
+//TODO DURCH JEDEN NODE DA print AUSGEBEN
+Anker->printData();
 }
 
 TreeNode *Tree::searchNode(std::string searchData) {

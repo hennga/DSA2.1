@@ -58,6 +58,11 @@ if(checkManualData(_data.Name)
   }
 //nutze den 3. ctr für auto pos gen
 TreeNode node = new TreeNode(_tree->NumberOfNodes, &_data);
+
+if(node == nullptr){
+  std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
+}
+
 _tree->insertNewNode(node);
 }
 
