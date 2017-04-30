@@ -11,29 +11,14 @@
 #include "TreeNode.h"
 #include "Tree.h"
 
-
 class Datareader {
-
-private:
-		//immer schön const :D
-		const std::string CSVSearchadress = "ExportZielanalyse.csv";
-
 
 public:
 	bool checkManualData(const std::string& _assignString);
 	bool checkManualData(const double& _assignDouble);
 	bool checkManualData(const int& _assignInt);
 	DataEntry getManualData(void);
-
-
 	void ConvertAndAddDataTypes(Tree* _tree, DataEntry _data);
-
-	void readStringsFromFile(Tree* _tree, const char* _file);
-
-
-
-
+	void readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv");
 };
-
-
 #endif //PRAKTIKUM2TREE_DATAREADER_H

@@ -17,8 +17,8 @@ private:
 	TreeNode* Anker= nullptr;
 	int NumberOfNodes;
 
-
 public:
+	Tree(bool _create_anchor);
 	void setAnker(TreeNode* newAnker);
 	void CallProcedure(std::string MenueFlag);
 	TreeNode* getAnker(void);
@@ -27,4 +27,5 @@ public:
 	void treeAusgeben(void);
 	TreeNode* searchNode(std::string searchData);
 
+//DESTRUCTOR ?
 };

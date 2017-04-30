@@ -10,6 +10,15 @@
 #include <fstream>
 
 
+Tree::Tree(bool _create_anchor){
+
+if(_create_anchor){
+Anker = new Tree
+//TODO
+
+}
+
+}
 
 TreeNode* Tree::getAnker() {
    return this->Anker;

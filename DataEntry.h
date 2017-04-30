@@ -16,16 +16,12 @@ private:
 	double Einkommen;
 
 public:
-	DataEntry(std::string newName,int newPLZ,int newAlter, double newEinkommen):
-	Name(newName),PLZ(newPLZ),Alter(newAlter),Einkommen(newEinkommen){}
-
-
+	//hmm lieber den ctr in die cpp oder ? besser leserlich bei so vielen vars
+DataEntry(const std::string _name,const int _plz,const int _age,const  double _income);
 void set_name(const std::string _val);
 void set_plz(const int _val);
 void set_age(const int _val);
 void set_income(const double _val);
 
 };
-
-
 #endif //PRAKTIKUM2TREE_DATAENTRY_H
