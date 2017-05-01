@@ -140,8 +140,8 @@ void Tree::searchNode( const std::string& searchData, TreeNode* _anker) {
    if(_anker!= nullptr){
 	  
 	  if(_anker->getName()==searchData){_anker->printData();}
-	  this->treeAusgeben(_anker->getLinksNode());
-	  this->treeAusgeben(_anker->getRechtsNode());
+	  this->searchNode(searchData,_anker->getLinksNode());
+	  this->searchNode(searchData,_anker->getRechtsNode());
    }
    
 }
