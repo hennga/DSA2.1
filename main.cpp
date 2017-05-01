@@ -7,7 +7,7 @@
 
 int main() {
 #ifdef _MSC_VER 
-#define FILE_CSV_PATH "ExportZielanalyse.csv"
+#define FILE_CSV_PATH "C:\ExportZielanalyse.csv"
 #else
 #define FILE_CSV_PATH "./ExportZielanalyse.csv"
 #endif

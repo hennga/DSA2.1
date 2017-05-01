@@ -8,51 +8,22 @@
 #include <string>
 #include "string.h"
 
-//bool Datareader::checkManualData(std::string& assignString) {
-//
-//   try {
-//	  std::getline(std::cin, assignString);
-//
-//	  if (assignString.empty()) {
-//		 throw "Der eingegebene Name darf nicht leer sein";
-//	  }
-//   }
-//   catch(std::string err){
-//	  std::cout << err<< std::endl;
-//
-//	  return false;
-//   }
-//
-//   return true;
-//}
-//
-
-
-
-
-//bool Datareader::checkManualData( double& _assignDouble){
-//return true;
-//}
-//bool Datareader::checkManualData( int& _assignInt){
-//  return true;
-//}
-
 
 //
 void Datareader::ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data){
-  //check ptr
-//if(_tree == nullptr){
-//  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE__ << std::endl;
-//  return;
-//}
-//
-//TreeNode* node = new TreeNode(_tree->get_non(), &_data);
-//
-//if(node == nullptr){
-//  std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
-//}
-//
-//_tree->insertNewNode(node);
+//  check ptr
+if(_tree == nullptr){
+  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE__ << std::endl;
+  return;
+}
+
+TreeNode* node = new TreeNode(_tree->get_non(), &_data);
+
+if(node == nullptr){
+  std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
+}
+
+_tree->insertNewNode(node);
 }
 //
 std::string Datareader::remove_chars(std::string _s, const char _c)
@@ -109,7 +80,8 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
 			line = remove_chars(line, '\r');
    //         //tmp vars
             std::string tmp = "";
-   //         DataEntry entry;
+           DataEntry entry;
+			
    //         //read first
             const char* start_str = line.c_str();
             if (start_str == nullptr) {
@@ -123,7 +95,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
             }
    //         //appende beide string together
             tmp.append(start_str, end_str);
-   //         entry.set_name(tmp);
+            entry.set_name(tmp);
             //read second
             start_str = strstr(end_str, ";");
             start_str++;
@@ -139,7 +111,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //appende beide string together
             tmp= "";
             tmp.append(start_str, end_str);
-   //         entry.set_age(atoi(tmp.c_str()));
+            entry.set_age(atoi(tmp.c_str()));
    //         //read third
             start_str = strstr(end_str, ";");
             start_str++;
@@ -155,7 +127,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //appende beide string together
             tmp= "";
             tmp.append(start_str, end_str);
-   //         entry.set_income(atof(tmp.c_str()));
+            entry.set_income(atof(tmp.c_str()));
    //         //read third
             start_str = strstr(end_str, ";");
             start_str++;
@@ -165,28 +137,12 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
             }
             tmp= "";
             tmp.append(start_str);
-   //         //TODO JO
-   //         //_desc->pos = atoi(tmp.c_str());
 
-        //  ConvertAndAddDataTypes(_tree,entry);
+			entry.set_plz(atoi(tmp.c_str()));
+        ConvertAndAddDataTypes(_tree,entry);
         }
         return 0;
 }
-
-//int Datareader::readManualData(Tree * _tree)
-//{
-//
-//	//cin stuff
-//	std::string tmp;
-//	
-//
-//	while (tmp.empty()) {
-//		std::cout << "name!!!>";
-//		std::cin >> tmp;
-//	}
-//	DataEntry d;
-//	return 0;
-//}
 
 
 int Datareader::readManualData(Tree* _tree) {
@@ -203,11 +159,14 @@ int Datareader::readManualData(Tree* _tree) {
    do {
 	  std::cout << "Name ?> ";
 	  std::cin>>newName;
-   } while (newName.empty());
+   } while (newName == "");
+
+   std::cin.ignore();
    do {
    std::cout<< "Alter ?> ";
 	  std::cin>>newAlter;
    } while (newAlter < 0);
+
    do {
    std::cout<<"Einkommen ?> " ;
 	  std::cin>>newEinkommen;
@@ -217,6 +176,7 @@ int Datareader::readManualData(Tree* _tree) {
 	  std::cin>>newPLZ;
   } while (newPLZ < 0);
   //TODO FIX
+ 
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
    TreeNode* n = new TreeNode(_tree->get_non()+1, &newEntry);
    _tree->insertNewNode(n);
