@@ -7,51 +7,22 @@
 #include <fstream>
 #include <string>
 
-//bool Datareader::checkManualData(std::string& assignString) {
-//
-//   try {
-//	  std::getline(std::cin, assignString);
-//
-//	  if (assignString.empty()) {
-//		 throw "Der eingegebene Name darf nicht leer sein";
-//	  }
-//   }
-//   catch(std::string err){
-//	  std::cout << err<< std::endl;
-//
-//	  return false;
-//   }
-//
-//   return true;
-//}
-//
-
-
-
-
-//bool Datareader::checkManualData( double& _assignDouble){
-//return true;
-//}
-//bool Datareader::checkManualData( int& _assignInt){
-//  return true;
-//}
-
 
 //
 void Datareader::ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data){
-  //check ptr
-//if(_tree == nullptr){
-//  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE__ << std::endl;
-//  return;
-//}
-//
-//TreeNode* node = new TreeNode(_tree->get_non(), &_data);
-//
-//if(node == nullptr){
-//  std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
-//}
-//
-//_tree->insertNewNode(node);
+//  check ptr
+if(_tree == nullptr){
+  std::cout << "ERROR NULLPTR " << __FILE__ << ":" << __LINE__ << std::endl;
+  return;
+}
+
+TreeNode* node = new TreeNode(_tree->get_non(), &_data);
+
+if(node == nullptr){
+  std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
+}
+
+_tree->insertNewNode(node);
 }
 //
 std::string Datareader::remove_chars(std::string _s, const char _c)
