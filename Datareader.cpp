@@ -108,7 +108,8 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
 			line = remove_chars(line, '\r');
    //         //tmp vars
             std::string tmp = "";
-   //         DataEntry entry;
+           DataEntry entry;
+			
    //         //read first
             const char* start_str = line.c_str();
             if (start_str == nullptr) {
@@ -122,7 +123,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
             }
    //         //appende beide string together
             tmp.append(start_str, end_str);
-   //         entry.set_name(tmp);
+            entry.set_name(tmp);
             //read second
             start_str = strstr(end_str, ";");
             start_str++;
@@ -138,7 +139,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //appende beide string together
             tmp= "";
             tmp.append(start_str, end_str);
-   //         entry.set_age(atoi(tmp.c_str()));
+            entry.set_age(atoi(tmp.c_str()));
    //         //read third
             start_str = strstr(end_str, ";");
             start_str++;
@@ -154,7 +155,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //appende beide string together
             tmp= "";
             tmp.append(start_str, end_str);
-   //         entry.set_income(atof(tmp.c_str()));
+            entry.set_income(atof(tmp.c_str()));
    //         //read third
             start_str = strstr(end_str, ";");
             start_str++;
@@ -164,10 +165,9 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
             }
             tmp= "";
             tmp.append(start_str);
-   //         //TODO JO
-   //         //_desc->pos = atoi(tmp.c_str());
 
-      //  ConvertAndAddDataTypes(_tree,entry);
+			entry.set_plz(atoi(tmp.c_str()));
+        ConvertAndAddDataTypes(_tree,entry);
         }
         return 0;
 }
