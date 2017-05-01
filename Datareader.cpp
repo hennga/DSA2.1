@@ -38,10 +38,6 @@ std::string Datareader::remove_chars(std::string _s, const char _c)
 	return result;
 }
 
-//int Datareader::readStringsFromFile(Tree * _tree, const char * _file)
-//{
-//	return 0;
-//}
 
 int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
 

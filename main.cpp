@@ -7,17 +7,11 @@
 
 int main() {
 #ifdef _MSC_VER 
-#define FILE_CSV_PATH "C:\ExportZielanalyse.csv"
+#define FILE_CSV_PATH "ExportZielanalyse.csv"
 #else
 #define FILE_CSV_PATH "./ExportZielanalyse.csv"
 #endif
-	//readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv")
 
-/*   std::cout << "1) Datensatz einfuegen, manuell" << std::endl;
-   std::cout << "2) Datensatz einfuegen, CSV Datei"<< std::endl;
-   std::cout << "3) Datensatz loeschen" << std::endl;
-   std::cout << "4) Datensatz suchen" << std::endl;
-   std::cout << "5) Datenstruktur anzeigen " << std::endl;*/
 	Tree* baum = new Tree(true);
 Menue men;
 Datareader reader;

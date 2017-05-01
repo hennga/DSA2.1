@@ -19,10 +19,7 @@
 class Datareader {
 
 public:
-	//bool checkManualData( std::string& _assignString);
-	//bool checkManualData( double& _assignDouble);
-	//bool checkManualData( int& _assignInt);
-	//DataEntry getManualData(void);
+
 	void ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data);
 	std::string remove_chars(std::string _s, const char _c);
 	int readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv");
