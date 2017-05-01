@@ -167,7 +167,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //TODO JO
    //         //_desc->pos = atoi(tmp.c_str());
 
-        //  ConvertAndAddDataTypes(_tree,entry);
+      //  ConvertAndAddDataTypes(_tree,entry);
         }
         return 0;
 }
