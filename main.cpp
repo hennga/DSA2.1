@@ -29,7 +29,7 @@ while (42) {
 
 switch (men.MenueUserSelection()) {
 case Menue::SELECTION_NN::INSERT:reader.readManualData(baum); break; //manuell
-//case Menue::SELECTION_NN::INSERT_CSV : reader.readStringsFromFile(baum, FILE_CSV_PATH); break; //file
+case Menue::SELECTION_NN::INSERT_CSV : reader.readStringsFromFile(baum, FILE_CSV_PATH); break; //file
 case Menue::SELECTION_NN::DELETE: {
 
 
