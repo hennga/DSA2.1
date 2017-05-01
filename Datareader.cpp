@@ -172,21 +172,6 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
         return 0;
 }
 
-//int Datareader::readManualData(Tree * _tree)
-//{
-//
-//	//cin stuff
-//	std::string tmp;
-//	
-//
-//	while (tmp.empty()) {
-//		std::cout << "name!!!>";
-//		std::cin >> tmp;
-//	}
-//	DataEntry d;
-//	return 0;
-//}
-
 
 int Datareader::readManualData(Tree* _tree) {
 	if (_tree == nullptr) {
@@ -202,11 +187,14 @@ int Datareader::readManualData(Tree* _tree) {
    do {
 	  std::cout << "Name ?> ";
 	  std::cin>>newName;
-   } while (newName.empty());
+   } while (newName == "");
+
+   std::cin.ignore();
    do {
    std::cout<< "Alter ?> ";
 	  std::cin>>newAlter;
    } while (newAlter < 0);
+
    do {
    std::cout<<"Einkommen ?> " ;
 	  std::cin>>newEinkommen;
@@ -216,6 +204,7 @@ int Datareader::readManualData(Tree* _tree) {
 	  std::cin>>newPLZ;
   } while (newPLZ < 0);
   //TODO FIX
+ 
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
    TreeNode* n = new TreeNode(_tree->get_non(), &newEntry);
    _tree->insertNewNode(n);
