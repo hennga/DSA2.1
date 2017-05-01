@@ -34,12 +34,7 @@ void Tree::setAnker(TreeNode *newAnker) {
    this->Anker = newAnker;
 }
 
-bool Tree::fromManualEntryNewNode() {
 
-	//  Datareader ManualReader;
-	 // DataEntry newEntry = ManualReader.getManualData();
-	  return false;
- }
 
    void Tree::CallProcedure(std::string MenueFlag) {
 
@@ -67,12 +62,19 @@ bool Tree::fromManualEntryNewNode() {
 	  if(this->Anker == nullptr){
 		 this->Anker = newNode;
 		 this->NumberOfNodes++;
+		 return newNode;
 	  }
 	  else {
 		 TreeNode* tmp = this->Anker;
 		 while (tmp!= nullptr){
 
 			if (tmp->getNodePosID()>=newNode->getNodePosID()) {
+			
+			if(tmp->getLinksNode()== nullptr){
+			   tmp->setLinksNode(newNode);
+			   return newNode;
+			}
+			
 			if(tmp->getLinksNode()->getNodePosID()<=newNode->getNodePosID()) {
 
 			   newNode->setLinksNode(tmp->getLinksNode());
@@ -80,21 +82,27 @@ bool Tree::fromManualEntryNewNode() {
 			   tmp->setLinksNode(newNode);
 			   //neuer knoten liegt links vom Elternknoten tmp
 			   NumberOfNodes++;
-			   break;
+			   return newNode;
 			}
 			   else {
 				  tmp = tmp->getLinksNode();
-				  continue;
+				  
 			   }
 			}
 
 			else if (tmp->getNodePosID()<=newNode->getNodePosID()){
+			   
+			   if(tmp->getRechtsNode()== nullptr){
+				  tmp->setRechtsNode(newNode);
+				  return newNode;
+			   }
+			   
 			   if(tmp->getRechtsNode()->getNodePosID()>=newNode->getNodePosID()){
 
 				  newNode->setRechtsNode(tmp->getRechtsNode());
 				  tmp->setRechtsNode(newNode);
 				  NumberOfNodes++;
-				  break;
+				  return newNode;
 				  // neuer Knoten liegt rechts vom Elternknoten tmp
 			   }
 			   else {
@@ -106,8 +114,7 @@ bool Tree::fromManualEntryNewNode() {
 		 }
 
 	  }
-	  //TODO FIX
-	  return nullptr;
+	 return nullptr;
    }
 
 void Tree::treeAusgeben( TreeNode* _anker) {
@@ -116,23 +123,14 @@ void Tree::treeAusgeben( TreeNode* _anker) {
    
    if(_anker!= nullptr){
 	  
-	  _anker->printData();
 	  this->treeAusgeben(_anker->getLinksNode());
+	  _anker->printData();
 	  this->treeAusgeben(_anker->getRechtsNode());
    }
    
 
 //TODO DURCH JEDEN NODE DA print AUSGEBEN
 
-   
-   
-   
-   
-   
-   
-   
-   
-   this->Anker->printData();
 }
 
 void Tree::searchNode( const std::string& searchData, TreeNode* _anker) {

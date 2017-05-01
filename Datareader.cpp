@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "string.h"
 
 //bool Datareader::checkManualData(std::string& assignString) {
 //
@@ -217,7 +218,7 @@ int Datareader::readManualData(Tree* _tree) {
   } while (newPLZ < 0);
   //TODO FIX
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
-   TreeNode* n = new TreeNode(_tree->get_non(), &newEntry);
+   TreeNode* n = new TreeNode(_tree->get_non()+1, &newEntry);
    _tree->insertNewNode(n);
    return 0;
 }

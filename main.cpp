@@ -42,7 +42,7 @@ case Menue::SELECTION_NN::SEARCH: {
           std::cin >> tmp;
 		  TreeNode* n = baum->getAnker();
 		  baum->searchNode(tmp,n);
-          n->printData();
+        //  n->printData();
         }
         break; //suchen
 case Menue::SELECTION_NN::PRINT: baum->treeAusgeben(baum->getAnker()); break; //print
