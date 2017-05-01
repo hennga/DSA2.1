@@ -90,6 +90,9 @@ void TreeNode::setPLZ(const int _plz){
 
 void TreeNode::printData(void){
 //format id
+	if (this == nullptr) {
+		return;
+	}
 std::cout << NodePosID;
 if(NodeID < 10){
   std::cout << "  ";

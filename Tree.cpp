@@ -36,9 +36,9 @@ void Tree::setAnker(TreeNode *newAnker) {
 
 bool Tree::fromManualEntryNewNode() {
 
-	  Datareader ManualReader;
-	  DataEntry newEntry = ManualReader.getManualData();
-	  return true;
+	//  Datareader ManualReader;
+	 // DataEntry newEntry = ManualReader.getManualData();
+	  return false;
  }
 
    void Tree::CallProcedure(std::string MenueFlag) {
@@ -106,7 +106,8 @@ bool Tree::fromManualEntryNewNode() {
 		 }
 
 	  }
-
+	  //TODO FIX
+	  return nullptr;
    }
 
 void Tree::treeAusgeben( TreeNode* _anker) {
