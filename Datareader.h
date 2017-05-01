@@ -22,7 +22,7 @@ public:
 	bool checkManualData( double& _assignDouble);
 	bool checkManualData( int& _assignInt);
 	DataEntry getManualData(void);
-	void ConvertAndAddDataTypes(Tree* _tree, DataEntry _data);
+	void ConvertAndAddDataTypes(Tree* _tree, DataEntry& _data);
 	int readStringsFromFile(Tree* _tree, const char* _file = "ExportZielanalyse.csv");
 };
 #endif //PRAKTIKUM2TREE_DATAREADER_H

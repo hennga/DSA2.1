@@ -66,6 +66,7 @@ bool Tree::fromManualEntryNewNode() {
 
 	  if(this->Anker == nullptr){
 		 this->Anker = newNode;
+		 this->NumberOfNodes++;
 	  }
 	  else {
 		 TreeNode* tmp = this->Anker;
@@ -108,19 +109,70 @@ bool Tree::fromManualEntryNewNode() {
 
    }
 
-void Tree::treeAusgeben(void) {
+void Tree::treeAusgeben( TreeNode* _anker) {
+   
+   
+   
+   if(_anker!= nullptr){
+	  
+	  _anker->printData();
+	  this->treeAusgeben(_anker->getLinksNode());
+	  this->treeAusgeben(_anker->getRechtsNode());
+   }
+   
+
 //TODO DURCH JEDEN NODE DA print AUSGEBEN
-this->Anker->printData();
+
+   
+   
+   
+   
+   
+   
+   
+   
+   this->Anker->printData();
 }
 
-TreeNode *Tree::searchNode(std::string searchData) {
-   TreeNode* tmp = this->Anker;
+void Tree::searchNode( const std::string& searchData, TreeNode* _anker) {
+   
+   
+   if(_anker!= nullptr){
+	  
+	  if(_anker->getName()==searchData){_anker->printData();}
+	  this->treeAusgeben(_anker->getLinksNode());
+	  this->treeAusgeben(_anker->getRechtsNode());
+   }
+   
+}
 
-
-
-
-
-
-
+TreeNode *Tree::deleteNode() {
+   //TODO Loeschen der unterschiedlichen Faelle von child nodes...
+   
+   
+   
+  
+  
+  
+  
+  
+  
+  
+  
    return nullptr;
+}
+
+void Tree::traversePrintWhenCondition(bool condition, TreeNode *_anker) {
+   
+   //TODO Eventuell search und printtree zu einer Funktion zusammenlegen und Ausgabe ueber Bedingung steuern?
+   
+   
+   if(_anker!= nullptr){
+	  
+	  if(condition){_anker->printData();}
+	  this->treeAusgeben(_anker->getLinksNode());
+	  this->treeAusgeben(_anker->getRechtsNode());
+   }
+   
+   
 }

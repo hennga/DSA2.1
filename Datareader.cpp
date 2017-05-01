@@ -7,7 +7,7 @@
 #include <fstream>
 #include <string>
 
-bool Datareader::checkManualData(std::string assignString) {
+bool Datareader::checkManualData(std::string& assignString) {
 
    try {
 	  std::getline(std::cin, assignString);
@@ -180,7 +180,7 @@ DataEntry Datareader::getManualData(void) {
    } while (!this->checkManualData(newEinkommen));
    do {
    std::cout<<"PLZ ?> " ;
-	  std::cin>>newEinkommen;
+	  std::cin>>newPLZ;
   } while (!this->checkManualData(newPLZ));
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
    return newEntry;

@@ -22,8 +22,10 @@ public:
 	TreeNode* getAnker(void);
 	bool fromManualEntryNewNode();
 	TreeNode* insertNewNode(TreeNode* newNode);
-	void treeAusgeben(void);
-	TreeNode* searchNode(std::string searchData);
+	void treeAusgeben( TreeNode* _anker=getAnker()); // Default auf Anker fuer start der Rekursion
+	void searchNode( const std::string& searchData, TreeNode* _anker=getAnker());
+	void traversePrintWhenCondition(bool condition,TreeNode* _anker=getAnker());
+	TreeNode* deleteNode();
 	int get_non();
 
 //DESTRUCTOR ?
