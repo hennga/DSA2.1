@@ -22,6 +22,10 @@ TreeNode::TreeNode(const int _id,const std::string _name,const int _age,const do
   this->PLZ= _plz;
 }
 TreeNode::TreeNode(const int _id,const DataEntry* _data){
+	if (_data == nullptr && _id != -1) {
+		std::cout << "treenode warning nullptr " << __LINE__ << ":" << __FILE__ << std::endl;
+		return;
+	}
   this->NodePosID= _data->Alter + _data->PLZ + (int)_data->Einkommen;
   this->NodeID=_id;
   this->Name=_data->Name;

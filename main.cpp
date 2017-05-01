@@ -32,7 +32,8 @@ case Menue::SELECTION_NN::DELETE: break; //löschen
 case Menue::SELECTION_NN::SEARCH: {
           std::string tmp = "";
           std::cin >> tmp;
-          TreeNode* n = baum->searchNode(tmp);
+		  TreeNode* n = baum->getAnker();
+		  baum->searchNode(tmp,n);
           n->printData();
         }
         break; //suchen
