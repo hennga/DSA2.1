@@ -158,6 +158,21 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
         return 0;
 }
 
+int Datareader::readManualData(Tree * _tree)
+{
+
+	//cin stuff
+	std::string tmp;
+	
+
+	while (tmp.empty()) {
+		std::cout << "name!!!>";
+		std::cin >> tmp;
+	}
+	DataEntry d;
+	return 0;
+}
+
 
 DataEntry Datareader::getManualData(void) {
   //tmp vars

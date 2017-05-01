@@ -20,15 +20,20 @@ Menue men;
 Datareader reader;
 //dauerschleife für Menue
 while (42) {
-  /* code */
+
 
 
 
 switch (men.MenueUserSelection()) {
-case Menue::SELECTION_NN::INSERT: break; //manuell
+case Menue::SELECTION_NN::INSERT:reader.readManualData(baum); break; //manuell
 case Menue::SELECTION_NN::INSERT_CSV : reader.readStringsFromFile(baum, FILE_CSV_PATH); break; //file
-case Menue::SELECTION_NN::DELETE: break; //löschen
+case Menue::SELECTION_NN::DELETE: {
 
+
+									}
+								  break; //löschen
+
+	//die { machen einen neuen scope auf so kann ich einfach neue vars erstellen :D
 case Menue::SELECTION_NN::SEARCH: {
           std::string tmp = "";
           std::cin >> tmp;
