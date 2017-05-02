@@ -39,7 +39,11 @@ case Menue::SELECTION_NN::SEARCH: {
         //  n->printData();
         }
         break; //suchen
-case Menue::SELECTION_NN::PRINT: baum->treeAusgeben(baum->getAnker()); break; //print
+case Menue::SELECTION_NN::PRINT: {
+	std::cout << "ID | NAME | ALTER | Einkommen | PLZ " << std::endl;
+	baum->treeAusgeben(baum->getAnker());
+		}
+		break; //print
   default:break;
 }
 

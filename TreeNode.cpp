@@ -93,30 +93,11 @@ void TreeNode::printData(void){
 	if (this == nullptr) {
 		return;
 	}
-std::cout << NodePosID;
-if(NodeID < 10){
-  std::cout << "  ";
-}
-if(NodeID > 9 && NodeID < 100){
-  std::cout << " ";
-}
-
-//FORMAT NAME
-int w =32 - Name.size();
-if(w < 0 || w == 0){
-  std::cout << Name;
-}else {
-  for (size_t i = 0; i < w; i++) {
-    std::cout << " ";
-  }
-  std::cout << Name;
-}
-
-//FORMAT AGE
-//mal echt jetzt ich habe keine lust mehr auf das passend formatierte
-std::cout << this->Alter << " | ";
-std::cout << this->Einkommen << " | ";
-std::cout << this->PLZ << " | ";
+std::cout << NodePosID << "  | ";
+  std::cout << Name << "    | ";
+std::cout << this->Alter << "    | ";
+std::cout << this->Einkommen << "     | ";
+std::cout << this->PLZ << "  | ";
 std::cout << this->NodeID << std::endl;
 
 }
