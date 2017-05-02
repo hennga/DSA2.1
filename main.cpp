@@ -7,7 +7,7 @@
 
 int main() {
 #ifdef _MSC_VER 
-#define FILE_CSV_PATH "ExportZielanalyse.csv"
+#define FILE_CSV_PATH "c:\\users\\marcel\\desktop\\dsa2.1\\ExportZielanalyse.csv"
 #else
 #define FILE_CSV_PATH "./ExportZielanalyse.csv"
 #endif
@@ -46,12 +46,14 @@ case Menue::SELECTION_NN::DELETE: {
 	break; //löschen
 
 	//die { machen einen neuen scope auf so kann ich einfach neue vars erstellen :D
-case Menue::SELECTION_NN::SEARCH: {
+case Menue::SELECTION_NN::SEARCH: {	
           std::string tmp = "";
-          std::cin >> tmp;
-		  TreeNode* n = baum->getAnker();
-		  baum->searchNode(tmp,n);
-        //  n->printData();
+		  while (tmp.empty())
+		  {
+			  std::cout << "NAMEN EINGEBEN>>";
+			  std::cin >> tmp;
+		  }
+		  baum->searchNode(tmp, baum->getAnker());
         }
         break; //suchen
 case Menue::SELECTION_NN::PRINT: {
