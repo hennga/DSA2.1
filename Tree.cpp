@@ -15,7 +15,6 @@ Tree::Tree(bool _create_anchor){
 if(_create_anchor){
 //Anker = new TreeNode();
 //TODO
-
 }
 
 }
@@ -23,7 +22,6 @@ if(_create_anchor){
 
 int Tree::get_non() {
 	return NumberOfNodes;
-
 }
 
 TreeNode* Tree::getAnker() {
@@ -34,31 +32,7 @@ void Tree::setAnker(TreeNode *newAnker) {
    this->Anker = newAnker;
 }
 
-
-
-   void Tree::CallProcedure(std::string MenueFlag) {
-
-	   /*
-	  if (MenueFlag == "1") {
-		 this->fromManualEntryNewNode();
-	  } else if (MenueFlag == "2") {
-		 this->fromFileNewNodes();
-	  } else if (MenueFlag == "3") {
-
-	  } else if (MenueFlag == "4") {
-
-	  } else if (MenueFlag == "5") {
-
-	  }
-	  */
-
-   //}
-
-}
-
-
    TreeNode* Tree::insertNewNode(TreeNode *newNode) {
-
 	  if(this->Anker == nullptr){
 		 this->Anker = newNode;
 		 this->NumberOfNodes++;
@@ -108,58 +82,30 @@ void Tree::setAnker(TreeNode *newAnker) {
 			   else {
 				  tmp= tmp->getRechtsNode();
 			   }
-
 			}
-
 		 }
-
 	  }
 	 return nullptr;
    }
 
 void Tree::treeAusgeben( TreeNode* _anker) {
-   
-   
-   
    if(_anker!= nullptr){
 	  
 	  this->treeAusgeben(_anker->getLinksNode());
 	  _anker->printData();
 	  this->treeAusgeben(_anker->getRechtsNode());
    }
-   
-
-//TODO DURCH JEDEN NODE DA print AUSGEBEN
-
 }
 
 void Tree::searchNode( const std::string& searchData, TreeNode* _anker) {
-   
-   
    if(_anker!= nullptr){
-	  
 	  if(_anker->getName()==searchData){_anker->printData();}
 	  this->searchNode(searchData,_anker->getLinksNode());
 	  this->searchNode(searchData,_anker->getRechtsNode());
    }
-   
 }
 
-TreeNode *Tree::deleteNode() {
-   //TODO Loeschen der unterschiedlichen Faelle von child nodes...
-   
-   
-   
-  
-  
-  
-  
-  
-  
-  
-  
-   return nullptr;
-}
+
 
 void Tree::traversePrintWhenCondition(bool condition, TreeNode *_anker) {
    
@@ -167,11 +113,27 @@ void Tree::traversePrintWhenCondition(bool condition, TreeNode *_anker) {
    
    
    if(_anker!= nullptr){
-	  
 	  if(condition){_anker->printData();}
 	  this->treeAusgeben(_anker->getLinksNode());
 	  this->treeAusgeben(_anker->getRechtsNode());
    }
    
    
+}
+
+int Tree::deleteNode(const int _pos)
+{
+	if (NumberOfNodes== 0) {
+		return -2;
+	}
+	else if (NumberOfNodes < 0) {
+		return -1;
+}
+	//baum durchlaufen
+	//node mit pos suchen
+	//löschen
+	//pointer biegen
+	//ret 0 ok
+	//ret 1 error
+	return 0;
 }

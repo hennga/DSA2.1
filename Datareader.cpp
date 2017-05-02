@@ -25,7 +25,6 @@ if(node == nullptr){
 
 _tree->insertNewNode(node);
 }
-//
 std::string Datareader::remove_chars(std::string _s, const char _c)
 {
 	std::string result;

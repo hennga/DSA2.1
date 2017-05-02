@@ -18,14 +18,12 @@ private:
 public:
 	Tree(bool _create_anchor);
 	void setAnker(TreeNode* newAnker);
-	void CallProcedure(std::string MenueFlag);
 	TreeNode* getAnker(void);
-	bool fromManualEntryNewNode();
 	TreeNode* insertNewNode(TreeNode* newNode);
 	void treeAusgeben( TreeNode* _anker); // Default auf Anker fuer start der Rekursion
 	void searchNode( const std::string& searchData, TreeNode* _anker);
 	void traversePrintWhenCondition(bool condition,TreeNode* _anker);
-	TreeNode* deleteNode();
+	int deleteNode(const int _pos);
 	int get_non();
 
 //DESTRUCTOR ?

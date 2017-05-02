@@ -94,10 +94,9 @@ void TreeNode::printData(void){
 		return;
 	}
 std::cout << NodePosID << "  | ";
-  std::cout << Name << "    | ";
+std::cout << Name << "    | ";
 std::cout << this->Alter << "    | ";
 std::cout << this->Einkommen << "     | ";
 std::cout << this->PLZ << "  | ";
 std::cout << this->NodeID << std::endl;
-
 }

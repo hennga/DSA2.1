@@ -25,10 +25,25 @@ switch (men.MenueUserSelection()) {
 case Menue::SELECTION_NN::INSERT:reader.readManualData(baum); break; //manuell
 case Menue::SELECTION_NN::INSERT_CSV : reader.readStringsFromFile(baum, FILE_CSV_PATH); break; //file
 case Menue::SELECTION_NN::DELETE: {
+	int p = -1;
+	while (p < 0)
+	{
+		std::cout << "POS LOESCHEN EINGEBEN >";
+		std::cin >> p;
+	}
+	p =baum->deleteNode(p);
+	switch (p)
+	{
+	case 0:std::cout << "DEL OK" << std::endl; break;
+	case -1:std::cout << "DEL ERROR" << std::endl; break;
+	case -2:std::cout << " NO ENTRIES" << std::endl; break;
 
-
-									}
-								  break; //löschen
+	default:
+		std::cout << "DEF" << std::endl;
+		break;
+	}
+}
+	break; //löschen
 
 	//die { machen einen neuen scope auf so kann ich einfach neue vars erstellen :D
 case Menue::SELECTION_NN::SEARCH: {
