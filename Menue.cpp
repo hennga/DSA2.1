@@ -17,7 +17,7 @@ Menue::SELECTION_NN Menue::MenueUserSelection() {
    std::cout << "3) Datensatz loeschen" << std::endl;
    std::cout << "4) Datensatz suchen" << std::endl;
    std::cout << "5) Datenstruktur anzeigen " << std::endl;
-
+ 
    do {
 	  std::cout << "?> ";
 	  std::cin >> eingabe;
@@ -31,7 +31,7 @@ Menue::SELECTION_NN Menue::MenueUserSelection() {
 
 bool Menue::checkUserSelection(std::string UserEntry) {
 
-   if (UserEntry=="1"||UserEntry=="2"||UserEntry=="3" || UserEntry =="4"||UserEntry=="5"){
+   if (UserEntry=="1"||UserEntry=="2"||UserEntry=="3" || UserEntry =="4"||UserEntry=="5" || UserEntry == "6"){
 	  return true;
    }
    else {

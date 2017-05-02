@@ -19,7 +19,8 @@ public:
 		INSERT_CSV = 1,
 		DELETE = 2,
 		SEARCH = 3,
-		PRINT = 4
+		PRINT = 4,
+		EXIT = 5
 	};
 
 

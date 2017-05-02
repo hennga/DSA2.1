@@ -37,7 +37,6 @@ case Menue::SELECTION_NN::DELETE: {
 	case 0:std::cout << "DEL OK" << std::endl; break;
 	case -1:std::cout << "DEL ERROR" << std::endl; break;
 	case -2:std::cout << " NO ENTRIES" << std::endl; break;
-
 	default:
 		std::cout << "DEF" << std::endl;
 		break;
@@ -61,11 +60,9 @@ case Menue::SELECTION_NN::PRINT: {
 	baum->treeAusgeben(baum->getAnker());
 		}
 		break; //print
-  default:break;
+case Menue::SELECTION_NN::EXIT:return 0; break;
+default:return 0; break;
 }
-
-
-
 }
 
 
