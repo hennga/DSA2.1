@@ -55,7 +55,7 @@ case Menue::SELECTION_NN::SEARCH: {
         }
         break; //suchen
 case Menue::SELECTION_NN::PRINT: {
-	std::cout << "ID | NAME | ALTER | Einkommen | PLZ " << std::endl;
+	std::cout << "ID | NAME | ALTER | Einkommen | PLZ  | PosID" << std::endl;
 	baum->treeAusgeben(baum->getAnker());
 		}
 		break; //print

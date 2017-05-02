@@ -25,6 +25,7 @@ Menue::SELECTION_NN Menue::MenueUserSelection() {
    }
    while (!checkUserSelection(eingabe));
 	//fancy cast
+  
    return (SELECTION_NN)(atoi(eingabe.c_str())-1);
 }
 

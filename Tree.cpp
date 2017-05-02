@@ -11,7 +11,7 @@
 
 
 Tree::Tree(bool _create_anchor){
-
+	NumberOfNodes = 0;
 if(_create_anchor){
 //Anker = new TreeNode();
 //TODO

@@ -50,7 +50,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
              std::cout << "CSV FILE OPEN ERROR"<< __FILE__ << ":" <<__LINE__ << std::endl;
             return -2;
         }
-        std::string line;
+        std::string line = "";
         for (std::string line; getline(input, line);)
         {
            std::cout << line << std::endl;
