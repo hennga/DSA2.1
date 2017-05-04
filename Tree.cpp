@@ -8,7 +8,7 @@
 #include "string"
 #include "Datareader.h"
 #include <fstream>
-
+#include <vector>
 
 Tree::Tree(bool _create_anchor){
 	NumberOfNodes = 0;
@@ -16,7 +16,8 @@ if(_create_anchor){
 //Anker = new TreeNode();
 //TODO
 }
-
+//	nodes_list = new std::vector<TreeNode*>();
+	nodes_list.clear();
 }
 
 
@@ -36,6 +37,7 @@ void Tree::setAnker(TreeNode *newAnker) {
 	  if (this->Anker == nullptr) {
 		 this->Anker = newNode;
 		 this->incrementNumberOfNodes();
+		  nodes_list.push_back(newNode);
 		 return newNode;
 	  } else {
 		 TreeNode *tmp = this->Anker;
@@ -46,6 +48,7 @@ void Tree::setAnker(TreeNode *newAnker) {
 			   if (tmp->getLinksNode() == nullptr) {
 				  tmp->setLinksNode(newNode);
 				  this->incrementNumberOfNodes();
+				   nodes_list.push_back(newNode);
 				  return newNode;
 			   }
 			
@@ -66,6 +69,7 @@ void Tree::setAnker(TreeNode *newAnker) {
 			   if (tmp->getRechtsNode() == nullptr) {
 				  tmp->setRechtsNode(newNode);
 				  this->incrementNumberOfNodes();
+				   nodes_list.push_back(newNode);
 				  return newNode;
 			   }
 			
@@ -110,7 +114,9 @@ void Tree::traversePrintWhenCondition(bool condition, TreeNode *_anker) {
    
    
    if(_anker!= nullptr){
-	  if(condition){_anker->printData();}
+	  if(condition){_anker->printData();
+	  }
+
 	  this->treeAusgeben(_anker->getLinksNode());
 	  this->treeAusgeben(_anker->getRechtsNode());
    }
@@ -127,113 +133,35 @@ int Tree::deleteNode(const int _pos) {
    TreeNode *tmp = this->getAnker();
    TreeNode *result= nullptr;
    TreeNode *previous= nullptr;
-   
-   searchSingleNodeByPos(_pos, tmp, result,
-						 previous); // result zeigt jetzt auf den entsprechenden Knoten oder ist noch nullptr
-   
-   if (!result) {
-	  
-	  return 3;
-   }
-   
-   else {
-   
-	  // Es ist nur ein Knoten im Baum, der Anker.
-	  if(result==this->getAnker()){
-		 delete result;
-		 this->decrementNumberOfNodes();
-		 this->setAnker(nullptr);
-		 return 0;
-	  }
-	  
-	  
-	  if(this->checkRelationship(result,previous)==1){
-		 //// Result liegt links vom previous Knoten
-	  
-		 if (result->getLinksNode()== nullptr && result->getRechtsNode()== nullptr){
-		 
-			delete result;
-			previous->setLinksNode(nullptr);
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		 
-		 else if (result->getLinksNode()== nullptr){
-			previous ->setLinksNode(result->getRechtsNode());
-			delete result;
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		
-		 else if (result->getRechtsNode() == nullptr){
-			previous ->setLinksNode(result->getLinksNode());
-			delete result;
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		 else {
-			//Result hat links und rechts Knoten
-			
-			
-			previous->setLinksNode(result->getRechtsNode());
-			
-			
-			
-			
-			
-		 }
-		 
-		 
-		 
-		 
-	  }
-	  
-	  else if (this->checkRelationship(result,previous)==2){
-		 //Result liegt rechts vom previous Knoten
-	  
-		 if (result->getLinksNode()== nullptr && result->getRechtsNode()== nullptr){
-		 //Result hat keine Blaetter mehr
-			delete result;
-			previous->setRechtsNode(nullptr);
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		
-		 else if (result->getLinksNode()== nullptr){
-			//Result hat keinen Knoten links dessen Wert kleiner ist, jedoch hat result einen rechten Knoten
-			previous ->setRechtsNode(result->getRechtsNode());
-			delete result;
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		
-		 else if (result->getRechtsNode()== nullptr){
-			//Result hat keinen Knoten rechts dessen Wert groesser ist, jedoch hat result einen rechten Knoten
-			previous ->setRechtsNode(result->getLinksNode());
-			delete result;
-			this->decrementNumberOfNodes();
-			return 0;
-		 }
-		 
-		 else {
-			//Result hat links und rechts Knoten
-			
-			previous->setRechtsNode(result->getRechtsNode());
-			
-			//TODO tree rebalancing
-			
-			return 0;
-			
-			
-		 }
-		 
-		 
-		 
-		 
-	  }
-	  
-   }
-   
+
+    //wenn wir nur einen node haben einfach löschen
+    if(NumberOfNodes == 1){
+        NumberOfNodes = 0;
+        delete(Anker);
+        Anker = nullptr;
+        return 0;
+    }
+	//delete node
+	int nodes_deleted = 0;
+	std::vector<TreeNode*> tmp_list;
+	for (int i = 0; i < nodes_list.size(); ++i) {
+		if(nodes_list.at(i)->getNodePosID() == _pos){
+			delete( nodes_list.at(i));
+			nodes_list.at(i) = nullptr;
+			nodes_deleted++;
+		}else{
+			TreeNode* n = nodes_list.at(i);
+			tmp_list.push_back(n);
+
+		}
+	}
+	NumberOfNodes = 0;
+	nodes_list.clear();
+	for (int j = 0; j < tmp_list.size(); ++j) {
+	insertNewNode(tmp_list.at(j));
+	}
+
+
    
    
    return 0;

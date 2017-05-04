@@ -1,3 +1,3 @@
-/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles/Praktikum2Tree.dir
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles/Praktikum2Tree.dir

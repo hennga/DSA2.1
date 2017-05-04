@@ -8,13 +8,13 @@
 #ifndef PRAKTIKUM2TREE_TREE_H
 #define PRAKTIKUM2TREE_TREE_H
 #include "TreeNode.h"
-
+#include <vector>
 class Tree {
 
 private:
 	TreeNode* Anker= nullptr;
 	int NumberOfNodes;
-
+    std::vector<TreeNode*> nodes_list;
 public:
 	Tree(bool _create_anchor);
 	void setAnker(TreeNode* newAnker);

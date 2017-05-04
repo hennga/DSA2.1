@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/henn/clion-2016.3.4/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/henn/clion-2016.3.4/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1
+CMAKE_SOURCE_DIR = /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Praktikum2Tree.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/Praktikum2Tree.dir/flags.make
 
 CMakeFiles/Praktikum2Tree.dir/main.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Praktikum2Tree.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/main.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Praktikum2Tree.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/main.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/main.cpp
 
 CMakeFiles/Praktikum2Tree.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/main.cpp > CMakeFiles/Praktikum2Tree.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/main.cpp > CMakeFiles/Praktikum2Tree.dir/main.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/main.cpp -o CMakeFiles/Praktikum2Tree.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/main.cpp -o CMakeFiles/Praktikum2Tree.dir/main.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/Praktikum2Tree.dir/main.cpp.o.provides.build: CMakeFiles/Praktikum2Tr
 
 CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o: ../Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.cpp
 
 CMakeFiles/Praktikum2Tree.dir/Tree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/Tree.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.cpp > CMakeFiles/Praktikum2Tree.dir/Tree.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.cpp > CMakeFiles/Praktikum2Tree.dir/Tree.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/Tree.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.cpp -o CMakeFiles/Praktikum2Tree.dir/Tree.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.cpp -o CMakeFiles/Praktikum2Tree.dir/Tree.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/Praktikum2Tree.dir/Tree.cpp.o.provides.build: CMakeFiles/Praktikum2Tr
 
 CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o: ../TreeNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.cpp
 
 CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.cpp > CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.cpp > CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.cpp -o CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.cpp -o CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/Praktikum2Tree.dir/TreeNode.cpp.o.provides.build: CMakeFiles/Praktiku
 
 CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o: ../Menue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.cpp
 
 CMakeFiles/Praktikum2Tree.dir/Menue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/Menue.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.cpp > CMakeFiles/Praktikum2Tree.dir/Menue.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.cpp > CMakeFiles/Praktikum2Tree.dir/Menue.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/Menue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/Menue.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.cpp -o CMakeFiles/Praktikum2Tree.dir/Menue.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.cpp -o CMakeFiles/Praktikum2Tree.dir/Menue.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/Praktikum2Tree.dir/Menue.cpp.o.provides.build: CMakeFiles/Praktikum2T
 
 CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o: ../DataEntry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.cpp
 
 CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.cpp > CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.cpp > CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.cpp -o CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.cpp -o CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o.provides.build: CMakeFiles/Praktik
 
 CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o: CMakeFiles/Praktikum2Tree.dir/flags.make
 CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o: ../Datareader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o -c /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o -c /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.cpp
 
 CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.cpp > CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.cpp > CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.i
 
 CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.cpp -o CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.cpp -o CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.s
 
 CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o.requires:
 
@@ -221,7 +221,7 @@ Praktikum2Tree: CMakeFiles/Praktikum2Tree.dir/DataEntry.cpp.o
 Praktikum2Tree: CMakeFiles/Praktikum2Tree.dir/Datareader.cpp.o
 Praktikum2Tree: CMakeFiles/Praktikum2Tree.dir/build.make
 Praktikum2Tree: CMakeFiles/Praktikum2Tree.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Praktikum2Tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Praktikum2Tree"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Praktikum2Tree.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -243,6 +243,6 @@ CMakeFiles/Praktikum2Tree.dir/clean:
 .PHONY : CMakeFiles/Praktikum2Tree.dir/clean
 
 CMakeFiles/Praktikum2Tree.dir/depend:
-	cd /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1 /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1 /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug /home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/cmake-build-debug/CMakeFiles/Praktikum2Tree.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1 /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1 /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug /Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/cmake-build-debug/CMakeFiles/Praktikum2Tree.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Praktikum2Tree.dir/depend
 
