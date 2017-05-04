@@ -143,6 +143,8 @@ int Tree::deleteNode(const int _pos) {
     }
 	//delete node
 	int nodes_deleted = 0;
+    //TODO HIER EINE REKURSION EINFÜGEN
+    //TODO UND ALLE NODES != POS IN DIE TMP LISTE EINFÜGEN
 	std::vector<TreeNode*> tmp_list;
 	for (int i = 0; i < nodes_list.size(); ++i) {
 		if(nodes_list.at(i)->getNodePosID() == _pos){
