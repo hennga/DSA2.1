@@ -17,13 +17,15 @@ if(_tree == nullptr){
   return;
 }
 
-TreeNode* node = new TreeNode(_tree->get_non(), &_data);
+TreeNode* node = new TreeNode(_tree->get_non()+1, &_data);
 
 if(node == nullptr){
   std::cout << "_new_node_nullptr" << __FILE__ << ":" << __LINE__ << std::endl;
 }
 
 _tree->insertNewNode(node);
+//_tree->   incrementNumberOfNodes();
+
 }
 std::string Datareader::remove_chars(std::string _s, const char _c)
 {
@@ -39,7 +41,7 @@ std::string Datareader::remove_chars(std::string _s, const char _c)
 
 
 int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
-
+        
         if(_tree == nullptr){
             std::cout << "_tree nullptr"<< __FILE__ << ":" <<__LINE__ << std::endl;
             return -1;
@@ -59,7 +61,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
             {
                 continue;
             }
-   //         //cehck for right ; chars
+   //         //check for right ; chars
             int split_count = 0;
             for (int i = 0; i < line.size(); i++) {
                 if(line[i] == CSV_SPLIT_CHAR){

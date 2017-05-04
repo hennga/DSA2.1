@@ -29,6 +29,7 @@ public:
 	int getAlter(void);
 	double getEinkommen(void);
 	int getPLZ(void);
+	int getNodeID(void);
 	void setNamen(const std::string _name);
 	void setAlter(const int _age);
 	void setEinkommen(const double _income);

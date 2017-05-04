@@ -93,10 +93,16 @@ void TreeNode::printData(void){
 	if (this == nullptr) {
 		return;
 	}
-std::cout << NodeID << "  | ";
-std::cout << Name << "    | ";
-std::cout << this->Alter << "    | ";
-std::cout << this->Einkommen << "     | ";
-std::cout << this->PLZ << "  | ";
+std::cout << NodeID << " | ";
+std::cout << Name << "  | ";
+std::cout << this->Alter << " | ";
+std::cout << this->Einkommen << "   | ";
+std::cout << this->PLZ << "   | ";
 std::cout << this->NodePosID << std::endl;
 }
+
+int TreeNode::getNodeID(void) {
+   return this->NodeID;
+}
+
+

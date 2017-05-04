@@ -21,10 +21,14 @@ public:
 	TreeNode* getAnker(void);
 	TreeNode* insertNewNode(TreeNode* newNode);
 	void treeAusgeben( TreeNode* _anker); // Default auf Anker fuer start der Rekursion
-	void searchNode( const std::string& searchData, TreeNode* _anker);
+	void searchNodeAndPrint( const std::string& searchData, TreeNode* _anker);
 	void traversePrintWhenCondition(bool condition,TreeNode* _anker);
+	void searchSingleNodeByPos(const int _pos,TreeNode* _anker,TreeNode*& result,TreeNode*& previous);
 	int deleteNode(const int _pos);
 	int get_non();
+	int checkRelationship(TreeNode* result,TreeNode* previous);
+	void incrementNumberOfNodes();
+	void decrementNumberOfNodes();
 
 //DESTRUCTOR ?
 };
