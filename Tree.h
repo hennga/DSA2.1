@@ -14,7 +14,10 @@ class Tree {
 private:
 	TreeNode* Anker= nullptr;
 	int NumberOfNodes;
-    std::vector<TreeNode*> nodes_list;
+	void deleteNode(const int _pos,TreeNode* NodeToBeSearched);
+	void deleteAnkerMatch(void);
+	void removeHit(TreeNode* parent,TreeNode* NodeToBeFound,bool PassingLinksNode);
+ 
 public:
 	Tree(bool _create_anchor);
 	void setAnker(TreeNode* newAnker);
@@ -22,13 +25,13 @@ public:
 	TreeNode* insertNewNode(TreeNode* newNode);
 	void treeAusgeben( TreeNode* _anker); // Default auf Anker fuer start der Rekursion
 	void searchNodeAndPrint( const std::string& searchData, TreeNode* _anker);
-	void traversePrintWhenCondition(bool condition,TreeNode* _anker);
 	void searchSingleNodeByPos(const int _pos,TreeNode* _anker,TreeNode*& result,TreeNode*& previous);
-	int deleteNode(const int _pos);
+	int removeNode(const int _pos);
 	int get_non();
-	int checkRelationship(TreeNode* result,TreeNode* previous);
+	TreeNode* beforeSmallestinTree(TreeNode* ptr,TreeNode* smallest);
+	TreeNode* findSmallestInTree(TreeNode* Ptr);
 	void incrementNumberOfNodes();
-	void decrementNumberOfNodes();
+	
 
 //DESTRUCTOR ?
 };

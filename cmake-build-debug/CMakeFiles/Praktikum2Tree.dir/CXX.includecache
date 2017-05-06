@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.cpp
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.cpp
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 string
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/string
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/string
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.cpp
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.cpp
 Datareader.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.h
 iostream
 -
 fstream
@@ -24,85 +24,83 @@ fstream
 string
 -
 string.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/string.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/string.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.h
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 string
 -
 fstream
 -
 Tree.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.h
 TreeNode.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.cpp
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.cpp
 Menue.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.h
 iostream
 -
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 string
 -
 Datareader.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.h
 string
 -
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.cpp
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.cpp
 Tree.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.h
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 iostream
 -
 string
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/string
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/string
 Datareader.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.h
 fstream
 -
+
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.h
+TreeNode.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.h
 vector
 -
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.cpp
 TreeNode.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.h
-vector
--
-
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.cpp
-TreeNode.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.h
 iostream
 -
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/TreeNode.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/TreeNode.h
 string
 -
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 iostream
 -
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/main.cpp
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/main.cpp
 iostream
 -
 string
 -
 Tree.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Tree.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Tree.h
 Menue.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Menue.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Menue.h
 Datareader.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/Datareader.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/Datareader.h
 DataEntry.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/DataEntry.h
+/home/henn/2Semester/ADS/Praktikum/Praktikum1/TestKraken/DSA2.1/DataEntry.h
 

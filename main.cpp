@@ -33,7 +33,7 @@ int main() {
 			   std::cout << "POS LOESCHEN EINGEBEN >";
 			   std::cin >> p;
 			}
-			p = baum->deleteNode(p);
+			p = baum->removeNode(p);
 			switch (p) {
 			   case 0:
 				  std::cout << "DEL OK" << std::endl;
