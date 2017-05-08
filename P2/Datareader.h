@@ -1,6 +1,3 @@
-//
-// Created by henn on 27.04.17.
-//
 
 #ifndef PRAKTIKUM2TREE_DATAREADER_H
 #define PRAKTIKUM2TREE_DATAREADER_H

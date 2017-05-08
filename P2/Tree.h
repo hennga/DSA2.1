@@ -1,9 +1,3 @@
-//
-// Created by henn on 26.04.17.
-//
-
-
-
 
 #ifndef PRAKTIKUM2TREE_TREE_H
 #define PRAKTIKUM2TREE_TREE_H
@@ -17,7 +11,7 @@ private:
 	void deleteNode(const int _pos,TreeNode* NodeToBeSearched);
 	void deleteAnkerMatch(void);
 	void removeHit(TreeNode* parent,TreeNode* NodeToBeFound,bool PassingLinksNode);
- 
+
 public:
 	Tree(bool _create_anchor);
 	void setAnker(TreeNode* newAnker);
@@ -31,10 +25,9 @@ public:
 	TreeNode* beforeSmallestinTree(TreeNode* ptr,TreeNode* smallest);
 	TreeNode* findSmallestInTree(TreeNode* Ptr);
 	void incrementNumberOfNodes();
-	
+
 
 //DESTRUCTOR ?
 };
 
 #endif //PRAKTIKUM2TREE_TREE_H
-

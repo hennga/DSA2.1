@@ -1,6 +1,3 @@
-//
-// Created by henn on 27.04.17.
-//
 
 #include "Datareader.h"
 #include <iostream>
@@ -41,7 +38,7 @@ std::string Datareader::remove_chars(std::string _s, const char _c)
 
 
 int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
-        
+
         if(_tree == nullptr){
             std::cout << "_tree nullptr"<< __FILE__ << ":" <<__LINE__ << std::endl;
             return -1;
@@ -78,7 +75,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
    //         //tmp vars
             std::string tmp = "";
            DataEntry entry;
-			
+
    //         //read first
             const char* start_str = line.c_str();
             if (start_str == nullptr) {
@@ -145,7 +142,7 @@ int Datareader::readStringsFromFile(Tree* _tree, const char* _file){
 int Datareader::readManualData(Tree* _tree) {
 	if (_tree == nullptr) {
 		std::cout << __FILE__ << ":" << __LINE__ << " NULLPTR _TREE" << std::endl;
-		return -1; 
+		return -1;
 	}
   //tmp vars
    std::string newName;
@@ -173,14 +170,9 @@ int Datareader::readManualData(Tree* _tree) {
 	  std::cin>>newPLZ;
   } while (newPLZ < 0);
   //TODO FIX
- 
+
    DataEntry newEntry(newName,newPLZ,newAlter,newEinkommen);
    TreeNode* n = new TreeNode(_tree->get_non()+1, &newEntry);
    _tree->insertNewNode(n);
    return 0;
 }
-
-
-
-
-

@@ -1,6 +1,3 @@
-//
-// Created by henn on 26.04.17.
-//
 
 #include "Menue.h"
 #include <iostream>
@@ -17,7 +14,7 @@ Menue::SELECTION_NN Menue::MenueUserSelection() {
    std::cout << "3) Datensatz loeschen" << std::endl;
    std::cout << "4) Datensatz suchen" << std::endl;
    std::cout << "5) Datenstruktur anzeigen " << std::endl;
- 
+
    do {
 	  std::cout << "?> ";
 	  std::cin >> eingabe;
@@ -25,7 +22,7 @@ Menue::SELECTION_NN Menue::MenueUserSelection() {
    }
    while (!checkUserSelection(eingabe));
 	//fancy cast
-  
+
    return (SELECTION_NN)(atoi(eingabe.c_str())-1);
 }
 

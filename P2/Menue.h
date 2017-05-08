@@ -1,6 +1,3 @@
-//
-// Created by henn on 26.04.17.
-//
 
 #ifndef PRAKTIKUM2TREE_MENUE_H
 #define PRAKTIKUM2TREE_MENUE_H

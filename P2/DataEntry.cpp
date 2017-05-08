@@ -1,6 +1,4 @@
-//
-// Created by henn on 26.04.17.
-//
+
 #include "DataEntry.h"
 
 DataEntry::DataEntry(const std::string _name,const int _plz,const int _age,const  double _income){

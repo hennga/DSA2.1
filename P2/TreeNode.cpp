@@ -1,6 +1,3 @@
-//
-// Created by henn on 26.04.17.
-//
 
 #include "TreeNode.h"
 #include <iostream>
@@ -104,5 +101,3 @@ std::cout << this->NodePosID << std::endl;
 int TreeNode::getNodeID(void) {
    return this->NodeID;
 }
-
-
