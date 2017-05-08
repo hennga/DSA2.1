@@ -14,18 +14,18 @@
 #include "MyAlgo.h"
 
 using namespace std;
-//#define SHORT_FUNC_HEAPSORT
-#define SHORT_FUNC_MERGESORT
+#define SHORT_FUNC_HEAPSORT
+//#define SHORT_FUNC_MERGESORT
 //#define SHORT_FUNC_QUICKSORT
 //#define SHORT_FUNC_SHELLSORT
 
-#define PRINT_COMPLETE_TEXT
+//#define PRINT_COMPLETE_TEXT
 
-#define USE_TEST_DATA //otherwise randomdata will be generated
+//#define USE_TEST_DATA //otherwise randomdata will be generated
 #define ROOT_PATH "../MATLAB_STUFF/" //speicher ordner
 #define FILE_SAVE_EXT ".txt" //endung
 #define I_DONT_WAIT
-
+#define USE_GCC_TIME
 
 //wenn wir test daten benutzen wollen dann legen wir diret den vektor an sonst füllen wir den
 //dafür brauchen wir aber den radonom header
@@ -36,10 +36,21 @@ std::vector<int> data_pool{0,98,44,30,22,64,63,11,23,8,18};
 std::vector<int> data_pool;
 #endif
 
+//TEST DA BEI MIR OPENMP DIE TIMER NICHT GEHEH WIRD NOCH GELÖSCHT
+//http://stackoverflow.com/questions/3756323/getting-the-current-time-in-milliseconds
+#ifdef USE_GCC_TIME
+#include <sys/time.h>
+long long current_timestamp() {
+    struct timeval te;
+    gettimeofday(&te, NULL); // get current time
+    long long milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; // caculate milliseconds
+    // printf("milliseconds: %lld\n", milliseconds);
+    return milliseconds;
+}
 
-
-
-
+long start = 0;
+long end = 0;
+#endif
 
 
 
@@ -110,7 +121,9 @@ void print_file_headlines(std::ofstream* _file = nullptr){
 
 
 
-
+#ifdef  USE_OMP_FOR_SORT
+#pragma omp parallel
+#endif
 int main(int argc, char** argv) {
     //OPEN FILE
     ofstream file;
@@ -162,11 +175,21 @@ int main(int argc, char** argv) {
         /**********************/
 //lade daten zum sortieren
         data_use_vector = data_pool;
+//für die einzelnen algos die init sachen
+#ifdef SHORT_FUNC_MERGESORT
+        mergesort_low = 0;
+        mergesort_high = data_use_vector.size();
+#endif
+
+
 
 //SAVE TIME
 #ifdef USE_OMP_FOR_SORT
         dtime = omp_get_wtime();
 #endif
+
+        const clock_t begin_time = clock();
+
         /**********************/
         // run algorithm here //
         /**********************/
@@ -186,19 +209,18 @@ int main(int argc, char** argv) {
 #else
 #ifdef USE_OMP_FOR_SORT
         dtime = omp_get_wtime() - dtime;
-       file << n << "\t" << scientific << setprecision(10) << dtime << endl;
+
 #endif
 #endif
-
-        time_sum +=dtime;
-
-
+        start = current_timestamp() -start;
+float de  = float( clock () - begin_time ) /  CLOCKS_PER_SEC;
+        file << n << "\t" << setprecision(10) <<de << endl;
+        time_sum +=de;
     }
 
-
+file << time_sum;
     //FINALER SORT + TIME SUMME AUSGEBEN NUR IN DER HSO FILE
 #if defined(PRINT_COMPLETE_TEXT)
-
     print_vecotr("",data_use_vector,&file);
     file << "Finished in :" << time_sum << " sec" << std::endl;
 #endif
