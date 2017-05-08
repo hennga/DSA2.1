@@ -1,0 +1,3 @@
+/home/henn/2Semester/ADS/Praktikum/Praktikum2/Ringpuffer/Ringpuffer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/henn/2Semester/ADS/Praktikum/Praktikum2/Ringpuffer/Ringpuffer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/henn/2Semester/ADS/Praktikum/Praktikum2/Ringpuffer/Ringpuffer/cmake-build-debug/CMakeFiles/AdsPraktikum2_3129944.dir

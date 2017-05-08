@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/AdsPraktikum2_3129944.dir/main.cpp.o CMakeFiles/AdsPraktikum2_3129944.dir/Ringpuffer.cpp.o CMakeFiles/AdsPraktikum2_3129944.dir/RingNode.cpp.o CMakeFiles/AdsPraktikum2_3129944.dir/Menue.cpp.o  -o AdsPraktikum2_3129944 
