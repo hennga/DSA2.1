@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ADS_BLA_PRAK.vcxproj, ADS_BLA_PRAK_1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ADS_BLA_PRAK.cpp
+  Code wird generiert...
+  Überspringen... (keine relevanten Änderungen gefunden)
+  Node.cpp
+  List.cpp
+  ADS_BLA_PRAK.vcxproj -> C:\Users\marcel\Desktop\ADS_BLA_PRAK\Debug\ADS_BLA_PRAK_1_A.exe
+  ADS_BLA_PRAK.vcxproj -> C:\Users\marcel\Desktop\ADS_BLA_PRAK\Debug\ADS_BLA_PRAK_1_A.pdb (Partial PDB)
