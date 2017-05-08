@@ -6,4 +6,5 @@ CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o: ../MyAlgo.h
 
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.o: ../MyAlgo.h
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.o: ../main.cpp
+CMakeFiles/ADS_P3_CLION.dir/main.cpp.o: ../random_gen.h
 

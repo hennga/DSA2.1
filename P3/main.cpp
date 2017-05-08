@@ -1,6 +1,9 @@
 
 //#define USE_OMP_FOR_SORT
 
+
+
+#ifndef BLA
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -11,64 +14,147 @@
 #include "MyAlgo.h"
 
 using namespace std;
-
-
-#define USE_TEST_DATA //otherwise randomdata will be
-#ifdef USE_TEST_DATA
-std::vector<int> data_pool{94,44,30,22,64,63,11,23,8,18};
-#endif
-
-
-
+#define SHORT_FUNC_HEAPSORT
+//#define SHORT_FUNC_MERGESORT
+//#define SHORT_FUNC_QUICKSORT
+//#define SHORT_FUNC_SHELLSORT
 
 #define PRINT_COMPLETE_TEXT
-#define SHORT_FUNC_HEAPSORT
 
-#ifdef SHORT_FUNC_HEAPSORT
-#if defined(_WIN64) || defined(_WIN32) || defined(WINDOOF) || defined(_MSC_VER)
-#define FILE_OUT_NAME "MATLAB_STUFF/heapsort.txt"
+#define USE_TEST_DATA //otherwise randomdata will be generated
+#define ROOT_PATH "../MATLAB_STUFF/" //speicher ordner
+#define FILE_SAVE_EXT ".txt" //endung
+#define I_DONT_WAIT
+
+
+//wenn wir test daten benutzen wollen dann legen wir diret den vektor an sonst füllen wir den
+//dafür brauchen wir aber den radonom header
+#ifdef USE_TEST_DATA
+std::vector<int> data_pool{0,98,44,30,22,64,63,11,23,8,18};
 #else
-//PATH FOR THE CLONES REPO USING CLION
-#define FILE_OUT_NAME "../MATLAB_STUFF/heapsort.txt"
+#include "random_gen.h"
+std::vector<int> data_pool;
 #endif
+
+
+
+
+
+
+
+
+//hier werden die notendigen defines für jeden alogo gesetzt
+//zZ nur den namen für die dateien erspart ein if :)
+#ifdef SHORT_FUNC_HEAPSORT
+#define SORTING_ALGO_NAME "heapsort"
+#endif
+
+#ifdef SHORT_FUNC_MERGESORT
+#define SORTING_ALGO_NAME "mergesort"
+#endif
+
+#ifdef SHORT_FUNC_QUICKSORT
+#define SORTING_ALGO_NAME "quicksort"
+#endif
+
+#ifdef SHORT_FUNC_SHELLSORT
+#define SORTING_ALGO_NAME "shellsort"
 #endif
 
 
+//einfach den speicher string zusammenbauen also root + name + ext
+//wenn wir aber die daten nicht importieren wollen sondern nur normal anzeigen lassen wollen
+//dann fügen wir noch _show hinzu
+#ifdef PRINT_COMPLETE_TEXT
+#define FILE_OUT_NAME ROOT_PATH SORTING_ALGO_NAME "_show" FILE_SAVE_EXT
+#else
+#define FILE_OUT_NAME ROOT_PATH SORTING_ALGO_NAME FILE_SAVE_EXT
+#endif
 
+void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file = nullptr, int _start = 1, int _end =0){
+    std::cout << _text << " ";
+    if(_file != nullptr){
+        *_file << _text;
+    }
+    for (int i = _start; i < _a.size()+_end; i++)
+    {
+        if(_file != nullptr){
+        *_file << " " << _a[i];
+        }
+        std::cout << " "<< _a[i];
+    }
+    std::cout << std::endl;
+    if(_file != nullptr){
+        *_file << std::endl;
+    }
+}
+
+void print_file_headlines(std::ofstream* _file = nullptr){
+#if defined(SHORT_FUNC_HEAPSORT) && defined(PRINT_COMPLETE_TEXT)
+   if(_file != nullptr) {
+       *_file << "----------" << SORTING_ALGO_NAME << "-------------" << std::endl;
+   }
+       std::cout << "----------" << SORTING_ALGO_NAME << "-------------"<< std::endl;
+#endif
+
+
+}
 int main(int argc, char** argv) {
+    //OPEN FILE
     ofstream file;
     file.open(FILE_OUT_NAME,fstream::out);
     if(file.fail()){
         std::cout << "FILE OPEN FAILED" << std::endl;
         return -1;
     }
-    double dtime;
+    //SET TIME VARS
+    double dtime = 0.0; //tür time diff
+    double time_sum = 0.0; //für die summe
 
+    //SET LOOP PARAMETER AUFGABE ABER LEICH GEÄNTERT WEGEN WARTEN UND SO s. DEFINE OBEN
 #ifdef USE_TEST_DATA
-    int n_start = 0;
+    int n_start = 1;
     int n_step = 1;
     int n_end = 10;
+#else
+#ifdef I_DONT_WAIT
+    int n_start = 0;
+    int n_step = 1;
+    int n_end = 50;
 #else
     int n_start = 1000;
     int n_step = 1000;
     int n_end = 1000000;
 #endif
+#endif
 
-#if defined(SHORT_FUNC_HEAPSORT) && defined(PRINT_COMPLETE_TEXT)
-	file << "Heap Sort:" << std::endl;
+    //GENERATE TEST DATA
+#ifndef USE_TEST_DATA
+    data_pool.clear();
+    for (int j = 0; j < n_end; ++j) {
+        data_pool.push_back(randomFrom(1, 100));
+    }
+    std::cout << data_pool.size() << " random zahlen erzeugt" << std::endl;
 #endif
 
 
+    //PRINT HEADLINE OF FILE
+print_file_headlines(&file);
+
+
+//erstelle einen wektor mit einer kopie der datein die wir dann sortiren
+std::vector<int> data_use_vector;
+data_use_vector.clear();
+
+
+//TODO PRINTPUT FUNC
     for (int n = n_start; n<n_end; n+=n_step) {
         cout << "n: " << n << endl;
         /**********************/
         // init data here //
         /**********************/
-#if defined(SHORT_FUNC_HEAPSORT)
-        MyAlgorithms::HeapSortInit(data_pool, data_pool.size());
-#endif
-
-
+//lade daten zum sortieren
+        data_use_vector = data_pool;
 
 //SAVE TIME
 #ifdef USE_OMP_FOR_SORT
@@ -78,7 +164,7 @@ int main(int argc, char** argv) {
         // run algorithm here //
         /**********************/
 #ifdef SHORT_FUNC_HEAPSORT
-        MyAlgorithms::HeapSort(data_pool, data_pool.size());
+        MyAlgorithms::HeapSort(data_use_vector, data_use_vector.size());
 #endif
 
 
@@ -87,12 +173,7 @@ int main(int argc, char** argv) {
 
         //DSIPLAY HERE
 #if defined(PRINT_COMPLETE_TEXT)
-        file << "Durchlauf " << n << " :";
-        for (size_t i = 0; i < data_pool.size(); i++)
-        {
-            file << " " << data_pool.at(i);
-        }
-        file << std::endl;
+        print_vecotr("Durchgang " + std::to_string(n) + "->",data_use_vector,&file);
 #else
 #ifdef USE_OMP_FOR_SORT
         dtime = omp_get_wtime() - dtime;
@@ -100,9 +181,20 @@ int main(int argc, char** argv) {
 #endif
 #endif
 
-
+        time_sum +=dtime;
 
 
     }
+
+
+    //FINALER SORT + TIME SUMME AUSGEBEN NUR IN DER HSO FILE
+#if defined(PRINT_COMPLETE_TEXT)
+
+    print_vecotr("",data_use_vector,&file);
+    file << "Finished in :" << time_sum << " sec" << std::endl;
+#endif
+
+
     file.close();
 }
+#endif

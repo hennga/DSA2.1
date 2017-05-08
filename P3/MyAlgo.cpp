@@ -9,33 +9,32 @@ namespace MyAlgorithms{
 
     //Heapsort
     void max_heapify(vector<int> &a, int i, int n) {
-        int j, temp;
-        temp = a[i];
-        j = 2*i;
-        while (j <= n)
+        int l,r,largest,loc;
+        l=2*i;
+        r=(2*i+1);
+        if((l<=n)&&a[l]>a[i])
+            largest=l;
+        else
+            largest=i;
+        if((r<=n)&&(a[r]>a[largest]))
+            largest=r;
+        if(largest!=i)
         {
-            if (j < n && a[j+1] > a[j]) {
-                j = j + 1;
-            }
-            if (temp > a[j]) {
-                break;
-            }else if (temp <= a[j])
-            {
-                a[j/2] = a[j];
-                j = 2*j;
-            }
+            loc=a[i];
+            a[i]=a[largest];
+            a[largest]=loc;
+            max_heapify(a, largest,n);
         }
-        a[j/2] = temp;
-        return;
     }
     void HeapSort(vector<int> &a, int n) {
+        HeapSortInit(a,n);
         int i, temp;
         for (i = n; i >= 2; i--)
         {
             temp = a[i];
             a[i] = a[1];
             a[1] = temp;
-            max_heapify(a, 1, i - 1);
+            max_heapify(a, 1, i-1);
         }
     }
     void HeapSortInit(vector<int> &a, int n)
