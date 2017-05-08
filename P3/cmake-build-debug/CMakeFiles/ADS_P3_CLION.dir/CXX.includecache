@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/marcel/CLionProjects/ADS_P3_CLION/MyAlgo.h
+/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
 vector
 -
 
-/home/marcel/CLionProjects/ADS_P3_CLION/main.cpp
+/home/marcel/Desktop/DSA2.1/P3/main.cpp
 iostream
 -
 fstream
@@ -22,5 +22,5 @@ vector
 omp.h
 -
 MyAlgo.h
-/home/marcel/CLionProjects/ADS_P3_CLION/MyAlgo.h
+/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
 
