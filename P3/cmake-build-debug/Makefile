@@ -123,6 +123,33 @@ ADS_P3_CLION/fast:
 	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/build
 .PHONY : ADS_P3_CLION/fast
 
+MyAlgo.o: MyAlgo.cpp.o
+
+.PHONY : MyAlgo.o
+
+# target to build an object file
+MyAlgo.cpp.o:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o
+.PHONY : MyAlgo.cpp.o
+
+MyAlgo.i: MyAlgo.cpp.i
+
+.PHONY : MyAlgo.i
+
+# target to preprocess a source file
+MyAlgo.cpp.i:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.i
+.PHONY : MyAlgo.cpp.i
+
+MyAlgo.s: MyAlgo.cpp.s
+
+.PHONY : MyAlgo.s
+
+# target to generate assembly for a file
+MyAlgo.cpp.s:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.s
+.PHONY : MyAlgo.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... ADS_P3_CLION"
+	@echo "... MyAlgo.o"
+	@echo "... MyAlgo.i"
+	@echo "... MyAlgo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

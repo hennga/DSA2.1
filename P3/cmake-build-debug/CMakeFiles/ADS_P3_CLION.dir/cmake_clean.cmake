@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ADS_P3_CLION.dir/main.cpp.o"
+  "CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o"
   "ADS_P3_CLION.pdb"
   "ADS_P3_CLION"
 )

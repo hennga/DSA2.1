@@ -38,10 +38,7 @@ namespace MyAlgorithms{
             max_heapify(a, 1, i - 1);
         }
     }
-
-
-
-    void build_maxheap(vector<int> &a, int n)
+    void HeapSortInit(vector<int> &a, int n)
     {
         int i;
         for(i = n/2; i >= 1; i--)
@@ -63,6 +60,9 @@ namespace MyAlgorithms{
         // implement mergesort here //
         /****************************/
     }
+    void MergeSortInit(vector<int> &a, int n){
+
+    }
 
     //Quicksort
     void QuickSort(vector<int> &arr, int left, int right) {
@@ -70,7 +70,9 @@ namespace MyAlgorithms{
         // implement quicksort here //
         /****************************/
     }
+    void QuickSortInit(vector<int> &a, int n){
 
+    }
 
 
     void MatrixMul_ColMajor(vector<double> &A, vector<double> &B, vector<double> &C,

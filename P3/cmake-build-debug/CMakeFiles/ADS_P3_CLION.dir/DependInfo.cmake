@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp" "/home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o"
   "/home/marcel/Desktop/DSA2.1/P3/main.cpp" "/home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles/ADS_P3_CLION.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

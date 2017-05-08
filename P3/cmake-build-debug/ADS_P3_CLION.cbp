@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp">
+			<Option target="ADS_P3_CLION"/>
+		</Unit>
+		<Unit filename="/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h">
+			<Option target="ADS_P3_CLION"/>
+		</Unit>
 		<Unit filename="/home/marcel/Desktop/DSA2.1/P3/main.cpp">
 			<Option target="ADS_P3_CLION"/>
 		</Unit>
