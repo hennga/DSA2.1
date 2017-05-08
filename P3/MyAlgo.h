@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 #define SORT_D_TYPE int
+#define MATRIX_TYPE double
 namespace MyAlgorithms {
 
     //Heapsort
@@ -12,20 +13,20 @@ namespace MyAlgorithms {
     //MergeSort
     void Merge(vector<SORT_D_TYPE> &a, vector<SORT_D_TYPE> &b,int low, int pivot, int high);
     void MergeSort(vector<SORT_D_TYPE> &a, vector<SORT_D_TYPE> &b, int low, int high);
-    void MergeInit(vector<int> &a, int n);
+    void MergeInit(vector<SORT_D_TYPE> &a, int n);
     //Quicksort
-    void QuickSort(vector<int> &arr, int left, int right);
-    void QuickSortInit(vector<int> &a, int n);
+    void QuickSort(vector<SORT_D_TYPE> &arr, int left, int right);
+    void QuickSortInit(vector<SORT_D_TYPE> &a, int n);
     //Shellsort
 
     //Matrix Multiplikation
-    void MatrixMul_ColMajor(vector<double> &A,
-                            vector<double> &B,
-                            vector<double> &C,
+    void MatrixMul_ColMajor(vector<MATRIX_TYPE> &A,
+                            vector<MATRIX_TYPE> &B,
+                            vector<MATRIX_TYPE> &C,
                             int n);
-    void MatrixMul_RowMajor(vector<double> &A,
-                            vector<double> &B,
-                            vector<double> &C,
+    void MatrixMul_RowMajor(vector<MATRIX_TYPE> &A,
+                            vector<MATRIX_TYPE> &B,
+                            vector<MATRIX_TYPE> &C,
                             int n);
 } //end namespace
 

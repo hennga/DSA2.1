@@ -14,8 +14,8 @@
 #include "MyAlgo.h"
 
 using namespace std;
-#define SHORT_FUNC_HEAPSORT
-//#define SHORT_FUNC_MERGESORT
+//#define SHORT_FUNC_HEAPSORT
+#define SHORT_FUNC_MERGESORT
 //#define SHORT_FUNC_QUICKSORT
 //#define SHORT_FUNC_SHELLSORT
 
@@ -45,21 +45,27 @@ std::vector<int> data_pool;
 
 //hier werden die notendigen defines für jeden alogo gesetzt
 //zZ nur den namen für die dateien erspart ein if :)
+//und hier werden für die jeweiligen algos notwendige vars angelegt
 #ifdef SHORT_FUNC_HEAPSORT
 #define SORTING_ALGO_NAME "heapsort"
-#endif
-
+#else
 #ifdef SHORT_FUNC_MERGESORT
 #define SORTING_ALGO_NAME "mergesort"
-#endif
+int mergesort_low = 0;
+int mergesort_high = 0;
+std::vector<int> merge_sort_b_vector;
 
+#else
 #ifdef SHORT_FUNC_QUICKSORT
 #define SORTING_ALGO_NAME "quicksort"
-#endif
-
+#else
 #ifdef SHORT_FUNC_SHELLSORT
 #define SORTING_ALGO_NAME "shellsort"
 #endif
+#endif
+#endif
+#endif
+
 
 
 //einfach den speicher string zusammenbauen also root + name + ext
@@ -71,6 +77,8 @@ std::vector<int> data_pool;
 #define FILE_OUT_NAME ROOT_PATH SORTING_ALGO_NAME FILE_SAVE_EXT
 #endif
 
+
+//SOME PRINTING FUNCS
 void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file = nullptr, int _start = 1, int _end =0){
     std::cout << _text << " ";
     if(_file != nullptr){
@@ -88,7 +96,6 @@ void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file 
         *_file << std::endl;
     }
 }
-
 void print_file_headlines(std::ofstream* _file = nullptr){
 #if defined(SHORT_FUNC_HEAPSORT) && defined(PRINT_COMPLETE_TEXT)
    if(_file != nullptr) {
@@ -99,6 +106,11 @@ void print_file_headlines(std::ofstream* _file = nullptr){
 
 
 }
+
+
+
+
+
 int main(int argc, char** argv) {
     //OPEN FILE
     ofstream file;
@@ -128,7 +140,7 @@ int main(int argc, char** argv) {
 #endif
 #endif
 
-    //GENERATE TEST DATA
+    //GENERATE RANDOM DATA IF WE DONT USE THE TEST DATA
 #ifndef USE_TEST_DATA
     data_pool.clear();
     for (int j = 0; j < n_end; ++j) {
@@ -136,18 +148,13 @@ int main(int argc, char** argv) {
     }
     std::cout << data_pool.size() << " random zahlen erzeugt" << std::endl;
 #endif
-
-
     //PRINT HEADLINE OF FILE
-print_file_headlines(&file);
+    print_file_headlines(&file);
+    //erstelle einen wektor mit einer kopie der datein die wir dann sortiren
+    std::vector<int> data_use_vector;
+    data_use_vector.clear();
 
-
-//erstelle einen wektor mit einer kopie der datein die wir dann sortiren
-std::vector<int> data_use_vector;
-data_use_vector.clear();
-
-
-//TODO PRINTPUT FUNC
+    //LOOP
     for (int n = n_start; n<n_end; n+=n_step) {
         cout << "n: " << n << endl;
         /**********************/
@@ -167,7 +174,9 @@ data_use_vector.clear();
         MyAlgorithms::HeapSort(data_use_vector, data_use_vector.size());
 #endif
 
-
+#ifdef SHORT_FUNC_MERGESORT
+        MyAlgorithms::MergeSort(data_use_vector,merge_sort_b_vector,mergesort_low,mergesort_high);
+#endif
 
 
 
