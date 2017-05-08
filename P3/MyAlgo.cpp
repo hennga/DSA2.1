@@ -9,10 +9,6 @@ namespace MyAlgorithms{
 
     //Heapsort
     void max_heapify(vector<int> &a, int i, int n) {
-        /*******************************************/
-        // implement heapsort helper function here //
-        /*******************************************/
-        //SORT_D_TYPE
         int j, temp;
         temp = a[i];
         j = 2*i;
@@ -33,10 +29,6 @@ namespace MyAlgorithms{
         return;
     }
     void HeapSort(vector<int> &a, int n) {
-        /***************************/
-        // implement heapsort here //
-        /***************************/
-        //FIRST CALL
         int i, temp;
         for (i = n; i >= 2; i--)
         {
