@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/marcel/CLionProjects/ADS_P3_CLION/MyAlgo.h
+vector
+-
+
+/home/marcel/CLionProjects/ADS_P3_CLION/main.cpp
+iostream
+-
+fstream
+-
+iomanip
+-
+vector
+-
+omp.h
+-
+MyAlgo.h
+/home/marcel/CLionProjects/ADS_P3_CLION/MyAlgo.h
+

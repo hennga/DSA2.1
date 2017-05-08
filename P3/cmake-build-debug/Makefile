@@ -48,10 +48,10 @@ RM = /home/marcel/Desktop/clion-2017.1.1/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marcel/Desktop/DSA2.1/P3
+CMAKE_SOURCE_DIR = /home/marcel/CLionProjects/ADS_P3_CLION
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug
+CMAKE_BINARY_DIR = /home/marcel/CLionProjects/ADS_P3_CLION/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcel/CLionProjects/ADS_P3_CLION/cmake-build-debug/CMakeFiles /home/marcel/CLionProjects/ADS_P3_CLION/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marcel/CLionProjects/ADS_P3_CLION/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,6 +110,46 @@ depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named ADS_P3_CLION
+
+# Build rule for target.
+ADS_P3_CLION: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ADS_P3_CLION
+.PHONY : ADS_P3_CLION
+
+# fast build rule for target.
+ADS_P3_CLION/fast:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/build
+.PHONY : ADS_P3_CLION/fast
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/ADS_P3_CLION.dir/build.make CMakeFiles/ADS_P3_CLION.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... ADS_P3_CLION"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
