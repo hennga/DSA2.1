@@ -48,18 +48,47 @@ namespace MyAlgorithms{
 
 
     //MergeSort
-    void Merge(vector<int> &a, vector<int> &b,int low, int pivot, int high) {
-        /********************************************/
-        // implement mergesort helper function here //
-        /********************************************/
+    void Merge(vector<int> &a, int p, int q, int r) {
 
+        int n1=q-p+1;
+        int n2=r-q;
+        int L[n1+1];
+        int R[n2+1];
+        for(int i=1;i<=n1;i++)
+        {
+            L[i]=a[p+i-1];
+        }
+        for(int j=1;j<=n2;j++)
+        {
+            R[j]=a[q+j];
+        }
+        L[n1+1]=999;
+        R[n2+1]=999;
+        int i=1, j=1;
+        for(int k=p;k<=r;k++)
+        {
+            if(L[i]<=R[j])
+            {
+                a[k]=L[i];
+                i=i+1;
+            }
+            else
+            {
+                a[k]=R[j];
+                j=j+1;
+            }
+        }
     }
 
-    void MergeSort(vector<int> &a, vector<int> &b, int low, int high) {
-        /****************************/
-        // implement mergesort here //
-        /****************************/
-
+    void MergeSort(vector<int> &a, int p, int r) {
+        int q;
+        if(p<r)
+        {
+            q=(p+r)/2;
+            MergeSort(a,p,q);
+            MergeSort(a,q+1,r);
+            Merge(a,p,q,r);
+        }
     }
     void MergeSortInit(vector<int> &a, int n){
 
@@ -67,8 +96,7 @@ namespace MyAlgorithms{
 
 
     //Quicksort
-    int partition(vector<int>& A, int p,int q)
-    {
+    int partition(vector<int>& A, int p,int q) {
         int x= A[p];
         int i=p;
         int j;
@@ -83,7 +111,6 @@ namespace MyAlgorithms{
         swap(A[i],A[p]);
         return i;
     }
-
     void QuickSort(vector<int> &arr, int left, int right) {
         /****************************/
         // implement quicksort here //
@@ -102,9 +129,8 @@ namespace MyAlgorithms{
 
 
 
-    //SHELLSORT
-    void ShellSort(vector<SORT_D_TYPE> &a, int n)       //SHELL SORT - HIBBARD'S INCREMENTS
-    {
+    //SHELLSORT HIBBART
+    void ShellSort(vector<SORT_D_TYPE> &a, int n){
         int i, j,k, increment, temp;
          int swp=0,comp=0;
         int val;
@@ -137,6 +163,7 @@ namespace MyAlgorithms{
     }
 
 
+    //MATRIX SHIT
     void MatrixMul_ColMajor(vector<double> &A, vector<double> &B, vector<double> &C, int n) {
         //lda, ldb, ldc are leading dimensions of matrices A,B and C
         int lda = n;
@@ -155,8 +182,7 @@ namespace MyAlgorithms{
         }
     }
 
-    void MatrixMul_RowMajor(vector<double> &A, vector<double> &B, vector<double> &C,
-                            int n) {
+    void MatrixMul_RowMajor(vector<double> &A, vector<double> &B, vector<double> &C, int n) {
         //lda, ldb, ldc are leading dimensions of matrices A,B and C
         int lda = n;
         int ldb = n;

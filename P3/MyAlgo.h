@@ -14,8 +14,8 @@ namespace MyAlgorithms {
     void HeapSort(vector<SORT_D_TYPE> &a, int n);
     void HeapSortInit(vector<int> &a, int n);
     //MergeSort
-    void Merge(vector<SORT_D_TYPE> &a, vector<SORT_D_TYPE> &b,int low, int pivot, int high);
-    void MergeSort(vector<SORT_D_TYPE> &a, vector<SORT_D_TYPE> &b, int low, int high);
+    void Merge(vector<SORT_D_TYPE> &a, int p, int q, int r);
+    void MergeSort(vector<SORT_D_TYPE> &a,  int p, int r);
     void MergeInit(vector<SORT_D_TYPE> &a, int n);
     //Quicksort
     void QuickSort(vector<SORT_D_TYPE> &arr, int left, int right);
@@ -35,7 +35,7 @@ namespace MyAlgorithms {
 
 
 
-
+    //SWAPT 2 ELEMENTE
     template <typename T> void swap(T& t1, T& t2) {
         T temp = std::move(t1);
         t1 = std::move(t2);

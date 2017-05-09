@@ -104,7 +104,7 @@ void print_file_headlines(std::ofstream* _file = nullptr){
 
 }
 
-
+//if we want only use the test data we only made 10 loops
 int n_start = 1;
 int n_step = 1;
 int n_end = 10;
@@ -149,7 +149,13 @@ int main(int argc, char** argv) {
     std::vector<int> data_use_vector;
     data_use_vector.clear();
 
+
+    //SETUP OMP
+    //int num procs = omp get num procs();
+    //omp set num threads(num procs);
+
     //LOOP
+    #pragma omp parallel for
     for (int n = n_start; n<n_end; n+=n_step) {
         std::cout << "n: " << n << endl;
         /**********************/
@@ -181,8 +187,7 @@ data_use_vector.clear();
 #endif
 
 #ifdef SHORT_FUNC_MERGESORT
-        std::vector<int> merge_sort_vector_b;
-        MyAlgorithms::MergeSort(data_use_vector,merge_sort_vector_b,0,data_use_vector.size());
+        MyAlgorithms::MergeSort(data_use_vector,1,data_use_vector.size());
 #endif
 
 #ifdef SHORT_FUNC_QUICKSORT
