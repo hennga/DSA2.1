@@ -67,7 +67,6 @@ namespace MyAlgorithms{
 
 
     //Quicksort
-
     int partition(vector<int>& A, int p,int q)
     {
         int x= A[p];
@@ -99,6 +98,42 @@ namespace MyAlgorithms{
     }
     void QuickSortInit(vector<int> &a, int n){
 
+    }
+
+
+
+    //SHELLSORT
+    void ShellSort(vector<SORT_D_TYPE> &a, int n)       //SHELL SORT - HIBBARD'S INCREMENTS
+    {
+        int i, j,k, increment, temp;
+         int swp=0,comp=0;
+        int val;
+        val=log(n+1)/log(2);
+        increment =pow(2,val)-1;
+        while (increment > 0)
+        {
+            for (i=0;i<increment;i++)
+            {
+                for(j=0;j<n;j+=increment)
+                {
+                    temp=a[j];
+                    for(k=j-increment;k>=0&&temp<a[k];k-=increment)
+                    {
+                        comp++;
+                        swp++;
+                        a[k+increment]=a[k];
+                    }
+                    a[k+increment]=temp;
+                    swp++;
+                }
+            }
+            comp++;
+            val--;
+            if(increment!=1)
+                increment=pow(2,val)-1;
+            else
+                increment = 0;
+        }
     }
 
 

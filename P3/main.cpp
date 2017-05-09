@@ -13,9 +13,9 @@
 //#define SHORT_FUNC_QUICKSORT
 #define SHORT_FUNC_SHELLSORT
 
-//#define PRINT_COMPLETE_TEXT
+#define PRINT_COMPLETE_TEXT
 
-//#define USE_TEST_DATA //otherwise randomdata will be generated
+#define USE_TEST_DATA //otherwise randomdata will be generated
 
 
 //wenn wir test daten benutzen wollen dann legen wir diret den vektor an sonst füllen wir den
@@ -29,7 +29,6 @@ std::vector<int> data_pool;
 
 //TEST DA BEI MIR OPENMP DIE TIMER NICHT GEHEH WIRD NOCH GELÖSCHT
 //http://stackoverflow.com/questions/3756323/getting-the-current-time-in-milliseconds
-
 #include <sys/time.h>
 long long current_timestamp() {
     struct timeval te;
@@ -191,7 +190,7 @@ data_use_vector.clear();
 #endif
 
 #ifdef SHORT_FUNC_SHELLSORT
-     //   MyAlgorithms::ShellSort(data_use_vector,0,data_use_vector.size());
+     MyAlgorithms::ShellSort(data_use_vector,data_use_vector.size());
 #endif
 
 

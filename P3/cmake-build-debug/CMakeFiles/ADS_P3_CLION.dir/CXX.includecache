@@ -17,6 +17,8 @@ utility
 -
 algorithm
 -
+math.h
+-
 
 /home/marcel/Desktop/DSA2.1/P3/main.cpp
 iostream

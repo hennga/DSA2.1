@@ -3,6 +3,7 @@
 #include <vector>
 #include <utility>
 #include <algorithm>
+#include <math.h>
 using namespace std;
 #define SORT_D_TYPE int
 #define MATRIX_TYPE double
@@ -20,7 +21,7 @@ namespace MyAlgorithms {
     void QuickSort(vector<SORT_D_TYPE> &arr, int left, int right);
     void QuickSortInit(vector<SORT_D_TYPE> &a, int n);
     //Shellsort
-
+    void ShellSort(vector<SORT_D_TYPE> &a, int n);
     //Matrix Multiplikation
     void MatrixMul_ColMajor(vector<MATRIX_TYPE> &A,
                             vector<MATRIX_TYPE> &B,
