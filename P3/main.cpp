@@ -10,12 +10,12 @@
 
 //#define SHORT_FUNC_HEAPSORT
 //#define SHORT_FUNC_MERGESORT
-#define SHORT_FUNC_QUICKSORT
-//#define SHORT_FUNC_SHELLSORT
+//#define SHORT_FUNC_QUICKSORT
+#define SHORT_FUNC_SHELLSORT
 
-#define PRINT_COMPLETE_TEXT
+//#define PRINT_COMPLETE_TEXT
 
-#define USE_TEST_DATA //otherwise randomdata will be generated
+//#define USE_TEST_DATA //otherwise randomdata will be generated
 
 
 //wenn wir test daten benutzen wollen dann legen wir diret den vektor an sonst füllen wir den
@@ -57,6 +57,8 @@ long start = 0;
 #else
 #ifdef SHORT_FUNC_SHELLSORT
 #define SORTING_ALGO_NAME "shellsort"
+#else
+#error "PLEASE SELECT A SORTING METHOD"
 #endif
 #endif
 #endif
@@ -128,12 +130,12 @@ int main(int argc, char** argv) {
      n_end = 10;
 #else
      n_start = 1000;
-     n_step = 1000;
-     n_end = 1000000;
+     n_step = 10000;
+     n_end = 10000000;
 
     //GENERATE RANDOM DATA IF WE DONT USE THE TEST DATA
     data_pool.clear();
-    for (int j = 0; j < n_end; ++j) {
+    for (int j = 0; j < n_end+n_step+n_start; ++j) {
         data_pool.push_back(randomFrom(1, 100));
     }
     std::cout << data_pool.size() << " random zahlen erzeugt" << std::endl;
@@ -155,7 +157,17 @@ int main(int argc, char** argv) {
         // init data here //
         /**********************/
         //lade daten zum sortieren
+data_use_vector.clear();
+#ifdef USE_TEST_DATA
         data_use_vector = data_pool;
+#else
+        for (int i = 0; i < n_step; ++i) {
+            if(i+n > data_pool.size()){break;}
+            data_use_vector.push_back((int)data_pool.at(n+i));
+        }
+
+#endif
+
 
 
 
@@ -179,7 +191,7 @@ int main(int argc, char** argv) {
 #endif
 
 #ifdef SHORT_FUNC_SHELLSORT
-        MyAlgorithms::QuickSort(data_use_vector,0,data_use_vector.size());
+     //   MyAlgorithms::ShellSort(data_use_vector,0,data_use_vector.size());
 #endif
 
 
@@ -191,7 +203,7 @@ int main(int argc, char** argv) {
 
 
 
-
+        //CALC DELTA TIME
         start = current_timestamp() -start;
 	    double de  = double( clock () - begin_time ) /  CLOCKS_PER_SEC;
         file << n << "\t" << setprecision(10) <<de << endl;
