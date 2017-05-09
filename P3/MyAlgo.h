@@ -1,6 +1,8 @@
 #ifndef _MYALGORITHMS_H_
 #define _MYALGORITHMS_H_
 #include <vector>
+#include <utility>
+#include <algorithm>
 using namespace std;
 #define SORT_D_TYPE int
 #define MATRIX_TYPE double
@@ -28,6 +30,18 @@ namespace MyAlgorithms {
                             vector<MATRIX_TYPE> &B,
                             vector<MATRIX_TYPE> &C,
                             int n);
+
+
+
+
+
+    template <typename T> void swap(T& t1, T& t2) {
+        T temp = std::move(t1);
+        t1 = std::move(t2);
+        t2 = std::move(temp);
+    }
+
+
 } //end namespace
 
 #endif //_MYALGORITHMS_H_

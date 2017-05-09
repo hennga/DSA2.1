@@ -65,19 +65,44 @@ namespace MyAlgorithms{
 
     }
 
+
     //Quicksort
+
+    int partition(vector<int>& A, int p,int q)
+    {
+        int x= A[p];
+        int i=p;
+        int j;
+        for(j=p+1; j<q; j++)
+        {
+            if(A[j]<=x)
+            {
+                i=i+1;
+                swap(A[i],A[j]);
+            }
+        }
+        swap(A[i],A[p]);
+        return i;
+    }
+
     void QuickSort(vector<int> &arr, int left, int right) {
         /****************************/
         // implement quicksort here //
         /****************************/
+        int r;
+        if(left<right)
+        {
+            r=partition(arr, left,right);
+            QuickSort(arr,left,r);
+            QuickSort(arr,r+1,right);
+        }
     }
     void QuickSortInit(vector<int> &a, int n){
 
     }
 
 
-    void MatrixMul_ColMajor(vector<double> &A, vector<double> &B, vector<double> &C,
-                            int n) {
+    void MatrixMul_ColMajor(vector<double> &A, vector<double> &B, vector<double> &C, int n) {
         //lda, ldb, ldc are leading dimensions of matrices A,B and C
         int lda = n;
         int ldb = n;

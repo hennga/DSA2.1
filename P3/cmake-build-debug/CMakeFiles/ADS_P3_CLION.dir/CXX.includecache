@@ -13,6 +13,10 @@ MyAlgo.h
 /home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
 vector
 -
+utility
+-
+algorithm
+-
 
 /home/marcel/Desktop/DSA2.1/P3/main.cpp
 iostream
@@ -22,8 +26,6 @@ fstream
 iomanip
 -
 vector
--
-omp.h
 -
 MyAlgo.h
 /home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
