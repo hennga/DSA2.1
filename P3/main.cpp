@@ -1,5 +1,5 @@
 
-//#define USE_OMP_FOR_SORT
+#define USE_OMP_FOR_SORT
 
 #include <iostream>
 #include <fstream>
