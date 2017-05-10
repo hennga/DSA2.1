@@ -10,26 +10,26 @@ using namespace std;
 namespace MyAlgorithms {
 
     //Heapsort
-    void max_heapify(vector<SORT_D_TYPE> &a, int i, int n);
-    void HeapSort(vector<SORT_D_TYPE> &a, int n);
+    void max_heapify(vector<int> &a, int i, int n);
+    void HeapSort(vector<int> &a, int n);
     void HeapSortInit(vector<int> &a, int n);
     //MergeSort
-    void Merge(vector<SORT_D_TYPE> &a, int p, int q, int r);
-    void MergeSort(vector<SORT_D_TYPE> &a,  int p, int r);
-    void MergeInit(vector<SORT_D_TYPE> &a, int n);
+    void Merge(vector<int> &a, int p, int q, int r);
+    void MergeSort(vector<int> &a,  int p, int r);
+    void MergeInit(vector<int> &a, int n);
     //Quicksort
-    void QuickSort(vector<SORT_D_TYPE> &arr, int left, int right);
-    void QuickSortInit(vector<SORT_D_TYPE> &a, int n);
+    void QuickSort(vector<int> &arr, int left, int right);
+    void QuickSortInit(vector<int> &a, int n);
     //Shellsort
-    void ShellSort(vector<SORT_D_TYPE> &a, int n);
+    void ShellSort(vector<int> &a, int n);
     //Matrix Multiplikation
-    void MatrixMul_ColMajor(vector<MATRIX_TYPE> &A,
-                            vector<MATRIX_TYPE> &B,
-                            vector<MATRIX_TYPE> &C,
+    void MatrixMul_ColMajor(vector<double > &A,
+                            vector<double > &B,
+                            vector<double > &C,
                             int n);
-    void MatrixMul_RowMajor(vector<MATRIX_TYPE> &A,
-                            vector<MATRIX_TYPE> &B,
-                            vector<MATRIX_TYPE> &C,
+    void MatrixMul_RowMajor(vector<double > &A,
+                            vector<double > &B,
+                            vector<double > &C,
                             int n);
 
 

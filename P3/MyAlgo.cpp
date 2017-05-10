@@ -175,9 +175,14 @@ namespace MyAlgorithms{
             for (int j=0; j<n ; j++) {
                 s = 0.0;
                 for (int k=0; k<n; k++) {
-                    s = s + A[i+k*lda] * B[k+j*ldb];
+                    int r =i+k*lda;
+                    int r1 = k+j*ldb;
+                    s = s + A[r] * B[r1];
                 }
-                C[i+j*ldc]=s;
+                int r2 =i+j*ldc;
+                int w = 0;
+
+               // C[r2]=s;
             }
         }
     }
