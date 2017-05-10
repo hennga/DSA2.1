@@ -8,14 +8,21 @@
 #include "MyAlgo.h"
 
 
-//#define SHORT_FUNC_HEAPSORT
+#define SHORT_FUNC_HEAPSORT
 //#define SHORT_FUNC_MERGESORT
 //#define SHORT_FUNC_QUICKSORT
-#define SHORT_FUNC_SHELLSORT
+//#define SHORT_FUNC_SHELLSORT
 
-#define PRINT_COMPLETE_TEXT
 
-#define USE_TEST_DATA //otherwise randomdata will be generated
+#define PROBLEMGROESSE_SORT 1000000
+#define PROBLEMGROESSE_SORT_STRING "1000000"
+
+#define LOOPS_SORT 100
+#define LOOPS_SORT_STRING "100"
+
+//#define PRINT_COMPLETE_TEXT
+
+//#define USE_TEST_DATA //otherwise randomdata will be generated
 
 
 //wenn wir test daten benutzen wollen dann legen wir diret den vektor an sonst füllen wir den
@@ -65,17 +72,17 @@ long start = 0;
 
 
 
+//SOME PRINTING FUNCS
+
+
 //einfach den speicher string zusammenbauen also root + name + ext
 //wenn wir aber die daten nicht importieren wollen sondern nur normal anzeigen lassen wollen
 //dann fügen wir noch _show hinzu
 #ifdef PRINT_COMPLETE_TEXT
-#define FILE_OUT_NAME "../MATLAB_STUFF/" SORTING_ALGO_NAME "_show" ".txt"
+#define FILE_OUT_NAME "../MATLAB_STUFF/DATA_SHOW/" SORTING_ALGO_NAME "_10_100_show" ".txt"
 #else
-#define FILE_OUT_NAME "../MATLAB_STUFF/" SORTING_ALGO_NAME ".txt"
+#define FILE_OUT_NAME "../MATLAB_STUFF/DATA/" SORTING_ALGO_NAME "_" PROBLEMGROESSE_SORT_STRING "_" LOOPS_SORT_STRING ".txt"
 #endif
-
-
-//SOME PRINTING FUNCS
 void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file = nullptr, int _start = 1, int _end =0){
     std::cout << _text << " ";
     if(_file != nullptr){
@@ -107,8 +114,8 @@ void print_file_headlines(std::ofstream* _file = nullptr){
 //if we want only use the test data we only made 10 loops
 int n_start = 1;
 int n_step = 1;
-int n_end = 10;
-
+unsigned int n_end = 10;
+unsigned int do_loops = LOOPS_SORT;
 
 int main(int argc, char** argv) {
     //OPEN FILE
@@ -128,9 +135,11 @@ int main(int argc, char** argv) {
      n_step = 1;
      n_end = 10;
 #else
-     n_start = 1000;
-     n_step = 10000;
-     n_end = 10000000;
+
+     do_loops = 100;
+     n_start = 1;
+     n_step = PROBLEMGROESSE_SORT; //=Problemgrösse
+     n_end = n_start*(do_loops*n_step);
 
     //GENERATE RANDOM DATA IF WE DONT USE THE TEST DATA
     data_pool.clear();
@@ -139,6 +148,7 @@ int main(int argc, char** argv) {
     }
     std::cout << data_pool.size() << " random zahlen erzeugt" << std::endl;
     #endif
+
 
 
 
@@ -153,11 +163,13 @@ int main(int argc, char** argv) {
     //SETUP OMP
     //int num procs = omp get num procs();
     //omp set num threads(num procs);
-
-    //LOOP
+unsigned int loop_counter = 0;
+    //LOOP pragma für openmp
     #pragma omp parallel for
     for (int n = n_start; n<n_end; n+=n_step) {
-        std::cout << "n: " << n << endl;
+        loop_counter++;
+        std::cout << "n: " << loop_counter << endl;
+
         /**********************/
         // init data here //
         /**********************/
@@ -167,8 +179,9 @@ data_use_vector.clear();
         data_use_vector = data_pool;
 #else
         for (int i = 0; i < n_step; ++i) {
-            if(i+n > data_pool.size()){break;}
+            if(i+n > data_pool.size()){std::cout << "e";break;}
             data_use_vector.push_back((int)data_pool.at(n+i));
+
         }
 
 #endif

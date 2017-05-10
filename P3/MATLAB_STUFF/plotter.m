@@ -1,20 +1,20 @@
 clear;
 clc; 
 close all;
-fid=fopen('quicksort.txt');
+fid=fopen('DATA/quicksort.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 x=data{1};
 quicksort_y=data{2};
-fid=fopen('mergesort.txt');
+fid=fopen('DATA/mergesort.txt');
 data=textscan(fid,'%d %f')
 fclose ( fid );
 mergesort_y=data{2};
-fid=fopen('heapsort.txt');
+fid=fopen('DATA/heapsort.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 heapsort_y=data{2};
-fid=fopen('shellsort.txt');
+fid=fopen('DATA/shellsort.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 shellsort_y =data{2};
