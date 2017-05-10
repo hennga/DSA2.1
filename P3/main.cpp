@@ -20,7 +20,7 @@ enum SORT_TYPE_SELECTOR{
 };
 
 
-const unsigned int PROBLEMGROESSE_SORT = 4;
+const unsigned int PROBLEMGROESSE_SORT = 1000;//ähm ja mind 1000 für gute zahlen
 const unsigned int LOOPS_SORT = 100;
 const SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL;
 const char* SAFE_FILE_DIR = "../MATLAB_STUFF/DATA/"; //make sure the folder exits
@@ -94,7 +94,13 @@ int main(int argc, char** argv) {
             break;
     }
     //hier steht der output file path drin
-    std::string final_file_name = SAFE_FILE_DIR +algo_name + "_" + std::to_string(PROBLEMGROESSE_SORT) + "_" + std::to_string(LOOPS_SORT) + ".txt";
+    std::string final_file_name = "tmp.txt";
+    //WENN WIR EINE MATRIX HABEN STEHT IM DATEINAMEN DIE DIMENSION
+    if(selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW){
+        final_file_name = SAFE_FILE_DIR +algo_name + "_" + std::to_string((int)sqrt((double)PROBLEMGROESSE_SORT)) + "_" + std::to_string(LOOPS_SORT) + ".txt";
+    }else{
+        final_file_name = SAFE_FILE_DIR +algo_name + "_" + std::to_string(PROBLEMGROESSE_SORT) + "_" + std::to_string(LOOPS_SORT) + ".txt";
+    }
     //OPEN FILE
     std::ofstream file;
     file.open(final_file_name,std::fstream::out);
