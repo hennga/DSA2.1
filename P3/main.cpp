@@ -151,7 +151,7 @@ int main(int argc, char** argv) {
     for (int n = n_start; n<n_end; n+=n_step) {
         loop_counter++;
         std::cout << "n: " << loop_counter << endl;
-
+        if(loop_counter >= 100){break;}
         //die daten müssen unterschiedlich geladen werden wenn es eine matrix ist
         //also bei der matrix m,ul müssen wir die zahlen in 2 vektoren splitten
         if(selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
