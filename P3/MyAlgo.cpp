@@ -182,7 +182,7 @@ namespace MyAlgorithms{
                 int r2 =i+j*ldc;
                 int w = 0;
 
-               // C[r2]=s;
+                C[r2]=s;
             }
         }
     }
@@ -196,6 +196,18 @@ namespace MyAlgorithms{
         /***************************************/
         // implement row major calculation here//
         /***************************************/
+        for (int i=0; i<n ; i++) {
+            for (int j=0; j<n ; j++) {
+                s = 0.0;
+                for (int k=0; k<n; k++) {
+                    int r =i*lda +k; //öhm joar
+                    int r1 = k*ldb+j; //jop bestimmt
+                    s = s + A[r] * B[r1];
+                }
+                int r2 =i*ldc + j; //müsste ok sein
+                C[r2]=s;
+            }
+        }
     }
 
 } // end namespace
