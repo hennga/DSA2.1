@@ -8,7 +8,7 @@
 #include "MyAlgo.h"
 #include "random_gen.h"
 #include <sys/time.h>
-#include <omp.h>
+//#include <omp.h>
 
 const unsigned int SORT_TYPE_ENUM_SIZE = 6;
 enum SORT_TYPE_SELECTOR{
@@ -73,10 +73,10 @@ int main(int argc, char** argv) {
 
 
 
-
-
-
-
+//openmp stuff
+//int procs = omp_get_max_threads();
+//std::cout << "openmp enabled set threads to " << procs << std::endl;
+//omp_set_num_threads(procs);
 
 
 
@@ -181,7 +181,9 @@ int main(int argc, char** argv) {
             loop_counter++;
             std::cout << "loop_counter " << loop_counter << endl;
             std::cout << "n " << n << endl;
-            if (loop_counter >= LOOPS_SORT) { break; }
+            //wenn wir ein loop limit gesetzt haben übersüringen wir den rest
+            //break geht nicht bei verwendung von opemp dfeswegen continue xD
+           if (loop_counter >= LOOPS_SORT) { continue; }
 
             //die daten müssen unterschiedlich geladen werden wenn es eine matrix ist
             //also bei der matrix m,ul müssen wir die zahlen in 2 vektoren splitten
