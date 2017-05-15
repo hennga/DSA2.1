@@ -1,4 +1,4 @@
-base_dir='DATA_SORT/';
+base_dir='SORT_DATA/';
 loop_string ='100';
 pron_string = '1000';
 
@@ -11,20 +11,20 @@ shellsort_name='shellsort';
 clear;
 clc; 
 close all;
-fid=fopen([base_dir heapsort_name '/' heapsort_name '_' loop_string '_' pron_string '.txt']);
+fid=fopen('SORT_DATA/quicksort_10_100.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 x=data{1};
 quicksort_y=data{2};
-fid=fopen([base_dir mergesort_name '/' mergesort_name '_' loop_string '_' pron_string '.txt']);
+fid=fopen('SORT_DATA/mergesort_10_100.txt');
 data=textscan(fid,'%d %f')
 fclose ( fid );
 mergesort_y=data{2};
-fid=fopen([base_dir heapsort_name '/' heapsort_name '_' loop_string '_' pron_string '.txt']);
+fid=fopen('SORT_DATA/heapsort_10_100.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 heapsort_y=data{2};
-fid=fopen([base_dir shellsort_name '/' shellsort_name '_' loop_string '_' pron_string '.txt']);
+fid=fopen('SORT_DATA/shellsort_10_100.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 shellsort_y =data{2};

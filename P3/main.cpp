@@ -20,8 +20,8 @@ enum SORT_TYPE_SELECTOR{
     ALGO_MATRIX_MUL_ROW = 5
 };
 
-#define AUTO_RUN
-const unsigned int PROBLEMGROESSE_SORT = 1000000;//ähm ja mind 1000 für gute zahlen
+//#define AUTO_RUN
+const unsigned int PROBLEMGROESSE_SORT = 10000;//ähm ja mind 1000 für gute zahlen
 const unsigned int LOOPS_SORT = 100;
  SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_SORT_HEAPSORT;
 const std::string SAFE_FILE_DIR = "../MATLAB_STUFF/"; //make sure the folder exits
@@ -86,8 +86,8 @@ int main(int argc, char** argv) {
     //ES WERDEN ALLE TYPEN AUTOMATISCH DURCHGEGANGEN
     //SO MUSS ICH NICHT IMMER ETWAS ÄNDERN :D
 #ifdef AUTO_RUN
-    for (int k = 0; k < SORT_TYPE_ENUM_SIZE-2; ++k) {
-        selected_algorythm = (SORT_TYPE_SELECTOR) k;
+        for (int k = 0; k < SORT_TYPE_ENUM_SIZE; ++k) {
+            selected_algorythm = (SORT_TYPE_SELECTOR) k;
 #endif
 
         //bestimme den namen des sortier algos wäre per define einfacher gewesen :D
@@ -118,8 +118,7 @@ int main(int argc, char** argv) {
         //hier steht der output file path drin
         std::string final_file_name = "tmp.txt";
         //WENN WIR EINE MATRIX HABEN STEHT IM DATEINAMEN DIE DIMENSION
-        if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL ||
-            selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
+        if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
             final_file_name =
                     SAFE_FILE_DIR+"MATRIX_DATA/" + algo_name + "_" + std::to_string((int) sqrt((double) PROBLEMGROESSE_SORT)) + "_" +
                     std::to_string(LOOPS_SORT) + ".txt";
@@ -139,7 +138,6 @@ int main(int argc, char** argv) {
 
 
         //ERSTELLE ZUERST DIE ZUFALLSDATEN SODASS SIE FÜR ALLLE DURCHGÄNGE GLEICH SIND
-
         //BEIM ERSTEN DRUCHGANG
 #ifdef AUTO_RUN
         if(k == 0) {
@@ -178,13 +176,39 @@ int main(int argc, char** argv) {
         //omp set num threads(num procs);
 
         //LOOP pragma für openmp
-//        #pragma omp parallel for
+        #pragma omp parallel for
         for (int n = n_start; n < n_end; n += n_step) {
             loop_counter++;
-            std::cout << "n: " << loop_counter << endl;
-            if (loop_counter >= 100) { break; }
+            std::cout << "loop_counter " << loop_counter << endl;
+            std::cout << "n " << n << endl;
+            if (loop_counter >= LOOPS_SORT) { break; }
+
             //die daten müssen unterschiedlich geladen werden wenn es eine matrix ist
             //also bei der matrix m,ul müssen wir die zahlen in 2 vektoren splitten
+            if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
+                matrix_mul_vector_a.clear();
+                matrix_mul_vector_b.clear();
+                matrix_mul_vector_result.clear();
+                int size_half = (double) (data_pool_double.size() / 2.0f);
+                for (int ij = 0; ij< n -1; ++ij) {
+                    matrix_mul_vector_a.push_back((double) data_pool_double.at(ij));
+                    matrix_mul_vector_b.push_back((double) data_pool_double.at(n+ij));
+                    matrix_mul_vector_result.push_back(-1.0f);
+                }
+                std::cout << "data size mul a" << matrix_mul_vector_a.size() << std::endl;
+                std::cout << "data size mul b" << matrix_mul_vector_b.size() << std::endl;
+            }else {
+                //LADE DATEN IN DEN SORTIER VECTOR
+                data_use_vector.clear();
+                for (int i = 0; i < n ; ++i) {
+                    data_use_vector.push_back((int) data_pool_double.at(i));
+                }
+                std::cout << "data size " << data_use_vector.size() << std::endl;
+            }
+
+/*
+
+
             if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL ||
                 selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
                 matrix_mul_vector_a.clear();
@@ -202,14 +226,15 @@ int main(int argc, char** argv) {
             } else {
                 //lade daten zum sortieren
                 data_use_vector.clear();
-                for (int i = 0; i < PROBLEMGROESSE_SORT; ++i) {
+                for (int i = 0; i < n; ++i) {
                     if (i + n > data_pool.size()) {
                         std::cout << "e";
                         break;
                     }
-                    data_use_vector.push_back((int) data_pool_double.at(n + i));
+                    data_use_vector.push_back((int) data_pool_double.at(i));
                 }
             }
+*/
 
             //SAVE TIME BEFORE RUNNING
             const clock_t begin_time = clock();
