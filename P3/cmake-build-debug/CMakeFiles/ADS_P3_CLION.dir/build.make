@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/henn/clion-2016.3.4/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/marcel/Desktop/clion-2017.1.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/henn/clion-2016.3.4/bin/cmake/bin/cmake -E remove -f
+RM = /home/marcel/Desktop/clion-2017.1.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3
+CMAKE_SOURCE_DIR = /home/marcel/Desktop/DSA2.1/P3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug
+CMAKE_BINARY_DIR = /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ADS_P3_CLION.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ADS_P3_CLION.dir/flags.make
 
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.o: CMakeFiles/ADS_P3_CLION.dir/flags.make
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ADS_P3_CLION.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS_P3_CLION.dir/main.cpp.o -c /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ADS_P3_CLION.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS_P3_CLION.dir/main.cpp.o -c /home/marcel/Desktop/DSA2.1/P3/main.cpp
 
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS_P3_CLION.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/main.cpp > CMakeFiles/ADS_P3_CLION.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marcel/Desktop/DSA2.1/P3/main.cpp > CMakeFiles/ADS_P3_CLION.dir/main.cpp.i
 
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS_P3_CLION.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/main.cpp -o CMakeFiles/ADS_P3_CLION.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marcel/Desktop/DSA2.1/P3/main.cpp -o CMakeFiles/ADS_P3_CLION.dir/main.cpp.s
 
 CMakeFiles/ADS_P3_CLION.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ADS_P3_CLION.dir/main.cpp.o.provides.build: CMakeFiles/ADS_P3_CLION.d
 
 CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o: CMakeFiles/ADS_P3_CLION.dir/flags.make
 CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o: ../MyAlgo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o -c /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o -c /home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp
 
 CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.cpp > CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp > CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.i
 
 CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.cpp -o CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp -o CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.s
 
 CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o.requires:
 
@@ -117,7 +117,7 @@ ADS_P3_CLION: CMakeFiles/ADS_P3_CLION.dir/main.cpp.o
 ADS_P3_CLION: CMakeFiles/ADS_P3_CLION.dir/MyAlgo.cpp.o
 ADS_P3_CLION: CMakeFiles/ADS_P3_CLION.dir/build.make
 ADS_P3_CLION: CMakeFiles/ADS_P3_CLION.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ADS_P3_CLION"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ADS_P3_CLION"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ADS_P3_CLION.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/ADS_P3_CLION.dir/clean:
 .PHONY : CMakeFiles/ADS_P3_CLION.dir/clean
 
 CMakeFiles/ADS_P3_CLION.dir/depend:
-	cd /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3 /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3 /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug /home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/cmake-build-debug/CMakeFiles/ADS_P3_CLION.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marcel/Desktop/DSA2.1/P3 /home/marcel/Desktop/DSA2.1/P3 /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug /home/marcel/Desktop/DSA2.1/P3/cmake-build-debug/CMakeFiles/ADS_P3_CLION.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ADS_P3_CLION.dir/depend
 

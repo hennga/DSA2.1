@@ -1,6 +1,6 @@
 
-#define USE_OMP_FOR_SORT
-
+#define USE_OMP
+//#define AUTO_RUN
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -20,10 +20,10 @@ enum SORT_TYPE_SELECTOR{
     ALGO_MATRIX_MUL_ROW = 5
 };
 
-//#define AUTO_RUN
+
 const unsigned int PROBLEMGROESSE_SORT = 1000;//ähm ja mind 1000 für gute zahlen
 const unsigned int LOOPS_SORT = 100;
- SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_SORT_HEAPSORT;
+ SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL;
 const std::string SAFE_FILE_DIR = "../MATLAB_STUFF/"; //make sure the folder exits
 
 
@@ -38,12 +38,12 @@ std::vector<double> data_pool_double;
 
 
 //gibt den aktuelle system timestamp zurück == OPENMP FIX
-long long current_timestamp() {
-    struct timeval te;
-    gettimeofday(&te, NULL); // get current time
-    long long milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; // caculate milliseconds
-    return milliseconds;
-}
+//long long current_timestamp() {
+ //   struct timeval te;
+ //   gettimeofday(&te, NULL); // get current time
+ //   long long milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; // caculate milliseconds
+ //   return milliseconds;
+//}
 void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file = nullptr, int _start = 1, int _end =0){
     std::cout << _text << " ";
     if(_file != nullptr){
@@ -65,14 +65,24 @@ void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file 
 int main(int argc, char** argv) {
 
 
+    //setzte fest wie viele cores omp benutzen kann bei mir 12@3.5Ghz
+#ifdef USE_OMP
 int procs = omp_get_max_threads();
 std::cout << "openmp enabled set threads to " << procs << std::endl;
 omp_set_num_threads(procs);
+#endif
+
 
 
 #ifdef AUTO_RUN
         for (int k = 0; k < SORT_TYPE_ENUM_SIZE; ++k) {
             selected_algorythm = (SORT_TYPE_SELECTOR) k;
+#endif
+
+            //Die DAtei soll anders heissen wenn open mp an ist
+            std::string use_open_map_name = "";
+#ifdef USE_OMP
+            use_open_map_name = "OPENMP";
 #endif
 
         //bestimme den namen des sortier algos wäre per define einfacher gewesen :D
@@ -106,10 +116,10 @@ omp_set_num_threads(procs);
         if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
             final_file_name =
                     SAFE_FILE_DIR+"MATRIX_DATA/" + algo_name + "_" + std::to_string((int) sqrt((double) PROBLEMGROESSE_SORT)) + "_" +
-                    std::to_string(LOOPS_SORT) + ".txt";
+                    std::to_string(LOOPS_SORT) + "_"+ use_open_map_name + ".txt";
         } else {
             final_file_name =   SAFE_FILE_DIR +"SORT_DATA/"+ algo_name + "_" + std::to_string(PROBLEMGROESSE_SORT) + "_" +
-                              std::to_string(LOOPS_SORT) + ".txt";
+                              std::to_string(LOOPS_SORT) + "_"+ use_open_map_name + ".txt";
         }
     std::cout << "DATA WILL BE WRITTEN TO:" << std::endl << final_file_name << std::endl;
         //OPEN FILE
@@ -131,7 +141,7 @@ omp_set_num_threads(procs);
     n_step = PROBLEMGROESSE_SORT; //=Problemgrösse
 
         //wir brauchen die anzahl der zahlen 2x da wir 2 matrizzen füllen wollen
-        n_end = n_start * (do_loops * n_step * 2);
+        n_end = n_start * (do_loops * n_step * 4);
         data_pool_double.clear();
         for (int j = 0; j < n_end + n_step + n_start; ++j) {
             data_pool_double.push_back(randomFrom(1.0f, 100.0f));
@@ -147,28 +157,27 @@ omp_set_num_threads(procs);
 
 
         //einen vektor für das sortierte ergebnis
-        std::vector<int> data_use_vector;
-        data_use_vector.clear();
+
         unsigned int loop_counter = 0;
 
-        //VEKTOREN FÜR MATRIX MUL
-        std::vector<double> matrix_mul_vector_a;
-        std::vector<double> matrix_mul_vector_b;
-        std::vector<double> matrix_mul_vector_result;
-        //SETUP OMP
-        //int num procs = omp get num procs();
-        //omp set num threads(num procs);
 
         //LOOP pragma für openmp
+#ifdef USE_OMP
         #pragma omp parallel for
-        for (int n = n_start; n < n_end; n += n_step) {
+#endif
+    for (int n = n_start; n < n_end; n += n_step) {
             loop_counter++;
-            std::cout << "loop_counter " << loop_counter << endl;
+           // std::cout << "loop_counter " << loop_counter << endl;
             std::cout << "n " << n << endl;
             //wenn wir ein loop limit gesetzt haben übersüringen wir den rest
             //break geht nicht bei verwendung von opemp dfeswegen continue xD
            if (loop_counter >= LOOPS_SORT) { continue; }
 
+            std::vector<double> matrix_mul_vector_a;
+            std::vector<double> matrix_mul_vector_b;
+            std::vector<double> matrix_mul_vector_result;
+            std::vector<int> data_use_vector;
+            data_use_vector.clear();
             //die daten müssen unterschiedlich geladen werden wenn es eine matrix ist
             //also bei der matrix m,ul müssen wir die zahlen in 2 vektoren splitten
             if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL || selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
@@ -176,54 +185,27 @@ omp_set_num_threads(procs);
                 matrix_mul_vector_b.clear();
                 matrix_mul_vector_result.clear();
                 int size_half = (double) (data_pool_double.size() / 2.0f);
-                for (int ij = 0; ij< n -1; ++ij) {
+                for (int ij = 0; ij< size_half; ++ij) {
                     matrix_mul_vector_a.push_back((double) data_pool_double.at(ij));
-                    matrix_mul_vector_b.push_back((double) data_pool_double.at(n+ij));
+                    matrix_mul_vector_b.push_back((double) data_pool_double.at(size_half+ij));
                     matrix_mul_vector_result.push_back(-1.0f);
                 }
-                std::cout << "data size mul a" << matrix_mul_vector_a.size() << std::endl;
-                std::cout << "data size mul b" << matrix_mul_vector_b.size() << std::endl;
+            //    std::cout << "data size mul a" << matrix_mul_vector_a.size() << std::endl;
+             //   std::cout << "data size mul b" << matrix_mul_vector_b.size() << std::endl;
             }else {
                 //LADE DATEN IN DEN SORTIER VECTOR
                 data_use_vector.clear();
                 for (int i = 0; i < n ; ++i) {
                     data_use_vector.push_back((int) data_pool_double.at(i));
                 }
-                std::cout << "data size " << data_use_vector.size() << std::endl;
+              //  std::cout << "data size " << data_use_vector.size() << std::endl;
             }
 
-/*
-
-
-            if (selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL ||
-                selected_algorythm == SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW) {
-                matrix_mul_vector_a.clear();
-                matrix_mul_vector_b.clear();
-                matrix_mul_vector_result.clear();
-                //wo ist die mitte des vectors
-                int size_half = (double) (data_pool_double.size() / 2.0f);
-                for (int i = 0; i < PROBLEMGROESSE_SORT; ++i) {
-                    //wir füllen in den vector a die erste hälfte der erzeugten zahlen
-                    //und in b die 2. obere hälfte
-                    matrix_mul_vector_a.push_back((double) data_pool_double.at(n + i));
-                    matrix_mul_vector_b.push_back((double) data_pool_double.at(n + i + size_half));
-                    matrix_mul_vector_result.push_back(-1.0f);
-                }
-            } else {
-                //lade daten zum sortieren
-                data_use_vector.clear();
-                for (int i = 0; i < n; ++i) {
-                    if (i + n > data_pool.size()) {
-                        std::cout << "e";
-                        break;
-                    }
-                    data_use_vector.push_back((int) data_pool_double.at(i));
-                }
-            }
-*/
 
             //SAVE TIME BEFORE RUNNING
-            const clock_t begin_time = clock();
+          //  const clock_t begin_time = clock();
+
+        dtime = omp_get_wtime();
             /**********************/
             // run algorithm here //
             /**********************/
@@ -255,9 +237,10 @@ omp_set_num_threads(procs);
 
 
             //CALC DELTA TIME AND PRINT THEM TO FILE
-            start = current_timestamp() - start;
-            double de = double(clock() - begin_time) / CLOCKS_PER_SEC;
-            file << n << "\t" << setprecision(20) << de << endl;
+           // start = current_timestamp() - start;
+            //double de = double(clock() - begin_time) / CLOCKS_PER_SEC;
+        dtime = omp_get_wtime() - dtime;
+            file << n << "\t" << setprecision(20) << dtime<< endl;
 
         }
         file.close();
