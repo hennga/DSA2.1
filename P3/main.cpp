@@ -8,7 +8,7 @@
 #include "MyAlgo.h"
 #include "random_gen.h"
 #include <sys/time.h>
-//#include <omp.h>
+#include <omp.h>
 
 const unsigned int SORT_TYPE_ENUM_SIZE = 6;
 enum SORT_TYPE_SELECTOR{
@@ -21,7 +21,7 @@ enum SORT_TYPE_SELECTOR{
 };
 
 //#define AUTO_RUN
-const unsigned int PROBLEMGROESSE_SORT = 10000;//ähm ja mind 1000 für gute zahlen
+const unsigned int PROBLEMGROESSE_SORT = 1000;//ähm ja mind 1000 für gute zahlen
 const unsigned int LOOPS_SORT = 100;
  SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_SORT_HEAPSORT;
 const std::string SAFE_FILE_DIR = "../MATLAB_STUFF/"; //make sure the folder exits
@@ -35,12 +35,6 @@ unsigned int do_loops = LOOPS_SORT;
 double dtime = 0.0; //für delta time
 std::vector<int> data_pool;
 std::vector<double> data_pool_double;
-
-
-
-
-
-
 
 
 //gibt den aktuelle system timestamp zurück == OPENMP FIX
@@ -71,20 +65,11 @@ void print_vecotr(std::string _text, std::vector<int>& _a, std::ofstream* _file 
 int main(int argc, char** argv) {
 
 
+int procs = omp_get_max_threads();
+std::cout << "openmp enabled set threads to " << procs << std::endl;
+omp_set_num_threads(procs);
 
 
-//openmp stuff
-//int procs = omp_get_max_threads();
-//std::cout << "openmp enabled set threads to " << procs << std::endl;
-//omp_set_num_threads(procs);
-
-
-
-
-
-
-    //ES WERDEN ALLE TYPEN AUTOMATISCH DURCHGEGANGEN
-    //SO MUSS ICH NICHT IMMER ETWAS ÄNDERN :D
 #ifdef AUTO_RUN
         for (int k = 0; k < SORT_TYPE_ENUM_SIZE; ++k) {
             selected_algorythm = (SORT_TYPE_SELECTOR) k;
@@ -137,8 +122,7 @@ int main(int argc, char** argv) {
 
 
 
-        //ERSTELLE ZUERST DIE ZUFALLSDATEN SODASS SIE FÜR ALLLE DURCHGÄNGE GLEICH SIND
-        //BEIM ERSTEN DRUCHGANG
+        
 #ifdef AUTO_RUN
         if(k == 0) {
 #endif

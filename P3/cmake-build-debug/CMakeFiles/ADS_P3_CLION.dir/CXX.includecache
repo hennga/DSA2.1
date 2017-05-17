@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/marcel/Desktop/DSA2.1/P3/MyAlgo.cpp
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.cpp
 MyAlgo.h
-/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.h
 
-/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.h
 vector
 -
 utility
@@ -20,7 +20,7 @@ algorithm
 math.h
 -
 
-/home/marcel/Desktop/DSA2.1/P3/main.cpp
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/main.cpp
 iostream
 -
 fstream
@@ -30,13 +30,15 @@ iomanip
 vector
 -
 MyAlgo.h
-/home/marcel/Desktop/DSA2.1/P3/MyAlgo.h
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/MyAlgo.h
 random_gen.h
-/home/marcel/Desktop/DSA2.1/P3/random_gen.h
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/random_gen.h
 sys/time.h
 -
+omp.h
+-
 
-/home/marcel/Desktop/DSA2.1/P3/random_gen.h
+/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P3/random_gen.h
 random
 -
 
