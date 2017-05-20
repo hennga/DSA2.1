@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.cpp
+P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+P4_graphnode.h
+-
+deque
+-
+map
+-
+queue
+-
+iostream
+-
+
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.cpp
+P4_graphnode.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
+
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
+vector
+-
+list
+-
+
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_main.cpp
+iostream
+-
+P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+
