@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/marcelochsendorf/Desktop/P4/P4_graph.cpp
+P4_graph.h
+/Users/marcelochsendorf/Desktop/P4/P4_graph.h
+
+/Users/marcelochsendorf/Desktop/P4/P4_graph.h
+P4_graphnode.h
+/Users/marcelochsendorf/Desktop/P4/P4_graphnode.h
+deque
+-
+map
+-
+queue
+-
+sstream
+-
+iostream
+-
+fstream
+-
+
+/Users/marcelochsendorf/Desktop/P4/P4_graphnode.cpp
+P4_graphnode.h
+/Users/marcelochsendorf/Desktop/P4/P4_graphnode.h
+
+/Users/marcelochsendorf/Desktop/P4/P4_graphnode.h
+vector
+-
+list
+-
+
+/Users/marcelochsendorf/Desktop/P4/main.cpp
+iostream
+-
+P4_graph.h
+/Users/marcelochsendorf/Desktop/P4/P4_graph.h
+
