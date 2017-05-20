@@ -9,7 +9,7 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
-
+#include <stack>
 class Graph
 {
 public:
@@ -23,16 +23,17 @@ public:
     bool print();
 
     //Implement this:
-    bool depthSearchRek(int startKey);
-    bool breadthSearchIter(int startKey);
+
+
     //Or this
     bool depthSearchIter(int startKey);
-    bool breadthSearchRek(int startKey);
+    bool breadthSearchRekStart(int startKey);
+    bool breadthSearchRek(GraphNode& n);
 
     //This must be done by you
     double prim(int startKey);
     double kruskal();
-
+public:
     //They might be helpful
     int _anzKnoten;
     bool _ger, _gew;

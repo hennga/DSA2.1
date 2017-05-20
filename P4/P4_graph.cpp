@@ -127,9 +127,7 @@ bool Graph::print() {
             }
         }
         std::cout << std::endl;
-
     }
-
    return true;
 }
 
@@ -137,36 +135,59 @@ bool Graph::print() {
 
 
 
-//Implement here the depth-/breadfirstthsearch and Prim & Kruskal
-
-//Implement this:
-bool Graph::depthSearchRek(int startKey)
-{
-    return true;
-}
-
-bool breadthSearchIter(int startKey)
-{
-    return true;
-}
 //Or this
-bool depthSearchIter(int startKey)
+bool Graph::depthSearchIter(int startKey)
 {
+    std::stack<GraphNode*> stack_nodes;
+    for (int i = 0; i < _anzKnoten; ++i) {
+        GraphNode* tmp = _nodes.at(i);
+        tmp->_visited = false;
+        stack_nodes.push(tmp);
+    }
 
+  while(stack_nodes.size()){
+        GraphNode* n = stack_nodes.top();
+        n->_visited = true;
+        if(n->_key == startKey){return true;}
+
+      for (int i = 0; i < n->_edges.size(); ++i) {
+
+            if(!n->_edges.at(i).node->_visited){
+                //TODO
+                //Qu <- k
+            }
+      }
+
+      for (int j = 0; j <_anzKnoten ; ++j) {
+          if(!_nodes.at(j)->_visited){
+              return  false;
+          }
+      }
+
+  }
 
     return true;
 }
-bool breadthSearchRek(int startKey)
+
+
+
+bool Graph::breadthSearchRekStart(int startKey)
 {
     return true;
 }
+
+bool Graph::breadthSearchRek(GraphNode& n){
+    n._visited = true;
+    return true;
+}
+
 
 //This must be done by you
-double prim(int startKey){
+double Graph::prim(int startKey){
     return 5.;
 }
 
-double kruskal()
+double Graph::kruskal()
 {
     return 5.;
 }

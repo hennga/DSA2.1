@@ -10,7 +10,7 @@ const char* file_paths[3] = {"../graphs/graph1.txt", "../graphs/graph2.txt","../
 
 void displayMenu(bool is_graph_init)
 {
-    std::cout << "Working on Grphs. Please choose:" << std::endl;
+    std::cout << "Please choose:" << std::endl;
     if(!is_graph_init) {
         std::cout << "1) Graph einlesen" << std::endl;
     }else {
@@ -67,7 +67,7 @@ int main() {
             }
         }
 
-        //Depthsearch
+        //Depthsearch1
         if(menuwahl==2)
         {
 
@@ -75,10 +75,13 @@ int main() {
             std::cin >> key;
 
             //This way:
-            //myGraph.depthSearchIter(key);
+           if(myGraph->depthSearchIter(key)){
+               std::cout << "diggah key found" << std::endl;
 
-            //Or this:
-            //myGraph.depthSearchRek(key);
+           }else{
+               std::cout << "altah bist du schlecht" << std::endl;
+           }
+
         }
 
         //Breadthsearch
@@ -86,12 +89,14 @@ int main() {
 
             std::cout << "Choose a startkey: " << std::endl;
             std::cin >> key;
-
-            //This way:
-            //myGraph.breadthSearchIter(key);
-
             //Or this:
-            //myGraph.breadthSearchRek(key);
+
+            if( myGraph->breadthSearchRekStart(key)){
+                std::cout << "diggah key found" << std::endl;
+
+            }else{
+                std::cout << "altah bist du schlecht" << std::endl;
+            }
         }
 
         //Prim
