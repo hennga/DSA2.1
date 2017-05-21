@@ -26,9 +26,9 @@ public:
 
 
     //Or this
-    bool depthSearchIter(int startKey);
-    bool breadthSearchRekStart(int startKey);
-    bool breadthSearchRek(GraphNode& n);
+    bool depthSearchRecStart(int startKey);
+    bool depthSearchRec(GraphNode* x, int key);
+    bool breadthSearchIter(int startKey);
 
     //This must be done by you
     double prim(int startKey);

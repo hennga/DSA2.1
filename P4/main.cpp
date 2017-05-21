@@ -75,7 +75,7 @@ int main() {
             std::cin >> key;
 
             //This way:
-           if(myGraph->depthSearchIter(key)){
+           if(myGraph->depthSearchRecStart(key)){
                std::cout << "diggah key found" << std::endl;
 
            }else{
@@ -91,7 +91,7 @@ int main() {
             std::cin >> key;
             //Or this:
 
-            if( myGraph->breadthSearchRekStart(key)){
+            if( myGraph->breadthSearchIter(key)){
                 std::cout << "diggah key found" << std::endl;
 
             }else{

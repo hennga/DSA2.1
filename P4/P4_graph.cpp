@@ -136,50 +136,35 @@ bool Graph::print() {
 
 
 //Or this
-bool Graph::depthSearchIter(int startKey)
+bool Graph::depthSearchRecStart(int startKey)
 {
-    std::stack<GraphNode*> stack_nodes;
-    for (int i = 0; i < _anzKnoten; ++i) {
-        GraphNode* tmp = _nodes.at(i);
-        tmp->_visited = false;
-        stack_nodes.push(tmp);
+    //all auf unbesucht sitzen
+    for (int i = 0; i < _nodes.size(); ++i) {
+        _nodes.at(i)->_visited = false;
     }
+    //START SEARCH AND RETURN BOOLD
+    return   dfs(_nodes.at(0), startKey); //suche mit dem root node beginnen
+}
 
-  while(stack_nodes.size()){
-        GraphNode* n = stack_nodes.top();
-        n->_visited = true;
-        if(n->_key == startKey){return true;}
-
-      for (int i = 0; i < n->_edges.size(); ++i) {
-
-            if(!n->_edges.at(i).node->_visited){
-                //TODO
-                //Qu <- k
-            }
-      }
-
-      for (int j = 0; j <_anzKnoten ; ++j) {
-          if(!_nodes.at(j)->_visited){
-              return  false;
-          }
-      }
-
-  }
-
-    return true;
+//DFS REK FUNC
+bool Graph::depthSearchRec(GraphNode* x, int key){
+x->_visited = true;
+    if(x->_key == key){return true;}
+    for (int i = 0; i < x->_edges.size(); ++i) {
+        if(!x->_edges.at(i).node->_visited){
+            return Graph::dfs(x->_edges.at(i).node,key);
+        }
+    }
+    return false;
 }
 
 
-
-bool Graph::breadthSearchRekStart(int startKey)
+bool Graph::breadthSearchIter(int startKey)
 {
     return true;
 }
 
-bool Graph::breadthSearchRek(GraphNode& n){
-    n._visited = true;
-    return true;
-}
+
 
 
 //This must be done by you
