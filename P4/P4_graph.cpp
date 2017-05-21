@@ -134,8 +134,9 @@ bool Graph::print() {
 
 
 
-
+//TODO DAS IST EINE BREITENSUCHE ODER ?
 //Or this
+//OR DEINE MAM
 bool Graph::depthSearchRecStart(int startKey)
 {
     //all auf unbesucht sitzen
@@ -143,7 +144,7 @@ bool Graph::depthSearchRecStart(int startKey)
         _nodes.at(i)->_visited = false;
     }
     //START SEARCH AND RETURN BOOLD
-    return   dfs(_nodes.at(0), startKey); //suche mit dem root node beginnen
+    return   depthSearchRec(_nodes.at(0), startKey); //suche mit dem root node beginnen
 }
 
 //DFS REK FUNC
@@ -152,7 +153,7 @@ x->_visited = true;
     if(x->_key == key){return true;}
     for (int i = 0; i < x->_edges.size(); ++i) {
         if(!x->_edges.at(i).node->_visited){
-            return Graph::dfs(x->_edges.at(i).node,key);
+            return Graph::depthSearchRec(x->_edges.at(i).node,key);
         }
     }
     return false;
@@ -161,7 +162,38 @@ x->_visited = true;
 
 bool Graph::breadthSearchIter(int startKey)
 {
-    return true;
+    GraphNode * rootNode = _nodes.at(0);
+    std::queue qu;
+    qu.push(rootNode); //wir fangen mit dem root node an
+
+
+
+    /*
+
+
+while ( !queue.isEmpty() ) {
+currentNode = getNextNode(queue);
+// mach was mit currentNode
+}
+
+Wobei getNextNode in etwa so definiert wäre:
+
+Node getNextNode( Queue q ) {
+Node node = null;
+
+if ( !q.isEmpty() ) {
+node = q.pop(); // liest und entfernt erstes Element der Queue
+Iterator it = node.getChildNodes();
+while ( it.hasNext() )
+q.push( it.next() ); // hängt it.next() an die Queue an
+}
+
+return node;
+}
+     */
+
+
+    return false;
 }
 
 
