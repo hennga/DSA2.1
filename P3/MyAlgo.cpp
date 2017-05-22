@@ -1,8 +1,6 @@
-//
-// Created by marcel on 5/8/17.
-//
 
 #include "MyAlgo.h"
+#include <omp.h>
 using namespace std;
 
 namespace MyAlgorithms{
@@ -96,40 +94,69 @@ namespace MyAlgorithms{
 
 
     //Quicksort
-    int partition(vector<int>& A, int p,int q) {
-        int x= A[p];
-        int i=p;
+    int partition(vector<int>& A, int p,int r) {
+        int x= A[r];
+        int i=p-1;
         int j;
-        for(j=p+1; j<q; j++)
+        for(j=p; j<r-1; j++)
         {
             if(A[j]<=x)
             {
                 i=i+1;
                 swap(A[i],A[j]);
             }
+		   swap(A[i+1],A[r]);
         }
-        swap(A[i],A[p]);
-        return i;
+        
+        return i+1;
     }
+	
     void QuickSort(vector<int> &arr, int left, int right) {
+    
+	   /*int r;
+	   if(left<right)
+	   {
+		  r=partition(arr, left,right);
+		  QuickSort(arr,left,r);
+		  QuickSort(arr,r+1,right);
+	   }
+	} */
+	
+	
         /****************************/
         // implement quicksort here //
         /****************************/
-        int r;
-        if(left<right)
-        {
-            r=partition(arr, left,right);
-            QuickSort(arr,left,r);
-            QuickSort(arr,r+1,right);
-        }
-    }
-    void QuickSortInit(vector<int> &a, int n){
-
-    }
-
-
-
-    //SHELLSORT HIBBART
+      
+     int center = (left-right)/2;
+       int l = left;
+	   int r = right;
+	   if(arr[center]<arr[1]) swap(arr[center],arr[l]);
+       if(arr[r]<arr[l]) swap(arr[r],arr[center]);
+       if(arr[r]<arr[center]) swap(arr[r],arr[center]);
+	   int pivot = arr[center];
+    
+	   while(l<=r){
+		  
+		  while(arr[l]<pivot){
+			 l++;
+		  }
+		  
+		  while(arr[r]>pivot){
+			 r--;
+		  }
+		  
+		  if(l<=r){
+			 swap(arr[r],arr[l]);
+		  r--;
+		  l++;
+		  }
+		  
+	   if(l<r) QuickSort(arr,left,r);
+		if(l<r) QuickSort(arr,l,right);
+        }}
+    
+	
+	
     void ShellSort(vector<SORT_D_TYPE> &a, int n){
         int i, j,k, increment, temp;
          int swp=0,comp=0;
@@ -163,7 +190,7 @@ namespace MyAlgorithms{
     }
 
 
-    //MATRIX SHIT
+    
     void MatrixMul_ColMajor(vector<double> &A, vector<double> &B, vector<double> &C, int n) {
         //lda, ldb, ldc are leading dimensions of matrices A,B and C
         int lda = n;
@@ -171,6 +198,9 @@ namespace MyAlgorithms{
         int ldc = n;
         double s = 0.0;
 
+      int num_procs = omp_get_num_procs();
+	  omp_set_num_threads(num_procs);
+      #pragma omp parallel for
         for (int i=0; i<n ; i++) {
             for (int j=0; j<n ; j++) {
                 s = 0.0;
@@ -185,10 +215,11 @@ namespace MyAlgorithms{
                 C[r2]=s;
             }
         }
-    }
+      
+	}
 
     void MatrixMul_RowMajor(vector<double> &A, vector<double> &B, vector<double> &C, int n) {
-        //lda, ldb, ldc are leading dimensions of matrices A,B and C
+        
         int lda = n;
         int ldb = n;
         int ldc = n;
@@ -196,18 +227,23 @@ namespace MyAlgorithms{
         /***************************************/
         // implement row major calculation here//
         /***************************************/
+	   
+	   
+	   //int num_procs = omp_get_num_procs();
+	   //omp_set_num_threads(num_procs);
+	   //#pragma omp parallel for
         for (int i=0; i<n ; i++) {
             for (int j=0; j<n ; j++) {
                 s = 0.0;
                 for (int k=0; k<n; k++) {
-                    int r =i*lda +k; //öhm joar
-                    int r1 = k*ldb+j; //jop bestimmt
+                    int r =i*lda +k;
+                    int r1 = k*ldb+j;
                     s = s + A[r] * B[r1];
                 }
-                int r2 =i*ldc + j; //müsste ok sein
+                int r2 =i*ldc + j;
                 C[r2]=s;
             }
         }
-    }
+    }}
 
-} // end namespace
+ // end namespace

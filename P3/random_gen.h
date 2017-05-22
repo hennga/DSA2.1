@@ -1,6 +1,3 @@
-//
-// Created by marcel on 5/8/17.
-//
 
 #ifndef ADS_P3_CLION_RANDOM_GEN_H
 #define ADS_P3_CLION_RANDOM_GEN_H
@@ -24,6 +21,5 @@ T randomFrom(const T min, const T max)
 }
 
 
-
-
 #endif //ADS_P3_CLION_RANDOM_GEN_H
+

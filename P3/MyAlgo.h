@@ -33,8 +33,6 @@ namespace MyAlgorithms {
                             int n);
 
 
-
-
     //SWAPT 2 ELEMENTE
     template <typename T> void swap(T& t1, T& t2) {
         T temp = std::move(t1);
