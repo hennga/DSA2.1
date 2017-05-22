@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.cpp
+/home/marcel/Desktop/DSA2.1/P4/P4_graph.cpp
 P4_graph.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graph.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graph.h
 P4_graphnode.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graphnode.h
 deque
 -
 map
@@ -28,19 +28,19 @@ fstream
 stack
 -
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.cpp
+/home/marcel/Desktop/DSA2.1/P4/P4_graphnode.cpp
 P4_graphnode.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graphnode.h
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graphnode.h
 vector
 -
 list
 -
 
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/main.cpp
+/home/marcel/Desktop/DSA2.1/P4/main.cpp
 iostream
 -
 P4_graph.h
-/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
+/home/marcel/Desktop/DSA2.1/P4/P4_graph.h
 

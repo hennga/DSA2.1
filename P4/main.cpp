@@ -103,12 +103,12 @@ int main() {
         if(menuwahl==4){
             std::cout << "Choose a startkey: " << std::endl;
             std::cin >> key;
-            //myGraph.prim(key);
+            myGraph->prim(key);
         }
 
         //Kruskal
         if(menuwahl==5){
-            //myGraph.kruskal();
+            myGraph->kruskal();
         }
 
         //Print function

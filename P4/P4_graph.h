@@ -39,6 +39,17 @@ public:
     bool _ger, _gew;
     bool is_init;
     std::vector<GraphNode*> _nodes;
+
+
+
+    //für den krusal brauche wir noch en struct was das sortieren einfacher macht
+    struct KRUSAL_EDGE{
+        int from;
+        int to;
+        double distance;
+    };
+
+    bool is_edge_in_list();
 };
 
 #endif // GRAPH_H

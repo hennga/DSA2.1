@@ -163,8 +163,8 @@ x->_visited = true;
 bool Graph::breadthSearchIter(int startKey)
 {
     GraphNode * rootNode = _nodes.at(0);
-    std::queue qu;
-    qu.push(rootNode); //wir fangen mit dem root node an
+//    std::queue qu;
+  //  qu.push(rootNode); //wir fangen mit dem root node an
 
 
 
@@ -204,7 +204,44 @@ double Graph::prim(int startKey){
     return 5.;
 }
 
+
+
+
+bool Graph::is_edge_in_list(){
+
+    return true;
+}
+
 double Graph::kruskal()
 {
-    return 5.;
+std::cout << "START KRUSKAL" <<std::endl;
+    double kruskal_weight = 0.0f;
+
+//erstelle liste mit kanten
+    std::vector<KRUSAL_EDGE> edges_to_sort;
+    edges_to_sort.clear();
+    //now insert all edges to the list1
+    for (int i = 0; i < _nodes.size(); ++i) {
+        for (int k = 0; k < _nodes.at(i)->_edges.size(); ++k) {
+            KRUSAL_EDGE tmp_edge;
+            tmp_edge.distance =  _nodes.at(i)->_edges.at(k).value;
+            tmp_edge.from = _nodes.at(i)->_key;
+            tmp_edge.to = _nodes.at(i)->_edges.at(k).node->_key;
+            edges_to_sort.push_back(tmp_edge);
+        }
+    }
+    //print sorted edge lsit
+    for (int j = 0; j < edges_to_sort.size(); ++j) {
+        std::cout << "FROM:" << edges_to_sort.at(j).from << " --" << edges_to_sort.at(j).distance << "--> TO:" << edges_to_sort.at(j).to << std::endl;
+    }
+
+
+
+
+
+
+
+
+
+    return kruskal_weight;
 }
