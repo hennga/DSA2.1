@@ -230,12 +230,47 @@ std::cout << "START KRUSKAL" <<std::endl;
             edges_to_sort.push_back(tmp_edge);
         }
     }
+    //NOW SORT LIST BY WEIGHT
+    //IMPLEMENATION OF A SIMPLE BUBBLESORT
+    bool all_wapped = true;
+    int it1 = 0;
+    KRUSAL_EDGE tmp_e;
+    while(all_wapped){
+        all_wapped = false;
+        it1++;
+        for (int i = 0; i < edges_to_sort.size()-1; ++i) {
+            if(edges_to_sort.at(i).distance > edges_to_sort.at(i+1).distance){
+                tmp_e = edges_to_sort.at(i);
+                edges_to_sort.at(i) = edges_to_sort.at(i+1);
+                edges_to_sort.at(i+1) = tmp_e;
+                all_wapped = true;
+            }
+        }
+    }
     //print sorted edge lsit
     for (int j = 0; j < edges_to_sort.size(); ++j) {
         std::cout << "FROM:" << edges_to_sort.at(j).from << " --" << edges_to_sort.at(j).distance << "--> TO:" << edges_to_sort.at(j).to << std::endl;
     }
 
+    while(edges_to_sort.size() > 0){
+        std::cout << edges_to_sort.size() << std::endl;
+        KRUSAL_EDGE kleinste_kante = edges_to_sort.back();
+        //TODO REMOVE AUS ege_to_sort bis auf das erste element
+        std::vector<KRUSAL_EDGE> tmp_del;
+    if(edges_to_sort.size() > 1) {
+        for (int l = 1; l < edges_to_sort.size(); ++l) {
+            tmp_del.push_back((KRUSAL_EDGE) edges_to_sort.at(l));
+        }
+        edges_to_sort = tmp_del;
+    }else{
+        std::cout << "WARNING REMOVE FAILED TODO IMPLEMENT" << std::endl;
+    }
 
+        //kreis ?
+        if(true){
+
+        }
+    }
 
 
 
