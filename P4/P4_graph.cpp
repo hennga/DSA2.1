@@ -216,7 +216,7 @@ double Graph::kruskal()
 {
 std::cout << "START KRUSKAL" <<std::endl;
     double kruskal_weight = 0.0f;
-
+    std::vector<KRUSAL_EDGE> final_path;
 //erstelle liste mit kanten
     std::vector<KRUSAL_EDGE> edges_to_sort;
     edges_to_sort.clear();
@@ -253,7 +253,7 @@ std::cout << "START KRUSKAL" <<std::endl;
     }
 
     while(edges_to_sort.size() > 0){
-        std::cout << edges_to_sort.size() << std::endl;
+
         KRUSAL_EDGE kleinste_kante = edges_to_sort.back();
         //TODO REMOVE AUS ege_to_sort bis auf das erste element
         std::vector<KRUSAL_EDGE> tmp_del;
@@ -267,8 +267,10 @@ std::cout << "START KRUSKAL" <<std::endl;
     }
 
         //kreis ?
-        if(true){
 
+        if(true){
+            //FÜGE WEG ZUM FINAL PFAD HINZU
+        final_path.push_back(kleinste_kante);
         }
     }
 
@@ -276,7 +278,10 @@ std::cout << "START KRUSKAL" <<std::endl;
 
 
 
-
-
+    //berechne weg auf dem pfad
+    for (int m = 0; m < final_path.size(); ++m) {
+        kruskal_weight += final_path.at(m).distance;
+    }
+    //FERTIG
     return kruskal_weight;
 }

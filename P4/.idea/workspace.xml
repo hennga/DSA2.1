@@ -82,8 +82,8 @@
       <file leaf-file-name="P4_graph.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/P4_graph.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="269" column="15" lean-forward="false" selection-start-line="269" selection-start-column="15" selection-end-line="269" selection-end-column="15" />
+            <state relative-caret-position="504">
+              <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
               <folding>
                 <element signature="e#244#528#0" expanded="false" />
                 <element signature="e#530#747#0" expanded="false" />
@@ -435,12 +435,12 @@
       <updated>1495307987815</updated>
       <workItem from="1495307991327" duration="4787000" />
       <workItem from="1495313622387" duration="9344000" />
-      <workItem from="1495489428167" duration="3503000" />
+      <workItem from="1495489428167" duration="4362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17634000" />
+    <option name="totallyTimeSpent" value="18493000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/P4_graph.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="269" column="15" lean-forward="false" selection-start-line="269" selection-start-column="15" selection-end-line="269" selection-end-column="15" />
+        <state relative-caret-position="504">
+          <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
           <folding>
             <element signature="e#244#528#0" expanded="false" />
             <element signature="e#530#747#0" expanded="false" />
