@@ -5,6 +5,10 @@
 #include <fstream>
 #include <iomanip>
 #include <vector>
+
+#define USE_OMP_MAT_ROW
+#define USE_OMP_MAT_COL
+
 #include "MyAlgo.h"
 #include "random_gen.h"
 #include <omp.h>
@@ -21,14 +25,14 @@ enum SORT_TYPE_SELECTOR{
 
 
 
- SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL;
+ SORT_TYPE_SELECTOR selected_algorythm = SORT_TYPE_SELECTOR::ALGO_SORT_QUICKSORT;
 const std::string SAFE_FILE_DIR = "../MATLAB_STUFF/";
 
 
 
 int n_start = 2;
 int n_step = 1;
-unsigned int n_end = 800;
+unsigned int n_end = 10000;
 double dtime = 0.0; //für delta time
 std::vector<int> data_pool;
 std::vector<double> data_pool_double;
@@ -42,28 +46,28 @@ int main(int argc, char** argv) {
    omp_set_num_threads(procs);
 #endif
    
-   std::string algo_name = "unknown";
+   std::string algo_name = "";
    switch (selected_algorythm) {
 	  case SORT_TYPE_SELECTOR::ALGO_SORT_HEAPSORT:
-		 algo_name = "heapsort";
+		 algo_name += "heapsort";
 		 break;
 	  case SORT_TYPE_SELECTOR::ALGO_SORT_MERGESORT:
-		 algo_name = "mergesort";
+		 algo_name += "mergesort";
 		 break;
 	  case SORT_TYPE_SELECTOR::ALGO_SORT_QUICKSORT:
-		 algo_name = "quicksort";
+		 algo_name += "quicksort";
 		 break;
 	  case SORT_TYPE_SELECTOR::ALGO_SORT_SHELLSORT:
-		 algo_name = "shellsort";
+		 algo_name += "shellsort";
 		 break;
 	  case SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_COL:
-		 algo_name = "matrix_mul_col";
+		 algo_name += "matrix_mul_col";
 		 break;
 	  case SORT_TYPE_SELECTOR::ALGO_MATRIX_MUL_ROW:
-		 algo_name = "matrix_mul_row";
+		 algo_name += "matrix_mul_row";
 		 break;
 	  default:
-		 algo_name = "unknown";
+		 algo_name += "unknown";
 		 break;
    }
    

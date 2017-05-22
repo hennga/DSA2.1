@@ -113,20 +113,20 @@ namespace MyAlgorithms{
 	
     void QuickSort(vector<int> &arr, int left, int right) {
     
-	   /*int r;
+	   int r;
 	   if(left<right)
 	   {
 		  r=partition(arr, left,right);
 		  QuickSort(arr,left,r);
 		  QuickSort(arr,r+1,right);
 	   }
-	} */
+//	}
 	
 	
         /****************************/
         // implement quicksort here //
         /****************************/
-      
+      /*
      int center = (left-right)/2;
        int l = left;
 	   int r = right;
@@ -153,7 +153,9 @@ namespace MyAlgorithms{
 		  
 	   if(l<r) QuickSort(arr,left,r);
 		if(l<r) QuickSort(arr,l,right);
-        }}
+        }
+        */
+    }
     
 	
 	
@@ -197,10 +199,12 @@ namespace MyAlgorithms{
         int ldb = n;
         int ldc = n;
         double s = 0.0;
-
+//#define USE_OMP_MAT_COL
+#ifdef USE_OMP_MAT_COL
       int num_procs = omp_get_num_procs();
 	  omp_set_num_threads(num_procs);
       #pragma omp parallel for
+#endif
         for (int i=0; i<n ; i++) {
             for (int j=0; j<n ; j++) {
                 s = 0.0;
@@ -227,11 +231,12 @@ namespace MyAlgorithms{
         /***************************************/
         // implement row major calculation here//
         /***************************************/
-	   
-	   
-	   //int num_procs = omp_get_num_procs();
-	   //omp_set_num_threads(num_procs);
-	   //#pragma omp parallel for
+//#define USE_OMP_MAT_ROW
+#ifdef USE_OMP_MAT_ROW
+	   int num_procs = omp_get_num_procs();
+	   omp_set_num_threads(num_procs);
+	   #pragma omp parallel for
+#endif
         for (int i=0; i<n ; i++) {
             for (int j=0; j<n ; j++) {
                 s = 0.0;
