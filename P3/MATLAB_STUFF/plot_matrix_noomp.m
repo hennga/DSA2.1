@@ -1,12 +1,12 @@
 clear;
 clc; 
 close all;
-fid=fopen('MATRIX_DATA/matrix_mul_col.txt');
+fid=fopen('MATRIX_DATA/matrix_mul_col_NOMP.txt');
 data=textscan(fid,'%d %f');
 fclose ( fid );
 x=data{1};
 quicksort_y=data{2};
-fid=fopen('MATRIX_DATA/matrix_mul_row.txt');
+fid=fopen('MATRIX_DATA/matrix_mul_row_NOMP.txt');
 data=textscan(fid,'%d %f')
 fclose ( fid );
 mergesort_y=data{2};
