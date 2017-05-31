@@ -33,7 +33,8 @@ public:
     GraphNode(int key);
     bool hasNeighbor(int neighborKey);
     edge getEdgeByNeigborkey(int key);
-
+	bool operator<(const GraphNode& comp);
+	
     int _key;
     std::vector<edge> _edges;
     bool _visited;

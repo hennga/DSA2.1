@@ -1,4 +1,6 @@
 #include "P4_graph.h"
+# include <queue>
+#include <set>
 
 Graph::Graph()
 {
@@ -134,9 +136,7 @@ bool Graph::print() {
 
 
 
-//TODO DAS IST EINE BREITENSUCHE ODER ?
-//Or this
-//OR DEINE MAM
+
 bool Graph::depthSearchRecStart(int startKey)
 {
     //all auf unbesucht sitzen
@@ -162,37 +162,40 @@ x->_visited = true;
 
 bool Graph::breadthSearchIter(int startKey)
 {
-    GraphNode * rootNode = _nodes.at(0);
-//    std::queue qu;
-  //  qu.push(rootNode); //wir fangen mit dem root node an
-
-
-
-    /*
-
-
-while ( !queue.isEmpty() ) {
-currentNode = getNextNode(queue);
-// mach was mit currentNode
-}
-
-Wobei getNextNode in etwa so definiert wäre:
-
-Node getNextNode( Queue q ) {
-Node node = null;
-
-if ( !q.isEmpty() ) {
-node = q.pop(); // liest und entfernt erstes Element der Queue
-Iterator it = node.getChildNodes();
-while ( it.hasNext() )
-q.push( it.next() ); // hängt it.next() an die Queue an
-}
-
-return node;
-}
-     */
-
-
+   for (int i = 0; i < _nodes.size(); ++i) {
+	  _nodes.at(i)->_visited = false;
+   }
+   GraphNode * rootNode = _nodes.at(0);
+   
+   std::queue<GraphNode*> qu;
+   qu.push(rootNode);
+   rootNode->_visited = true;
+   
+   while(!qu.empty()){
+	  
+	  GraphNode* tmpNode = qu.front();
+	  tmpNode->_visited=true;
+	  
+	  if(tmpNode->_key = startKey) {
+		 return true;
+	  }
+		 
+	  for( auto &ed : tmpNode->_edges){
+		 
+		 if (ed.node->_visited == false ){
+			qu.push(ed.node);
+		 }
+	  }
+	  qu.pop();
+   }
+   
+   for (int i = 0; i < _nodes.size(); ++i) {
+	  
+	  if(!_nodes.at(i)->_visited){
+		 return false;
+	  }
+   }
+   
     return false;
 }
 
@@ -201,8 +204,54 @@ return node;
 
 //This must be done by you
 double Graph::prim(int startKey){
-    return 5.;
+   
+   double AufwandWeight =0.000;
+   
+   for (int i = 0; i < _nodes.size(); ++i) {
+   
+	  _nodes.at(i)->_key = 99999;
+	  _nodes.at(i)->_prev = nullptr;
+   }
+   
+   _nodes.at(0)->_key = startKey;   // Einfach dem Knoten an 0 des graphen den Keywert 0 zugewiesen, damit wird dieser Knoten Startpunkt
+   
+ //  std::priority_queue<GraphNode> pQ;
+   
+   std::set<GraphNode> setOfGraphNodes;
+   
+   
+   
+   for (int i = 0; i < _nodes.size(); ++i) {
+	  
+	 setOfGraphNodes.insert(*_nodes.at(i));
+	 //pQ.push(*_nodes.at(i));
+   }
+   
+   while (!setOfGraphNodes.empty()) {
+   
+	  std::set<GraphNode>::iterator minKeyNode = setOfGraphNodes.begin();
+   
+	  for (auto &ed : minKeyNode->_edges) {
+	  
+		 std::set<GraphNode>::iterator FoundNode = setOfGraphNodes.find(GraphNode(ed.node->_key));
+		 bool gefunden = FoundNode != setOfGraphNodes.end();
+	  
+	  
+		 if (gefunden && ed.value < ed.node->_key) {
+		 
+			//ed.node->_prev = minKeyNode;
+			ed.node->_key = ed.value;
+		 }
+	  
+	  }
+   
+	  setOfGraphNodes.erase(minKeyNode);
+   
+   }
+   
+   return 5.;
 }
+
 
 
 
@@ -273,11 +322,7 @@ std::cout << "START KRUSKAL" <<std::endl;
         final_path.push_back(kleinste_kante);
         }
     }
-
-
-
-
-
+   
     //berechne weg auf dem pfad
     for (int m = 0; m < final_path.size(); ++m) {
         kruskal_weight += final_path.at(m).distance;
