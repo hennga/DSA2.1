@@ -10,6 +10,9 @@
 #include <iostream>
 #include <fstream>
 #include <stack>
+
+
+
 class Graph
 {
 public:
@@ -48,6 +51,12 @@ public:
         int to;
         double distance;
     };
+	
+	struct Disjoint_set {
+	
+	
+	
+	};
 
     bool is_edge_in_list();
 };

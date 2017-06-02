@@ -33,10 +33,11 @@ GraphNode::edge GraphNode::getEdgeByNeigborkey(int key)
     return GraphNode::edge(nullptr, 0.0);
 }
 
-bool GraphNode::operator<(const GraphNode &comp) {
+bool GraphNode::operator<(  const GraphNode & comp) const {
    
-   return _key> comp._key;
+   return this->_key< comp._key;
    
 }
+
 
 

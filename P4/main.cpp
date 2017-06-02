@@ -71,15 +71,15 @@ int main() {
         if(menuwahl==2)
         {
 
-            std::cout << "Choose a startkey: " << std::endl;
+            std::cout << "Choose a startkey to search for: " << std::endl;
             std::cin >> key;
 
             //This way:
            if(myGraph->depthSearchRecStart(key)){
-               std::cout << "diggah key found" << std::endl;
+               std::cout << "key found" << std::endl;
 
            }else{
-               std::cout << "altah bist du schlecht" << std::endl;
+               std::cout << " not found" << std::endl;
            }
 
         }
@@ -92,10 +92,15 @@ int main() {
             //Or this:
 
             if( myGraph->breadthSearchIter(key)){
-                std::cout << "diggah key found" << std::endl;
+                std::cout << "key found" << std::endl;
+			    std::cout << "________________________________ " << std::endl;
+			   std::cout << std::endl;
+			   
 
             }else{
-                std::cout << "altah bist du schlecht" << std::endl;
+                std::cout << "Baum nicht zusammenhaengend" << std::endl;
+			   std::cout << "________________________________ " << std::endl;
+			   std::cout << std::endl;
             }
         }
 
@@ -103,12 +108,18 @@ int main() {
         if(menuwahl==4){
             std::cout << "Choose a startkey: " << std::endl;
             std::cin >> key;
-            myGraph->prim(key);
+		   
+		   std::cout <<  myGraph->prim(key);
+		   std::cout << std::endl;
+		   std::cout << "________________________________ " << std::endl;
+		   
         }
 
         //Kruskal
         if(menuwahl==5){
-            myGraph->kruskal();
+		   std::cout << "Aufwand Kruskal: " << myGraph->kruskal()<< std::endl;
+		   std::cout << "________________________________ " << std::endl;
+		   
         }
 
         //Print function

@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.cpp">
+			<Option target="P4"/>
+		</Unit>
+		<Unit filename="/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.h">
+			<Option target="P4"/>
+		</Unit>
 		<Unit filename="/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.cpp">
 			<Option target="P4"/>
 		</Unit>

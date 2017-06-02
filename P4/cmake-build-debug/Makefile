@@ -123,6 +123,33 @@ P4/fast:
 	$(MAKE) -f CMakeFiles/P4.dir/build.make CMakeFiles/P4.dir/build
 .PHONY : P4/fast
 
+DisjointSet.o: DisjointSet.cpp.o
+
+.PHONY : DisjointSet.o
+
+# target to build an object file
+DisjointSet.cpp.o:
+	$(MAKE) -f CMakeFiles/P4.dir/build.make CMakeFiles/P4.dir/DisjointSet.cpp.o
+.PHONY : DisjointSet.cpp.o
+
+DisjointSet.i: DisjointSet.cpp.i
+
+.PHONY : DisjointSet.i
+
+# target to preprocess a source file
+DisjointSet.cpp.i:
+	$(MAKE) -f CMakeFiles/P4.dir/build.make CMakeFiles/P4.dir/DisjointSet.cpp.i
+.PHONY : DisjointSet.cpp.i
+
+DisjointSet.s: DisjointSet.cpp.s
+
+.PHONY : DisjointSet.s
+
+# target to generate assembly for a file
+DisjointSet.cpp.s:
+	$(MAKE) -f CMakeFiles/P4.dir/build.make CMakeFiles/P4.dir/DisjointSet.cpp.s
+.PHONY : DisjointSet.cpp.s
+
 P4_graph.o: P4_graph.cpp.o
 
 .PHONY : P4_graph.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... P4"
+	@echo "... DisjointSet.o"
+	@echo "... DisjointSet.i"
+	@echo "... DisjointSet.s"
 	@echo "... P4_graph.o"
 	@echo "... P4_graph.i"
 	@echo "... P4_graph.s"

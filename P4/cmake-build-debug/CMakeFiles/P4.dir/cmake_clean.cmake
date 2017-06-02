@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/P4.dir/main.cpp.o"
   "CMakeFiles/P4.dir/P4_graph.cpp.o"
   "CMakeFiles/P4.dir/P4_graphnode.cpp.o"
+  "CMakeFiles/P4.dir/DisjointSet.cpp.o"
   "P4.pdb"
   "P4"
 )
