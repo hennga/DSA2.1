@@ -159,7 +159,7 @@ bool Graph::depthSearchRecStart(int startKey)
    depthSearchRec(_nodes.at(0), startKey); //suche mit dem root node beginnen
    
    for (int i = 0; i < _nodes.size(); ++i) {
-	  if (_nodes.at(i)->_visited = false){
+	  if (_nodes.at(i)->_visited == false){
 		 return false;
 	  }
 	  return true;
@@ -219,7 +219,11 @@ bool Graph::breadthSearchIter(int startKey)
     return true;
 }
 
-//This must be done by you
+
+//startknoten suchen ist gegeben
+//alle knoten des selektieretten und eine liste eintragen
+//aus der liste den minimalen weg nehmen für alle nicht besuchten
+//solange bis alle bescuth worden sind
 double Graph::prim(int startKey) {
    
    double AufwandWeight = 0.000;
@@ -320,6 +324,12 @@ bool Graph::is_edge_in_list (){
     return true;
 }
 
+
+//kanten nach fgewicht sortieren
+//jeder knoten ist sein eigener baum
+//für jede nicht besuchte kante /baum kleinst noch übrige kante nehmen
+//und auf zyclus üerprüfen
+//wenn kein kreis dann zusammenfügen bis der baum am kleinsten ist und aufwand berechnen
 double Graph::kruskal() {
    
    double AufwandKruskal = 0.0;

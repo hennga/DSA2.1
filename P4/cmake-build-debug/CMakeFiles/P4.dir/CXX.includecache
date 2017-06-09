@@ -6,31 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.cpp
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/DisjointSet.cpp
 DisjointSet.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/DisjointSet.h
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/DisjointSet.h
 unordered_map
 -
 vector
 -
 P4_graphnode.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
 P4_graph.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.cpp
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.cpp
 P4_graph.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
 DisjointSet.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/DisjointSet.h
 set
 -
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
 P4_graphnode.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
 deque
 -
 map
@@ -46,19 +46,19 @@ fstream
 stack
 -
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.cpp
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.cpp
 P4_graphnode.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.h
 vector
 -
 list
 -
 
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/main.cpp
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/main.cpp
 iostream
 -
 P4_graph.h
-/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.h
+/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.h
 

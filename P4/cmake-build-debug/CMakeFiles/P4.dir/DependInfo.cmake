@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/DisjointSet.cpp" "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/cmake-build-debug/CMakeFiles/P4.dir/DisjointSet.cpp.o"
-  "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graph.cpp" "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/cmake-build-debug/CMakeFiles/P4.dir/P4_graph.cpp.o"
-  "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/P4_graphnode.cpp" "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/cmake-build-debug/CMakeFiles/P4.dir/P4_graphnode.cpp.o"
-  "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/main.cpp" "/home/henn/2Semester/ADS/PraktikumFinal/PraktikumCode/P4/cmake-build-debug/CMakeFiles/P4.dir/main.cpp.o"
+  "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/DisjointSet.cpp" "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/cmake-build-debug/CMakeFiles/P4.dir/DisjointSet.cpp.o"
+  "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graph.cpp" "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/cmake-build-debug/CMakeFiles/P4.dir/P4_graph.cpp.o"
+  "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/P4_graphnode.cpp" "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/cmake-build-debug/CMakeFiles/P4.dir/P4_graphnode.cpp.o"
+  "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/main.cpp" "/Users/marcelochsendorf/Dropbox/GIT_HUB_REPO_CLONES/DSA2.1/P4/cmake-build-debug/CMakeFiles/P4.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
