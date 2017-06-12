@@ -6,4 +6,5 @@ CMakeFiles/P5.dir/main.cpp.o: ../Huffman_IO.h
 CMakeFiles/P5.dir/main.cpp.o: ../IOSystem.h
 CMakeFiles/P5.dir/main.cpp.o: ../Kompression.h
 CMakeFiles/P5.dir/main.cpp.o: ../main.cpp
+CMakeFiles/P5.dir/main.cpp.o: /opt/X11/include/X11/Xlib.h
 

@@ -7,7 +7,7 @@ class Huffman_IO
 {
 private:
 	IOSystem file;
-	int pos_anz_bitvec;		// Filepointer merken für die Anzahl der Bit im Bit-Vector zu spreichern
+	int pos_anz_bitvec;		// Filepointer merken fï¿½r die Anzahl der Bit im Bit-Vector zu spreichern
 	int anz_vec_bit = 0;	// Anzahl der geschriebenen Code-Vektor-Bits
 	bool open_w = false, open_r = false;
 public:
@@ -31,14 +31,14 @@ public:
 	{
 		if (open_r) return false;
 		// Anzahl der Zeilen in der Map speichern
-		if (!file.write_zahl(Code.size())) return false;	// Anzahl der Zeilen in der map
+		if (!file.write_zahl((unsigned int)Code.size())) return false;	// Anzahl der Zeilen in der map
 		for (std::map<int, std::vector<bool>>::iterator i = Code.begin(); i != Code.end(); i++)	// Durchlaufe alle Zeilen
 		{
 			if (!file.write_zahl(i->first)) return false;			// Schreibe: Grauwert
-			if (!file.write_zahl(i->second.size())) return false;	// Schreibe: Anzahl der Bit in der Zeile (Codelänge)
+			if (!file.write_zahl((unsigned int)i->second.size())) return false;	// Schreibe: Anzahl der Bit in der Zeile (Codelï¿½nge)
 			for (unsigned int k = 0; k < i->second.size(); k++)
 			{
-				if (!file.write_bit(i->second[k])) return false;	// Schreibe: Huffman-Codewort für den Grauwert
+				if (!file.write_bit(i->second[k])) return false;	// Schreibe: Huffman-Codewort fï¿½r den Grauwert
 			}
 			if(!file.write_bit_flush()) return false;
 		}
@@ -47,10 +47,10 @@ public:
 		bool write_code_vektor(std::vector<int> & grauwerte, std::map<int, std::vector<bool>> & Code)
 	{
 		if (open_r) return false;
-		// Position merken um später die Anzahl der Bit eintragen zu können
+		// Position merken um spï¿½ter die Anzahl der Bit eintragen zu kï¿½nnen
 		pos_anz_bitvec = file.get_pos();
 		unsigned int anz_bit = 0;
-		if (!file.write_zahl(anz_bit)) return false;	// Platzhalter für die Anzahl der Bits
+		if (!file.write_zahl(anz_bit)) return false;	// Platzhalter fï¿½r die Anzahl der Bits
 		// schreiben des Bitmusters
 		std::map<int, std::vector<bool>>::iterator i;
 		for (unsigned int k = 0; k < grauwerte.size(); k++)
@@ -60,14 +60,14 @@ public:
 			{
 				for (unsigned int l = 0; l < i->second.size(); l++)
 				{
-					if (!file.write_bit(i->second[l])) return false;	// Schreibe: Huffman-Codewort für den Grauwert
+					if (!file.write_bit(i->second[l])) return false;	// Schreibe: Huffman-Codewort fï¿½r den Grauwert
 				}
 				anz_bit += i->second.size();
 			}
 		}
 		if (!file.write_bit_flush()) return false;
-		file.set_pos(pos_anz_bitvec);	// Dateiposition zur Speicherung der Grösse des Bit-Vektors wieder anfahren
-		if (!file.write_zahl(anz_bit)) return false;	// Platzhalter für die Anzahl der Bits
+		file.set_pos(pos_anz_bitvec);	// Dateiposition zur Speicherung der Grï¿½sse des Bit-Vektors wieder anfahren
+		if (!file.write_zahl(anz_bit)) return false;	// Platzhalter fï¿½r die Anzahl der Bits
 		return true;
 	}
 	bool close()
@@ -96,10 +96,10 @@ public:
 		for (unsigned int i = 0; i < anzahl; i++)			// Durchlaufe alle Zeilen
 		{
 			if (!file.read_zahl(grauwert)) return false;			// Lese: Grauwert
-			if (!file.read_zahl(bit_anzahl)) return false;			// Lese: Anzahl der Bit in der Zeile (Codelänge)
+			if (!file.read_zahl(bit_anzahl)) return false;			// Lese: Anzahl der Bit in der Zeile (Codelï¿½nge)
 			for (unsigned int k = 0; k < bit_anzahl; k++)
 			{
-				if (!file.read_bit(b)) return false;				// Lese: Huffman-Codewort für den Grauwert
+				if (!file.read_bit(b)) return false;				// Lese: Huffman-Codewort fï¿½r den Grauwert
 				tmp.push_back(b);
 			}
 			file.read_bit_flush();

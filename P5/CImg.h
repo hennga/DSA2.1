@@ -49662,7 +49662,7 @@ inline int gip_get_grey(unsigned int x, unsigned int y)
 
 inline void gip_set_grey(unsigned int x, unsigned int y, int grey_val)
 {
-	gip_color new_col{ grey_val, grey_val, grey_val };
+	gip_color new_col{ (unsigned char)grey_val, (unsigned char)grey_val, (unsigned char)grey_val };
 	gip_canvas.draw_point(x, y, new_col);
 }
 

@@ -1,6 +1,10 @@
 #define CIMGGIP_MAIN
 
+#ifdef __APPLE__
+#include "/opt/X11/include/X11/Xlib.h"
+#else
 #include </X11/Xlib.h>
+#endif
 #include "CImg.h"
 #include "Huffman_IO.h"
 #include <iostream>
@@ -15,7 +19,7 @@ int main(void)
     vector<int> grauwerte, histogramm;
     Kompression HK;
 
-    gip_load_image("Test2.bmp");
+    gip_load_image("../Test2.bmp");
 
     //Grauwerte auslesen:
     for (unsigned int i = 0; i < gip_win_size_y; i++)
@@ -122,7 +126,12 @@ int main(void)
     }
     CImgDisplay main_disp(img_restore, "Wieder hergestellt");
 
-    system("PAUSE");
+
+
+    std::cout <<  "Press [Enter] to continue . . ." << std::endl;
+    getchar();
+
+
 
     return 0;
 }
